@@ -1,0 +1,35 @@
+[
+  {
+    "date": "2024-01-02",
+    "person_id": "student_001",
+    "person_detected": true,
+    "wellbeing_score": 72,
+    "social_engagement_score": 68,
+    "eye_contact_detected": true,
+    "gaze_direction": "forward",
+    "energy_score": 58,
+    "activity_level": 57
+  },
+  {
+    "date": "2024-01-02",
+    "person_id": "student_002",
+    "person_detected": true,
+    "wellbeing_score": 50,
+    "social_engagement_score": 58,
+    "eye_contact_detected": true,
+    "gaze_direction": "forward",
+    "energy_score": 56,
+    "activity_level": 52
+  },
+  {
+    "date": "2024-01-02",
+    "person_id": "student_003",
+    "person_detected": true,
+    "wellbeing_score": 78,
+    "social_engagement_score": 72,
+    "eye_contact_detected": true,
+    "gaze_direction": "forward",
+    "energy_score": 67,
+    "activity_level": 63
+  }
+]

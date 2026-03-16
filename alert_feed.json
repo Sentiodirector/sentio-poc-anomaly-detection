@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-03-16T13:50:47.495103",
+  "total_alerts": 7,
+  "alerts": [
+    {
+      "alert_id": "22c5ce92-ff4e-4865-9767-10f6bd38f5bf",
+      "person_id": "student_001",
+      "alert_type": "SUDDEN_DROP",
+      "severity": "HIGH",
+      "detected_on": "2024-01-04",
+      "description": "Wellbeing dropped 26.0 points below personal baseline (70.0 \u2192 44).",
+      "details": {
+        "metric": "wellbeing_score",
+        "current_value": 44,
+        "baseline_value": 70,
+        "drop": 26,
+        "threshold": 20
+      }
+    },
+    {
+      "alert_id": "416e6178-6737-4980-a1db-aa4b4b0acda6",
+      "person_id": "student_001",
+      "alert_type": "SOCIAL_WITHDRAWAL",
+      "severity": "MEDIUM",
+      "detected_on": "2024-01-04",
+      "description": "Social engagement dropped 30.0 points (baseline: 65.0 \u2192 35) and gaze is consistently downward.",
+      "details": {
+        "metric": "social_engagement_score",
+        "current_value": 35,
+        "baseline_value": 65,
+        "drop": 30,
+        "threshold": 25,
+        "gaze_direction": "downward"
+      }
+    },
+    {
+      "alert_id": "9fe17129-5c46-4cd9-895f-e1c5a5638e2a",
+      "person_id": "student_002",
+      "alert_type": "HYPERACTIVITY_SPIKE",
+      "severity": "MEDIUM",
+      "detected_on": "2024-01-04",
+      "description": "Combined energy (185) is 76.7 points above personal baseline (108.3).",
+      "details": {
+        "metric": "combined_energy",
+        "current_value": 185,
+        "baseline_value": 108.3,
+        "spike": 76.7,
+        "threshold": 40,
+        "energy_score": 95,
+        "activity_level": 90
+      }
+    },
+    {
+      "alert_id": "6325af4e-a349-42da-80d7-0e4b25f8d26f",
+      "person_id": "student_003",
+      "alert_type": "ABSENCE_FLAG",
+      "severity": "HIGH",
+      "detected_on": "2024-01-05",
+      "description": "Person not detected for 2 consecutive days (since 2024-01-04). Welfare check recommended.",
+      "details": {
+        "metric": "person_detected",
+        "consecutive_absent_days": 2,
+        "start_date": "2024-01-04",
+        "dates": [
+          "2024-01-04",
+          "2024-01-05"
+        ]
+      }
+    },
+    {
+      "alert_id": "05527d3c-ea7a-4e09-ac84-936455c80cac",
+      "person_id": "student_001",
+      "alert_type": "SUSTAINED_LOW",
+      "severity": "HIGH",
+      "detected_on": "2024-01-06",
+      "description": "Wellbeing has been below 45 for 3 consecutive days (since 2024-01-04).",
+      "details": {
+        "metric": "wellbeing_score",
+        "threshold": 45,
+        "consecutive_days": 3,
+        "start_date": "2024-01-04",
+        "scores": [
+          44,
+          42,
+          40
+        ]
+      }
+    },
+    {
+      "alert_id": "7b1e8b15-33fd-4d91-a94d-e07e78a74f33",
+      "person_id": "student_001",
+      "alert_type": "GAZE_AVOIDANCE",
+      "severity": "MEDIUM",
+      "detected_on": "2024-01-06",
+      "description": "No eye contact detected for 3 consecutive days (since 2024-01-04).",
+      "details": {
+        "metric": "eye_contact_detected",
+        "consecutive_days": 3,
+        "start_date": "2024-01-04",
+        "dates": [
+          "2024-01-04",
+          "2024-01-05",
+          "2024-01-06"
+        ]
+      }
+    },
+    {
+      "alert_id": "05c3acc1-2b39-4e20-8b74-db6659c74abb",
+      "person_id": "student_002",
+      "alert_type": "REGRESSION",
+      "severity": "HIGH",
+      "detected_on": "2024-01-07",
+      "description": "After 3 days of recovery (55 \u2192 62 \u2192 70), wellbeing dropped 18 points today (70 \u2192 52).",
+      "details": {
+        "metric": "wellbeing_score",
+        "current_value": 52,
+        "previous_value": 70,
+        "drop": 18,
+        "threshold": 15,
+        "recovery_start": "2024-01-04",
+        "recovery_scores": [
+          55,
+          62,
+          70
+        ]
+      }
+    }
+  ]
+}
