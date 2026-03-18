@@ -1,0 +1,124 @@
+{
+  "date": "2026-01-01",
+  "persons": {
+    "SCHOOL_P0001": {
+      "person_info": {
+        "name": "Aarav Sharma",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 79,
+      "traits": {
+        "social_engagement": 57,
+        "physical_energy": 37,
+        "movement_energy": 59,
+        "focus": 69,
+        "calmness": 56
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detection_count": 14
+    },
+    "SCHOOL_P0002": {
+      "person_info": {
+        "name": "Sparshita Reddy",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 69,
+      "traits": {
+        "social_engagement": 47,
+        "physical_energy": 45,
+        "movement_energy": 44,
+        "focus": 72,
+        "calmness": 75
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detection_count": 14
+    },
+    "SCHOOL_P0003": {
+      "person_info": {
+        "name": "Ranjhana Patel",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 64,
+      "traits": {
+        "social_engagement": 70,
+        "physical_energy": 58,
+        "movement_energy": 47,
+        "focus": 47,
+        "calmness": 80
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detection_count": 9
+    },
+    "SCHOOL_P0004": {
+      "person_info": {
+        "name": "Kabir Nair",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 66,
+      "traits": {
+        "social_engagement": 66,
+        "physical_energy": 38,
+        "movement_energy": 53,
+        "focus": 58,
+        "calmness": 80
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detection_count": 9
+    },
+    "SCHOOL_P0005": {
+      "person_info": {
+        "name": "Diya Menon",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 41,
+      "traits": {
+        "social_engagement": 33,
+        "physical_energy": 56,
+        "movement_energy": 54,
+        "focus": 64,
+        "calmness": 73
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detection_count": 9
+    },
+    "SCHOOL_P0006": {
+      "person_info": {
+        "name": "Arjun Mehta",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 72,
+      "traits": {
+        "social_engagement": 58,
+        "physical_energy": 49,
+        "movement_energy": 48,
+        "focus": 54,
+        "calmness": 70
+      },
+      "gaze_direction": "side",
+      "eye_contact": false,
+      "detection_count": 19
+    },
+    "SCHOOL_P0007": {
+      "person_info": {
+        "name": "Priya Rajan",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 80,
+      "traits": {
+        "social_engagement": 72,
+        "physical_energy": 44,
+        "movement_energy": 60,
+        "focus": 58,
+        "calmness": 75
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detection_count": 11
+    }
+  }
+}

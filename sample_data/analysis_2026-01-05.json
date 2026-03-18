@@ -1,0 +1,107 @@
+{
+  "date": "2026-01-05",
+  "persons": {
+    "SCHOOL_P0001": {
+      "person_info": {
+        "name": "Aarav Sharma",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 75,
+      "traits": {
+        "social_engagement": 65,
+        "physical_energy": 49,
+        "movement_energy": 43,
+        "focus": 71,
+        "calmness": 61
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detection_count": 13
+    },
+    "SCHOOL_P0002": {
+      "person_info": {
+        "name": "Sparshita Reddy",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 51,
+      "traits": {
+        "social_engagement": 28,
+        "physical_energy": 43,
+        "movement_energy": 52,
+        "focus": 60,
+        "calmness": 54
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "detection_count": 9
+    },
+    "SCHOOL_P0003": {
+      "person_info": {
+        "name": "Ranjhana Patel",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 42,
+      "traits": {
+        "social_engagement": 29,
+        "physical_energy": 53,
+        "movement_energy": 50,
+        "focus": 56,
+        "calmness": 74
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "detection_count": 12
+    },
+    "SCHOOL_P0004": {
+      "person_info": {
+        "name": "Kabir Nair",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 79,
+      "traits": {
+        "social_engagement": 57,
+        "physical_energy": 91,
+        "movement_energy": 90,
+        "focus": 67,
+        "calmness": 61
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detection_count": 18
+    },
+    "SCHOOL_P0005": {
+      "person_info": {
+        "name": "Diya Menon",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 49,
+      "traits": {
+        "social_engagement": 20,
+        "physical_energy": 60,
+        "movement_energy": 49,
+        "focus": 70,
+        "calmness": 46
+      },
+      "gaze_direction": "side",
+      "eye_contact": false,
+      "detection_count": 13
+    },
+    "SCHOOL_P0006": {
+      "person_info": {
+        "name": "Arjun Mehta",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 82,
+      "traits": {
+        "social_engagement": 43,
+        "physical_energy": 63,
+        "movement_energy": 43,
+        "focus": 44,
+        "calmness": 77
+      },
+      "gaze_direction": "side",
+      "eye_contact": false,
+      "detection_count": 16
+    }
+  }
+}

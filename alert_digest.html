@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentio Mind · Alert Digest · 2026-03-19</title>
+<style>
+  :root {
+    --urgent:  #ef4444;
+    --monitor: #f59e0b;
+    --info:    #6366f1;
+    --bg:      #0f172a;
+    --surface: #1e293b;
+    --border:  #334155;
+    --text:    #e2e8f0;
+    --muted:   #94a3b8;
+    --green:   #22c55e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+    line-height: 1.6;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  header h1 { font-size: 1.6rem; font-weight: 700; color: #fff; }
+  header .sub { color: var(--muted); font-size: 0.9rem; }
+  .section { margin-bottom: 36px; }
+  .section h2 {
+    font-size: 1.1rem; font-weight: 600; color: #fff;
+    border-left: 3px solid var(--info);
+    padding-left: 10px; margin-bottom: 16px;
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .stat-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-box .num { font-size: 2rem; font-weight: 800; }
+  .stat-box .lbl { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+  .stat-box.urgent-box .num { color: var(--urgent); }
+  .stat-box.monitor-box .num { color: var(--monitor); }
+  .stat-box.green-box .num { color: var(--green); }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .card.severity-urgent  { border-left: 4px solid var(--urgent);  }
+  .card.severity-monitor { border-left: 4px solid var(--monitor); }
+  .card.severity-informational { border-left: 4px solid var(--info); }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border);
+  }
+  .person-name { font-weight: 700; font-size: 1rem; margin-right: 10px; }
+  .badge {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .bg-urgent  { background: rgba(239,68,68,0.2);  color: var(--urgent);  }
+  .bg-monitor { background: rgba(245,158,11,0.2); color: var(--monitor); }
+  .bg-info    { background: rgba(99,102,241,0.2); color: var(--info);    }
+  .card-body { padding: 14px 16px; }
+  .category { font-size: 0.75rem; color: var(--muted); margin-bottom: 4px; }
+  .title { font-weight: 600; margin-bottom: 6px; }
+  .description { font-size: 0.88rem; color: #cbd5e1; margin-bottom: 8px; }
+  .action {
+    font-size: 0.82rem;
+    background: rgba(99,102,241,0.1);
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    color: #a5b4fc;
+  }
+  .meta { font-size: 0.78rem; color: var(--muted); }
+  .sparkline svg { display: block; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    background: var(--surface);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th {
+    background: rgba(255,255,255,0.05);
+    text-align: left;
+    padding: 10px 14px;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+  }
+  td { padding: 10px 14px; border-top: 1px solid var(--border); }
+  ul { list-style: none; padding: 0; }
+  li { padding: 8px 12px; background: var(--surface); border-radius: 8px;
+        margin-bottom: 6px; border: 1px solid var(--border); }
+  .no-alerts { color: var(--green); padding: 20px; text-align: center; font-size: 1.1rem; }
+  .generated { color: var(--muted); font-size: 0.78rem; margin-top: 40px; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>🧠 Sentio Mind · Alert Digest</h1>
+    <div class="sub">Demo School &nbsp;·&nbsp; Generated 19 Mar 2026, 01:05</div>
+  </div>
+  <div class="sub">Project 5 · Behavioral Anomaly Detection</div>
+</header>
+
+<!-- SECTION 1: SCHOOL SUMMARY -->
+<div class="section">
+  <h2>📊 School Summary</h2>
+  <div class="summary-grid">
+    <div class="stat-box">
+      <div class="num">7</div>
+      <div class="lbl">Students Tracked</div>
+    </div>
+    <div class="stat-box urgent-box">
+      <div class="num">1</div>
+      <div class="lbl">Urgent Alerts</div>
+    </div>
+    <div class="stat-box monitor-box">
+      <div class="num">7</div>
+      <div class="lbl">Monitor Alerts</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">1</div>
+      <div class="lbl">Absent Students</div>
+    </div>
+    <div class="stat-box green-box">
+      <div class="num">63</div>
+      <div class="lbl">Avg Wellbeing Today</div>
+    </div>
+    <div class="stat-box">
+      <div class="num" style="font-size:1rem">GAZE_AVOIDANCE</div>
+      <div class="lbl">Top Anomaly This Week</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: TODAY'S ALERTS -->
+<div class="section">
+  <h2>🚨 Today's Alerts (8)</h2>
+  
+        <div class="card severity-urgent">
+          <div class="card-header">
+            <div>
+              <span class="person-name">Ranjhana Patel</span>
+              <span class="badge bg-urgent">🔴 URGENT</span>
+            </div>
+            <div class="sparkline"><svg width="80" height="30" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,8.8 21.5,3.0 40.0,20.8 58.5,27.0 77.0,19.3" fill="none" stroke="#6366f1" stroke-width="2" stroke-linejoin="round"/><circle cx="77.0" cy="19.3" r="3" fill="#ef4444"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="category">🌧️ SUSTAINED_LOW</div>
+            <div class="title">Wellbeing below 45 for 3+ consecutive days</div>
+            <p class="description">Ranjhana Patel has scored below 45 for 3 consecutive days. Current wellbeing: 42.</p>
+            <div class="action">💡 Immediate pastoral support recommended</div>
+            <div class="meta">
+              Baseline: <strong>0</strong> &nbsp;|&nbsp;
+              Today: <strong>42</strong> &nbsp;|&nbsp;
+              Delta: <strong>0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card severity-monitor">
+          <div class="card-header">
+            <div>
+              <span class="person-name">Sparshita Reddy</span>
+              <span class="badge bg-monitor">🟡 MONITOR</span>
+            </div>
+            <div class="sparkline"><svg width="80" height="30" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,15.6 21.5,11.2 40.0,3.0 58.5,15.6 77.0,27.0" fill="none" stroke="#6366f1" stroke-width="2" stroke-linejoin="round"/><circle cx="77.0" cy="27.0" r="3" fill="#ef4444"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="category">📉 SUDDEN_DROP</div>
+            <div class="title">Sudden wellbeing drop detected</div>
+            <p class="description">Sparshita Reddy's wellbeing dropped from a baseline of 78 to 51 today — a 27-point fall. Lowest trait: social_engagement at 28. Dominant gaze: down.</p>
+            <div class="action">💡 Schedule pastoral check-in today</div>
+            <div class="meta">
+              Baseline: <strong>78</strong> &nbsp;|&nbsp;
+              Today: <strong>51</strong> &nbsp;|&nbsp;
+              Delta: <strong>-27</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card severity-monitor">
+          <div class="card-header">
+            <div>
+              <span class="person-name">Sparshita Reddy</span>
+              <span class="badge bg-monitor">🟡 MONITOR</span>
+            </div>
+            <div class="sparkline"><svg width="80" height="30" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,15.6 21.5,11.2 40.0,3.0 58.5,15.6 77.0,27.0" fill="none" stroke="#6366f1" stroke-width="2" stroke-linejoin="round"/><circle cx="77.0" cy="27.0" r="3" fill="#ef4444"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="category">🚪 SOCIAL_WITHDRAWAL</div>
+            <div class="title">Social withdrawal detected</div>
+            <p class="description">Sparshita Reddy's social engagement dropped 32 points below baseline (now 28). Gaze: down.</p>
+            <div class="action">💡 Monitor social interactions; consider peer support</div>
+            <div class="meta">
+              Baseline: <strong>78</strong> &nbsp;|&nbsp;
+              Today: <strong>51</strong> &nbsp;|&nbsp;
+              Delta: <strong>-32</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card severity-monitor">
+          <div class="card-header">
+            <div>
+              <span class="person-name">Ranjhana Patel</span>
+              <span class="badge bg-monitor">🟡 MONITOR</span>
+            </div>
+            <div class="sparkline"><svg width="80" height="30" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,8.8 21.5,3.0 40.0,20.8 58.5,27.0 77.0,19.3" fill="none" stroke="#6366f1" stroke-width="2" stroke-linejoin="round"/><circle cx="77.0" cy="19.3" r="3" fill="#ef4444"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="category">👁️ GAZE_AVOIDANCE</div>
+            <div class="title">No eye contact for 3 consecutive days</div>
+            <p class="description">Ranjhana Patel has shown no eye contact for 3 consecutive days. Possible withdrawal or anxiety.</p>
+            <div class="action">💡 Gentle 1-on-1 check-in recommended</div>
+            <div class="meta">
+              Baseline: <strong>0</strong> &nbsp;|&nbsp;
+              Today: <strong>42</strong> &nbsp;|&nbsp;
+              Delta: <strong>0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card severity-monitor">
+          <div class="card-header">
+            <div>
+              <span class="person-name">Kabir Nair</span>
+              <span class="badge bg-monitor">🟡 MONITOR</span>
+            </div>
+            <div class="sparkline"><svg width="80" height="30" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,27.0 21.5,3.0 40.0,19.0 58.5,23.0 77.0,9.7" fill="none" stroke="#6366f1" stroke-width="2" stroke-linejoin="round"/><circle cx="77.0" cy="9.7" r="3" fill="#ef4444"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="category">⚡ HYPERACTIVITY_SPIKE</div>
+            <div class="title">Hyperactivity spike detected</div>
+            <p class="description">Kabir Nair's combined energy (physical + movement) is 81 points above baseline today.</p>
+            <div class="action">💡 Check for anxiety, overstimulation, or disrupted routine</div>
+            <div class="meta">
+              Baseline: <strong>74</strong> &nbsp;|&nbsp;
+              Today: <strong>79</strong> &nbsp;|&nbsp;
+              Delta: <strong>81</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card severity-monitor">
+          <div class="card-header">
+            <div>
+              <span class="person-name">Diya Menon</span>
+              <span class="badge bg-monitor">🟡 MONITOR</span>
+            </div>
+            <div class="sparkline"><svg width="80" height="30" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,27.0 21.5,16.3 40.0,11.9 58.5,3.0 77.0,19.9" fill="none" stroke="#6366f1" stroke-width="2" stroke-linejoin="round"/><circle cx="77.0" cy="19.9" r="3" fill="#ef4444"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="category">↩️ REGRESSION</div>
+            <div class="title">Regression after recovery period</div>
+            <p class="description">Diya Menon had been improving for 3 days (peaked at 68) but dropped 19 points today to 49.</p>
+            <div class="action">💡 Check for relapse triggers; schedule follow-up</div>
+            <div class="meta">
+              Baseline: <strong>68</strong> &nbsp;|&nbsp;
+              Today: <strong>49</strong> &nbsp;|&nbsp;
+              Delta: <strong>-19</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card severity-monitor">
+          <div class="card-header">
+            <div>
+              <span class="person-name">Diya Menon</span>
+              <span class="badge bg-monitor">🟡 MONITOR</span>
+            </div>
+            <div class="sparkline"><svg width="80" height="30" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,27.0 21.5,16.3 40.0,11.9 58.5,3.0 77.0,19.9" fill="none" stroke="#6366f1" stroke-width="2" stroke-linejoin="round"/><circle cx="77.0" cy="19.9" r="3" fill="#ef4444"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="category">👁️ GAZE_AVOIDANCE</div>
+            <div class="title">No eye contact for 3 consecutive days</div>
+            <p class="description">Diya Menon has shown no eye contact for 3 consecutive days. Possible withdrawal or anxiety.</p>
+            <div class="action">💡 Gentle 1-on-1 check-in recommended</div>
+            <div class="meta">
+              Baseline: <strong>0</strong> &nbsp;|&nbsp;
+              Today: <strong>49</strong> &nbsp;|&nbsp;
+              Delta: <strong>0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card severity-monitor">
+          <div class="card-header">
+            <div>
+              <span class="person-name">Arjun Mehta</span>
+              <span class="badge bg-monitor">🟡 MONITOR</span>
+            </div>
+            <div class="sparkline"><svg width="80" height="30" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,12.6 21.5,27.0 40.0,15.5 58.5,4.9 77.0,3.0" fill="none" stroke="#6366f1" stroke-width="2" stroke-linejoin="round"/><circle cx="77.0" cy="3.0" r="3" fill="#ef4444"/></svg></div>
+          </div>
+          <div class="card-body">
+            <div class="category">👁️ GAZE_AVOIDANCE</div>
+            <div class="title">No eye contact for 3 consecutive days</div>
+            <p class="description">Arjun Mehta has shown no eye contact for 3 consecutive days. Possible withdrawal or anxiety.</p>
+            <div class="action">💡 Gentle 1-on-1 check-in recommended</div>
+            <div class="meta">
+              Baseline: <strong>0</strong> &nbsp;|&nbsp;
+              Today: <strong>82</strong> &nbsp;|&nbsp;
+              Delta: <strong>0</strong>
+            </div>
+          </div>
+        </div>
+</div>
+
+<!-- SECTION 3: ABSENCE FLAGS -->
+<div class="section">
+  <h2>❓ Absence Flags (1)</h2>
+  <table><thead><tr><th>Student</th><th>Last Seen</th><th>Days Absent</th><th>Action</th></tr></thead><tbody>
+        <tr>
+          <td>Priya Rajan</td>
+          <td>2026-01-02</td>
+          <td><strong>3</strong></td>
+          <td>Welfare check — contact family if absent again tomorrow</td>
+        </tr></tbody></table>
+</div>
+
+<!-- SECTION 4: PERSISTENT ALERTS -->
+<div class="section">
+  <h2>🔁 Flagged 3+ Times</h2>
+  <ul><li>None at this time ✅</li></ul>
+</div>
+
+<div class="generated">Generated by solution.py · Sentio Mind POC · Project 5 · 2026-03-19T01:05:41.069261</div>
+
+</body>
+</html>

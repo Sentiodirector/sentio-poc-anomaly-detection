@@ -1,0 +1,229 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-19T01:05:41.063262",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 8,
+    "urgent": 1,
+    "monitor": 7,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "alert_id": "ALT_003",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Ranjhana Patel",
+      "date": "2026-01-05",
+      "severity": "urgent",
+      "category": "SUSTAINED_LOW",
+      "title": "Wellbeing below 45 for 3+ consecutive days",
+      "description": "Ranjhana Patel has scored below 45 for 3 consecutive days. Current wellbeing: 42.",
+      "baseline_wellbeing": 0,
+      "today_wellbeing": 42,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        64,
+        76,
+        39,
+        26,
+        42
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 29,
+      "recommended_action": "Immediate pastoral support recommended",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_001",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Sparshita Reddy",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "SUDDEN_DROP",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Sparshita Reddy's wellbeing dropped from a baseline of 78 to 51 today \u2014 a 27-point fall. Lowest trait: social_engagement at 28. Dominant gaze: down.",
+      "baseline_wellbeing": 78,
+      "today_wellbeing": 51,
+      "delta": -27,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        69,
+        76,
+        89,
+        69,
+        51
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 28,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_002",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Sparshita Reddy",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "SOCIAL_WITHDRAWAL",
+      "title": "Social withdrawal detected",
+      "description": "Sparshita Reddy's social engagement dropped 32 points below baseline (now 28). Gaze: down.",
+      "baseline_wellbeing": 78,
+      "today_wellbeing": 51,
+      "delta": -32,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        69,
+        76,
+        89,
+        69,
+        51
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 28,
+      "recommended_action": "Monitor social interactions; consider peer support",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_004",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Ranjhana Patel",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "No eye contact for 3 consecutive days",
+      "description": "Ranjhana Patel has shown no eye contact for 3 consecutive days. Possible withdrawal or anxiety.",
+      "baseline_wellbeing": 0,
+      "today_wellbeing": 42,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        64,
+        76,
+        39,
+        26,
+        42
+      ],
+      "lowest_trait": "eye_contact",
+      "lowest_trait_value": 0,
+      "recommended_action": "Gentle 1-on-1 check-in recommended",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_005",
+      "person_id": "SCHOOL_P0004",
+      "person_name": "Kabir Nair",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "HYPERACTIVITY_SPIKE",
+      "title": "Hyperactivity spike detected",
+      "description": "Kabir Nair's combined energy (physical + movement) is 81 points above baseline today.",
+      "baseline_wellbeing": 74,
+      "today_wellbeing": 79,
+      "delta": 81,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        66,
+        84,
+        72,
+        69,
+        79
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 90,
+      "recommended_action": "Check for anxiety, overstimulation, or disrupted routine",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_006",
+      "person_id": "SCHOOL_P0005",
+      "person_name": "Diya Menon",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "REGRESSION",
+      "title": "Regression after recovery period",
+      "description": "Diya Menon had been improving for 3 days (peaked at 68) but dropped 19 points today to 49.",
+      "baseline_wellbeing": 68,
+      "today_wellbeing": 49,
+      "delta": -19,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        41,
+        53,
+        58,
+        68,
+        49
+      ],
+      "lowest_trait": "wellbeing",
+      "lowest_trait_value": 49,
+      "recommended_action": "Check for relapse triggers; schedule follow-up",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_007",
+      "person_id": "SCHOOL_P0005",
+      "person_name": "Diya Menon",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "No eye contact for 3 consecutive days",
+      "description": "Diya Menon has shown no eye contact for 3 consecutive days. Possible withdrawal or anxiety.",
+      "baseline_wellbeing": 0,
+      "today_wellbeing": 49,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        41,
+        53,
+        58,
+        68,
+        49
+      ],
+      "lowest_trait": "eye_contact",
+      "lowest_trait_value": 0,
+      "recommended_action": "Gentle 1-on-1 check-in recommended",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_008",
+      "person_id": "SCHOOL_P0006",
+      "person_name": "Arjun Mehta",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "No eye contact for 3 consecutive days",
+      "description": "Arjun Mehta has shown no eye contact for 3 consecutive days. Possible withdrawal or anxiety.",
+      "baseline_wellbeing": 0,
+      "today_wellbeing": 82,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        72,
+        57,
+        69,
+        80,
+        82
+      ],
+      "lowest_trait": "eye_contact",
+      "lowest_trait_value": 0,
+      "recommended_action": "Gentle 1-on-1 check-in recommended",
+      "profile_image_b64": ""
+    }
+  ],
+  "absence_flags": [
+    {
+      "person_id": "SCHOOL_P0007",
+      "person_name": "Priya Rajan",
+      "last_seen_date": "2026-01-02",
+      "days_absent": 3,
+      "recommended_action": "Welfare check \u2014 contact family if absent again tomorrow"
+    }
+  ],
+  "school_summary": {
+    "total_persons_tracked": 7,
+    "persons_flagged_today": 0,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "GAZE_AVOIDANCE",
+    "school_avg_wellbeing_today": 63
+  }
+}
