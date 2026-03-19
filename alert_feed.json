@@ -1,0 +1,74 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-19T16:07:42.122214",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 2,
+    "urgent": 0,
+    "monitor": 2,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "alert_id": "P3_Day4_SUDDEN_DROP",
+      "person_id": "P3",
+      "person_name": "Student_P3",
+      "date": "Day4",
+      "severity": "monitor",
+      "_note_severity": "one of: urgent / monitor / informational",
+      "category": "SUDDEN_DROP",
+      "_note_category": "one of: SUDDEN_DROP / SUSTAINED_LOW / SOCIAL_WITHDRAWAL / HYPERACTIVITY_SPIKE / REGRESSION / GAZE_AVOIDANCE / ABSENCE_FLAG",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Student_P3's Wellbeing dropped by 26.0 points from baseline. Lowest trait: movement_energy (41). Gaze direction: side.",
+      "baseline_wellbeing": 82.0,
+      "today_wellbeing": 56,
+      "delta": -26.0,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        86,
+        87,
+        73,
+        56
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 41,
+      "recommended_action": "Monitor and follow up if persists",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "P5_Day5_REGRESSION",
+      "person_id": "P5",
+      "person_name": "Student_P5",
+      "date": "Day5",
+      "severity": "monitor",
+      "_note_severity": "one of: urgent / monitor / informational",
+      "category": "REGRESSION",
+      "_note_category": "one of: SUDDEN_DROP / SUSTAINED_LOW / SOCIAL_WITHDRAWAL / HYPERACTIVITY_SPIKE / REGRESSION / GAZE_AVOIDANCE / ABSENCE_FLAG",
+      "title": "Regression after improvement",
+      "description": "Student_P5's Wellbeing dropped by 40 after improvement streak. Lowest trait: movement_energy (40). Gaze direction: forward.",
+      "baseline_wellbeing": 44.0,
+      "today_wellbeing": 34,
+      "delta": -10.0,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        33,
+        39,
+        60,
+        74,
+        34
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 40,
+      "recommended_action": "Monitor and follow up if persists",
+      "profile_image_b64": ""
+    }
+  ],
+  "absence_flags": [],
+  "school_summary": {
+    "total_persons_tracked": 5,
+    "persons_flagged_today": 1,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "SUDDEN_DROP",
+    "school_avg_wellbeing_today": 0
+  }
+}

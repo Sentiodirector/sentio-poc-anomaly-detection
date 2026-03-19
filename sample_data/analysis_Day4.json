@@ -1,0 +1,72 @@
+{
+  "P1": {
+    "person_info": {
+      "name": "Student_P1"
+    },
+    "wellbeing": 62,
+    "social_engagement": 65,
+    "gaze_direction": "down",
+    "traits": {
+      "physical_energy": 24,
+      "movement_energy": 46,
+      "social_engagement": 54,
+      "eye_contact": false
+    }
+  },
+  "P2": {
+    "person_info": {
+      "name": "Student_P2"
+    },
+    "wellbeing": 37,
+    "social_engagement": 70,
+    "gaze_direction": "down",
+    "traits": {
+      "physical_energy": 22,
+      "movement_energy": 37,
+      "social_engagement": 58,
+      "eye_contact": true
+    }
+  },
+  "P3": {
+    "person_info": {
+      "name": "Student_P3"
+    },
+    "wellbeing": 56,
+    "social_engagement": 60,
+    "gaze_direction": "side",
+    "traits": {
+      "physical_energy": 79,
+      "movement_energy": 41,
+      "social_engagement": 43,
+      "eye_contact": true
+    }
+  },
+  "P4": {
+    "person_info": {
+      "name": "Student_P4"
+    },
+    "wellbeing": 77,
+    "social_engagement": 64,
+    "gaze_direction": "down",
+    "traits": {
+      "physical_energy": 74,
+      "movement_energy": 23,
+      "social_engagement": 42,
+      "eye_contact": true
+    }
+  },
+  "P5": {
+    "person_info": {
+      "name": "Student_P5"
+    },
+    "wellbeing": 74,
+    "social_engagement": 47,
+    "gaze_direction": "side",
+    "traits": {
+      "physical_energy": 54,
+      "movement_energy": 21,
+      "social_engagement": 69,
+      "eye_contact": false
+    }
+  }
+}
