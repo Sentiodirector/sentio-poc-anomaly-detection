@@ -1,0 +1,197 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-19T16:10:16.694778",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 7,
+    "urgent": 1,
+    "monitor": 6,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "alert_id": "ALT_003",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Sparshita",
+      "date": "2026-03-17",
+      "severity": "urgent",
+      "category": "SUSTAINED_LOW",
+      "title": "Sustained low wellbeing (3+ days)",
+      "description": "Sparshita has had wellbeing below 45 for 3+ consecutive days (scores: [38, 36, 34]).",
+      "baseline_wellbeing": null,
+      "today_wellbeing": 34,
+      "delta": null,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        42,
+        40,
+        38,
+        36,
+        34
+      ],
+      "lowest_trait": "",
+      "lowest_trait_value": 0,
+      "recommended_action": "Urgent counsellor meeting \u2014 arrange today"
+    },
+    {
+      "alert_id": "ALT_001",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Harshita",
+      "date": "2026-03-17",
+      "severity": "monitor",
+      "category": "SUDDEN_DROP",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Harshita's wellbeing dropped from a baseline of 70 to 40 today \u2014 a 30-point fall. Lowest trait: movement_energy at 27. Dominant gaze: down.",
+      "baseline_wellbeing": 70.0,
+      "today_wellbeing": 40,
+      "delta": 30.0,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        72,
+        70,
+        68,
+        44,
+        40
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 27,
+      "recommended_action": "Schedule pastoral check-in today"
+    },
+    {
+      "alert_id": "ALT_002",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Harshita",
+      "date": "2026-03-17",
+      "severity": "monitor",
+      "category": "SOCIAL_WITHDRAWAL",
+      "title": "Social withdrawal detected",
+      "description": "Harshita's social engagement dropped 32 pts vs baseline and gaze is 'down'. May be withdrawing from peers.",
+      "baseline_wellbeing": 70.0,
+      "today_wellbeing": 40,
+      "delta": 32.3,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        72,
+        70,
+        68,
+        44,
+        40
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 33,
+      "recommended_action": "Observe at lunch \u2014 consider peer support referral"
+    },
+    {
+      "alert_id": "ALT_004",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Sparshita",
+      "date": "2026-03-17",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "Gaze avoidance \u2014 3+ consecutive days",
+      "description": "Sparshita has had no eye contact detected for 3+ consecutive days. May indicate anxiety or low confidence.",
+      "baseline_wellbeing": null,
+      "today_wellbeing": 34,
+      "delta": null,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        42,
+        40,
+        38,
+        36,
+        34
+      ],
+      "lowest_trait": "",
+      "lowest_trait_value": 0,
+      "recommended_action": "Gentle 1-on-1 check-in from teacher \u2014 avoid group pressure"
+    },
+    {
+      "alert_id": "ALT_005",
+      "person_id": "SCHOOL_P0005",
+      "person_name": "Jahanvi",
+      "date": "2026-03-17",
+      "severity": "monitor",
+      "category": "SUDDEN_DROP",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Jahanvi's wellbeing dropped from a baseline of 80 to 58 today \u2014 a 22-point fall. Lowest trait: movement_energy at 64. Dominant gaze: forward.",
+      "baseline_wellbeing": 80.0,
+      "today_wellbeing": 58,
+      "delta": 22.0,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        78,
+        80,
+        82,
+        84,
+        58
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 64,
+      "recommended_action": "Schedule pastoral check-in today"
+    },
+    {
+      "alert_id": "ALT_006",
+      "person_id": "SCHOOL_P0005",
+      "person_name": "Jahanvi",
+      "date": "2026-03-17",
+      "severity": "monitor",
+      "category": "REGRESSION",
+      "title": "Regression after recovery",
+      "description": "Jahanvi was recovering for 3+ days, then dropped 26 pts today. May have relapsed.",
+      "baseline_wellbeing": null,
+      "today_wellbeing": 58,
+      "delta": 26,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        78,
+        80,
+        82,
+        84,
+        58
+      ],
+      "lowest_trait": "",
+      "lowest_trait_value": 0,
+      "recommended_action": "Follow-up with counsellor \u2014 check for recent stressors"
+    },
+    {
+      "alert_id": "ALT_007",
+      "person_id": "SCHOOL_P0006",
+      "person_name": "Mohini",
+      "date": "2026-03-17",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "Gaze avoidance \u2014 3+ consecutive days",
+      "description": "Mohini has had no eye contact detected for 3+ consecutive days. May indicate anxiety or low confidence.",
+      "baseline_wellbeing": null,
+      "today_wellbeing": 44,
+      "delta": null,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        58,
+        55,
+        52,
+        48,
+        44
+      ],
+      "lowest_trait": "",
+      "lowest_trait_value": 0,
+      "recommended_action": "Gentle 1-on-1 check-in from teacher \u2014 avoid group pressure"
+    }
+  ],
+  "absence_flags": [
+    {
+      "person_id": "SCHOOL_P0004",
+      "person_name": "Ranjhana",
+      "last_seen_date": "2026-03-15",
+      "days_absent": 2,
+      "recommended_action": "Welfare check \u2014 contact family if absent again tomorrow"
+    }
+  ],
+  "school_summary": {
+    "total_persons_tracked": 10,
+    "persons_flagged_today": 4,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "SUDDEN_DROP",
+    "school_avg_wellbeing_today": 63.4
+  }
+}
