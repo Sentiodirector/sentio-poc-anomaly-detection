@@ -1,0 +1,124 @@
+{
+  "date": "2026-03-13",
+  "persons": {
+    "SCHOOL_P0001": {
+      "person_info": {
+        "name": "Aarav Sharma",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 72,
+      "traits": {
+        "social_engagement": 71,
+        "physical_energy": 49,
+        "movement_energy": 54,
+        "focus": 59,
+        "emotional_stability": 65
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    },
+    "SCHOOL_P0002": {
+      "person_info": {
+        "name": "Priya Nair",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 65,
+      "traits": {
+        "social_engagement": 69,
+        "physical_energy": 54,
+        "movement_energy": 52,
+        "focus": 65,
+        "emotional_stability": 67
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    },
+    "SCHOOL_P0003": {
+      "person_info": {
+        "name": "Arjun Mehta",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 66,
+      "traits": {
+        "social_engagement": 66,
+        "physical_energy": 52,
+        "movement_energy": 51,
+        "focus": 69,
+        "emotional_stability": 70
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    },
+    "SCHOOL_P0004": {
+      "person_info": {
+        "name": "Sneha Reddy",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 55,
+      "traits": {
+        "social_engagement": 52,
+        "physical_energy": 56,
+        "movement_energy": 54,
+        "focus": 72,
+        "emotional_stability": 64
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    },
+    "SCHOOL_P0005": {
+      "person_info": {
+        "name": "Rahul Verma",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 58,
+      "traits": {
+        "social_engagement": 60,
+        "physical_energy": 50,
+        "movement_energy": 46,
+        "focus": 64,
+        "emotional_stability": 60
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    },
+    "SCHOOL_P0006": {
+      "person_info": {
+        "name": "Kavya Iyer",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 67,
+      "traits": {
+        "social_engagement": 73,
+        "physical_energy": 59,
+        "movement_energy": 52,
+        "focus": 60,
+        "emotional_stability": 74
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    },
+    "SCHOOL_P0007": {
+      "person_info": {
+        "name": "Vikram Pillai",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 72,
+      "traits": {
+        "social_engagement": 71,
+        "physical_energy": 58,
+        "movement_energy": 49,
+        "focus": 55,
+        "emotional_stability": 69
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    }
+  }
+}

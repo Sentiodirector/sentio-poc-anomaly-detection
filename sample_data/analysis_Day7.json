@@ -1,0 +1,107 @@
+{
+  "date": "2026-03-19",
+  "persons": {
+    "SCHOOL_P0001": {
+      "person_info": {
+        "name": "Aarav Sharma",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 28,
+      "traits": {
+        "social_engagement": 20,
+        "physical_energy": 55,
+        "movement_energy": 44,
+        "focus": 59,
+        "emotional_stability": 73
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "detected": true
+    },
+    "SCHOOL_P0002": {
+      "person_info": {
+        "name": "Priya Nair",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 62,
+      "traits": {
+        "social_engagement": 34,
+        "physical_energy": 48,
+        "movement_energy": 39,
+        "focus": 51,
+        "emotional_stability": 59
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "detected": true
+    },
+    "SCHOOL_P0003": {
+      "person_info": {
+        "name": "Arjun Mehta",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 39,
+      "traits": {
+        "social_engagement": 49,
+        "physical_energy": 52,
+        "movement_energy": 58,
+        "focus": 50,
+        "emotional_stability": 37
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    },
+    "SCHOOL_P0004": {
+      "person_info": {
+        "name": "Sneha Reddy",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 36,
+      "traits": {
+        "social_engagement": 34,
+        "physical_energy": 55,
+        "movement_energy": 54,
+        "focus": 52,
+        "emotional_stability": 40
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    },
+    "SCHOOL_P0005": {
+      "person_info": {
+        "name": "Rahul Verma",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 56,
+      "traits": {
+        "social_engagement": 58,
+        "physical_energy": 54,
+        "movement_energy": 58,
+        "focus": 58,
+        "emotional_stability": 48
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "detected": true
+    },
+    "SCHOOL_P0006": {
+      "person_info": {
+        "name": "Kavya Iyer",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 66,
+      "traits": {
+        "social_engagement": 60,
+        "physical_energy": 95,
+        "movement_energy": 90,
+        "focus": 63,
+        "emotional_stability": 71
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true
+    }
+  }
+}
