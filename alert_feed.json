@@ -1,0 +1,204 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-19T23:08:57.620688",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 7,
+    "urgent": 2,
+    "monitor": 5,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "alert_id": "ALT_001",
+      "person_id": "SCH_P001",
+      "person_name": "Arjun Mehta",
+      "date": "2026-01-05",
+      "severity": "urgent",
+      "category": "SUDDEN_DROP",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Arjun Mehta's wellbeing dropped from a baseline of 72 to 31 today \u2014 a 41-point fall. Lowest trait: social_engagement at 26. Dominant gaze: down.",
+      "baseline_wellbeing": 72.3,
+      "today_wellbeing": 31,
+      "delta": -41.3,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        72,
+        71,
+        74,
+        73,
+        31
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 26,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_003",
+      "person_id": "SCH_P002",
+      "person_name": "Priya Rajan",
+      "date": "2026-01-05",
+      "severity": "urgent",
+      "category": "SUSTAINED_LOW",
+      "title": "Wellbeing sustained below 45 for 3+ days",
+      "description": "Priya Rajan has had wellbeing below 45 for 3 consecutive days (avg 37.7). Immediate support recommended.",
+      "baseline_wellbeing": null,
+      "today_wellbeing": 35,
+      "delta": null,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        60,
+        42,
+        40,
+        38,
+        35
+      ],
+      "lowest_trait": null,
+      "lowest_trait_value": null,
+      "recommended_action": "Immediate counsellor referral",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_002",
+      "person_id": "SCH_P001",
+      "person_name": "Arjun Mehta",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "SOCIAL_WITHDRAWAL",
+      "title": "Social withdrawal pattern detected",
+      "description": "Arjun Mehta's social engagement dropped 52 pts (from baseline 78 to 26). Gaze direction is 'down', suggesting avoidance.",
+      "baseline_wellbeing": 72.33333333333333,
+      "today_wellbeing": 31,
+      "delta": -52.3,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        72,
+        71,
+        74,
+        73,
+        31
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 26,
+      "recommended_action": "Encourage peer interaction; follow up next session",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_004",
+      "person_id": "SCH_P003",
+      "person_name": "Kiran Das",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "SOCIAL_WITHDRAWAL",
+      "title": "Social withdrawal pattern detected",
+      "description": "Kiran Das's social engagement dropped 35 pts (from baseline 60 to 25). Gaze direction is 'down', suggesting avoidance.",
+      "baseline_wellbeing": 62.666666666666664,
+      "today_wellbeing": 58,
+      "delta": -34.7,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        65,
+        63,
+        60,
+        62,
+        58
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 25,
+      "recommended_action": "Encourage peer interaction; follow up next session",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_005",
+      "person_id": "SCH_P004",
+      "person_name": "Sneha Iyer",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "HYPERACTIVITY_SPIKE",
+      "title": "Hyperactivity / energy spike detected",
+      "description": "Sneha Iyer's combined physical+movement energy spiked 97 pts above baseline (physical: 95, movement: 92). May indicate anxiety or mood dysregulation.",
+      "baseline_wellbeing": 54.666666666666664,
+      "today_wellbeing": 57,
+      "delta": null,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        55,
+        53,
+        56,
+        54,
+        57
+      ],
+      "lowest_trait": null,
+      "lowest_trait_value": null,
+      "recommended_action": "Monitor for signs of anxiety; consider structured activity",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_006",
+      "person_id": "SCH_P005",
+      "person_name": "Rohan Verma",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "REGRESSION",
+      "title": "Regression after recovery period",
+      "description": "Rohan Verma showed 3 consecutive days of improvement (up to 70), then dropped 22 pts today to 48. May signal an underlying unresolved stressor.",
+      "baseline_wellbeing": null,
+      "today_wellbeing": 48,
+      "delta": -22,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        50,
+        55,
+        62,
+        70,
+        48
+      ],
+      "lowest_trait": null,
+      "lowest_trait_value": null,
+      "recommended_action": "Discuss with student what changed; reassess support plan",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_007",
+      "person_id": "SCH_P006",
+      "person_name": "Meera Nair",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "No eye contact detected for 3+ consecutive days",
+      "description": "Meera Nair has shown no eye contact for 3 consecutive days. This may indicate social anxiety, depression, or avoidant behaviour.",
+      "baseline_wellbeing": null,
+      "today_wellbeing": 56,
+      "delta": null,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        60,
+        58,
+        55,
+        57,
+        56
+      ],
+      "lowest_trait": null,
+      "lowest_trait_value": null,
+      "recommended_action": "Arrange a quiet one-on-one check-in with school counsellor",
+      "profile_image_b64": ""
+    }
+  ],
+  "absence_flags": [
+    {
+      "person_id": "SCH_P007",
+      "person_name": "Aditya Singh",
+      "last_seen_date": "2026-01-02",
+      "days_absent": 3,
+      "recommended_action": "Welfare check \u2014 contact family if absent again tomorrow"
+    }
+  ],
+  "school_summary": {
+    "total_persons_tracked": 8,
+    "persons_flagged_today": 0,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "SOCIAL_WITHDRAWAL",
+    "school_avg_wellbeing_today": 51.7
+  }
+}

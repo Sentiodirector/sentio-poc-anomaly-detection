@@ -1,0 +1,139 @@
+{
+  "date": "2026-01-05",
+  "school": "Demo School",
+  "persons": {
+    "SCH_P001": {
+      "person_id": "SCH_P001",
+      "person_name": "Arjun Mehta",
+      "date": "2026-01-05",
+      "wellbeing": 31,
+      "traits": {
+        "social_engagement": 26,
+        "physical_energy": 51,
+        "movement_energy": 64,
+        "focus": 27,
+        "mood_stability": 32
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "person_info": {
+        "name": "Arjun Mehta",
+        "profile_image_b64": ""
+      }
+    },
+    "SCH_P002": {
+      "person_id": "SCH_P002",
+      "person_name": "Priya Rajan",
+      "date": "2026-01-05",
+      "wellbeing": 35,
+      "traits": {
+        "social_engagement": 29,
+        "physical_energy": 46,
+        "movement_energy": 59,
+        "focus": 32,
+        "mood_stability": 43
+      },
+      "gaze_direction": "forward",
+      "eye_contact": false,
+      "person_info": {
+        "name": "Priya Rajan",
+        "profile_image_b64": ""
+      }
+    },
+    "SCH_P003": {
+      "person_id": "SCH_P003",
+      "person_name": "Kiran Das",
+      "date": "2026-01-05",
+      "wellbeing": 58,
+      "traits": {
+        "social_engagement": 25,
+        "physical_energy": 45,
+        "movement_energy": 50,
+        "focus": 53,
+        "mood_stability": 53
+      },
+      "gaze_direction": "down",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Kiran Das",
+        "profile_image_b64": ""
+      }
+    },
+    "SCH_P004": {
+      "person_id": "SCH_P004",
+      "person_name": "Sneha Iyer",
+      "date": "2026-01-05",
+      "wellbeing": 57,
+      "traits": {
+        "social_engagement": 58,
+        "physical_energy": 95,
+        "movement_energy": 92,
+        "focus": 56,
+        "mood_stability": 56
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Sneha Iyer",
+        "profile_image_b64": ""
+      }
+    },
+    "SCH_P005": {
+      "person_id": "SCH_P005",
+      "person_name": "Rohan Verma",
+      "date": "2026-01-05",
+      "wellbeing": 48,
+      "traits": {
+        "social_engagement": 39,
+        "physical_energy": 42,
+        "movement_energy": 63,
+        "focus": 52,
+        "mood_stability": 42
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Rohan Verma",
+        "profile_image_b64": ""
+      }
+    },
+    "SCH_P006": {
+      "person_id": "SCH_P006",
+      "person_name": "Meera Nair",
+      "date": "2026-01-05",
+      "wellbeing": 56,
+      "traits": {
+        "social_engagement": 61,
+        "physical_energy": 61,
+        "movement_energy": 37,
+        "focus": 59,
+        "mood_stability": 52
+      },
+      "gaze_direction": "side",
+      "eye_contact": false,
+      "person_info": {
+        "name": "Meera Nair",
+        "profile_image_b64": ""
+      }
+    },
+    "SCH_P008": {
+      "person_id": "SCH_P008",
+      "person_name": "Lakshmi Rao",
+      "date": "2026-01-05",
+      "wellbeing": 77,
+      "traits": {
+        "social_engagement": 71,
+        "physical_energy": 56,
+        "movement_energy": 50,
+        "focus": 80,
+        "mood_stability": 74
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Lakshmi Rao",
+        "profile_image_b64": ""
+      }
+    }
+  }
+}
