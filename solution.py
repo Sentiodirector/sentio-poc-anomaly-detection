@@ -408,7 +408,7 @@ def analyse_person(person_id: str, sorted_days: dict, info: dict) -> list:
                 action = "Monitor and follow up if persists"
 
             alert = {
-                "alert_id": f"{person_id}_{d}_{category}",
+                "alert_id": f"ALT_{person_id}_{i}_{category}_{len(alerts)}",
                 "person_id": person_id,
                 "person_name": person_name,
                 "date": d,
