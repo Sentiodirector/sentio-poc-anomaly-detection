@@ -1,0 +1,56 @@
+{
+  "_readme": "Your alert_feed.json must match this structure exactly. It is returned by the /get_alerts Flask endpoint in Sentio Mind. Do not add, remove, or rename any top-level key.",
+
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-01-05T07:30:00",
+  "school": "School Name Here",
+
+  "alert_summary": {
+    "total_alerts": 0,
+    "urgent": 0,
+    "monitor": 0,
+    "informational": 0
+  },
+
+  "alerts": [
+    {
+      "alert_id": "ALT_001",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Arjun Mehta",
+      "date": "2026-01-05",
+      "severity": "urgent",
+      "_note_severity": "one of: urgent / monitor / informational",
+      "category": "SUDDEN_DROP",
+      "_note_category": "one of: SUDDEN_DROP / SUSTAINED_LOW / SOCIAL_WITHDRAWAL / HYPERACTIVITY_SPIKE / REGRESSION / GAZE_AVOIDANCE / ABSENCE_FLAG",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Arjun's wellbeing dropped from a baseline of 74 to 31 today — a 43-point fall. Lowest trait: social_engagement at 18. Dominant gaze: down.",
+      "baseline_wellbeing": 74,
+      "today_wellbeing": 31,
+      "delta": -43,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [72, 71, 74, 69, 31],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 18,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    }
+  ],
+
+  "absence_flags": [
+    {
+      "person_id": "SCHOOL_P0007",
+      "person_name": "Priya Rajan",
+      "last_seen_date": "2026-01-02",
+      "days_absent": 3,
+      "recommended_action": "Welfare check — contact family if absent again tomorrow"
+    }
+  ],
+
+  "school_summary": {
+    "total_persons_tracked": 0,
+    "persons_flagged_today": 0,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "SUDDEN_DROP",
+    "school_avg_wellbeing_today": 0
+  }
+}
