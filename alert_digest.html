@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <title>Alert Digest</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --panel: #ffffff;
+      --ink: #1d2733;
+      --muted: #617083;
+      --urgent: #c81e1e;
+      --monitor: #b45309;
+      --line: #d7dfeb;
+    }
+    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(145deg, #f6f8fc 0%, #eef2f9 60%, #e6edf8 100%); color: var(--ink); }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 24px; }
+    .hero { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    .sub { color: var(--muted); font-size: 14px; }
+    .section { margin-top: 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+    .card { border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: #fbfdff; }
+    .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .meta { color: var(--muted); font-size: 12px; margin-top: 2px; }
+    .badge { font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 999px; color: #fff; }
+    .badge-urgent { background: var(--urgent); }
+    .badge-monitor { background: var(--monitor); }
+    p { margin: 8px 0 10px; line-height: 1.4; }
+    .spark { min-height: 34px; }
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+    .metric { border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: #fbfdff; }
+    .metric .k { font-size: 12px; color: var(--muted); }
+    .metric .v { font-size: 22px; margin-top: 6px; font-weight: 700; }
+    ul { margin: 8px 0 0; padding-left: 18px; }
+  </style>
+</head>
+<body>
+  <div class='wrap'>
+    <div class='hero'>
+      <h1>Counsellor Alert Digest</h1>
+      <div class='sub'>School: Demo School | Latest data date: 2026-01-05</div>
+    </div>
+
+    <div class='section'>
+      <h2>Today's Alerts</h2>
+      <div class='cards'>
+        
+            <div class='card'>
+              <div class='row'>
+                <h3>Diya Rao</h3>
+                <span class='badge badge-urgent'>URGENT</span>
+              </div>
+              <div class='meta'>SUSTAINED_LOW</div>
+              <p>Wellbeing stayed below 45 for 3 consecutive days.</p>
+              <div class='spark'><svg width='120' height='34' viewBox='0 0 120 34' xmlns='http://www.w3.org/2000/svg'><polyline fill='none' stroke='#0b5fff' stroke-width='2' points='0.0,2.0 30.0,18.36 60.0,23.82 90.0,29.27 120.0,32.0'/></svg></div>
+            </div>
+            
+            <div class='card'>
+              <div class='row'>
+                <h3>Aarav Singh</h3>
+                <span class='badge badge-monitor'>MONITOR</span>
+              </div>
+              <div class='meta'>SUDDEN_DROP</div>
+              <p>Wellbeing dropped from baseline 78 to 55 (23-point fall).</p>
+              <div class='spark'><svg width='120' height='34' viewBox='0 0 120 34' xmlns='http://www.w3.org/2000/svg'><polyline fill='none' stroke='#0b5fff' stroke-width='2' points='0.0,8.67 30.0,6.44 60.0,4.22 90.0,2.0 120.0,32.0'/></svg></div>
+            </div>
+            
+            <div class='card'>
+              <div class='row'>
+                <h3>Aarav Singh</h3>
+                <span class='badge badge-monitor'>MONITOR</span>
+              </div>
+              <div class='meta'>SOCIAL_WITHDRAWAL</div>
+              <p>Social engagement dropped by 27 points and gaze was mostly down.</p>
+              <div class='spark'><svg width='120' height='34' viewBox='0 0 120 34' xmlns='http://www.w3.org/2000/svg'><polyline fill='none' stroke='#0b5fff' stroke-width='2' points='0.0,8.67 30.0,6.44 60.0,4.22 90.0,2.0 120.0,32.0'/></svg></div>
+            </div>
+            
+            <div class='card'>
+              <div class='row'>
+                <h3>Aarav Singh</h3>
+                <span class='badge badge-monitor'>MONITOR</span>
+              </div>
+              <div class='meta'>REGRESSION</div>
+              <p>After 3 improving days, wellbeing fell by 27 points today.</p>
+              <div class='spark'><svg width='120' height='34' viewBox='0 0 120 34' xmlns='http://www.w3.org/2000/svg'><polyline fill='none' stroke='#0b5fff' stroke-width='2' points='0.0,8.67 30.0,6.44 60.0,4.22 90.0,2.0 120.0,32.0'/></svg></div>
+            </div>
+            
+            <div class='card'>
+              <div class='row'>
+                <h3>Diya Rao</h3>
+                <span class='badge badge-monitor'>MONITOR</span>
+              </div>
+              <div class='meta'>GAZE_AVOIDANCE</div>
+              <p>No eye contact detected for 3 consecutive days.</p>
+              <div class='spark'><svg width='120' height='34' viewBox='0 0 120 34' xmlns='http://www.w3.org/2000/svg'><polyline fill='none' stroke='#0b5fff' stroke-width='2' points='0.0,2.0 30.0,18.36 60.0,23.82 90.0,29.27 120.0,32.0'/></svg></div>
+            </div>
+            
+            <div class='card'>
+              <div class='row'>
+                <h3>Kabir Jain</h3>
+                <span class='badge badge-monitor'>MONITOR</span>
+              </div>
+              <div class='meta'>HYPERACTIVITY_SPIKE</div>
+              <p>Combined energy is 86 points above personal baseline.</p>
+              <div class='spark'><svg width='120' height='34' viewBox='0 0 120 34' xmlns='http://www.w3.org/2000/svg'><polyline fill='none' stroke='#0b5fff' stroke-width='2' points='0.0,32.0 30.0,20.0 60.0,26.0 90.0,20.0 120.0,2.0'/></svg></div>
+            </div>
+            
+      </div>
+    </div>
+
+    <div class='section'>
+      <h2>School Summary</h2>
+      <div class='summary-grid'>
+        <div class='metric'><div class='k'>Persons Tracked</div><div class='v'>4</div></div>
+        <div class='metric'><div class='k'>Flagged Today</div><div class='v'>3</div></div>
+        <div class='metric'><div class='k'>Flagged Yesterday</div><div class='v'>1</div></div>
+        <div class='metric'><div class='k'>Most Common Anomaly</div><div class='v' style='font-size:14px'>SUSTAINED_LOW</div></div>
+        <div class='metric'><div class='k'>Avg Wellbeing Today</div><div class='v'>54</div></div>
+      </div>
+    </div>
+
+    <div class='section'>
+      <h2>Persistent Alerts (3+ Consecutive Days)</h2>
+      <ul>
+        <li>No persistent 3+ day alert streaks.</li>
+      </ul>
+    </div>
+
+    <div class='section'>
+      <h2>Absence Flags</h2>
+      <ul>
+        <li>Meera Das - absent 2 days (last seen 2026-01-03)</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

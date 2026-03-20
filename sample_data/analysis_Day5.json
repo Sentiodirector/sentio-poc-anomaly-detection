@@ -1,0 +1,29 @@
+{
+  "date": "2026-01-05",
+  "persons": [
+    {
+      "person_id": "SCHOOL_P0001",
+      "person_info": {"name": "Aarav Singh", "profile_image_b64": ""},
+      "wellbeing": 55,
+      "traits": {"social_engagement": 48, "physical_energy": 49, "movement_energy": 47},
+      "gaze_direction": "down",
+      "eye_contact": true
+    },
+    {
+      "person_id": "SCHOOL_P0002",
+      "person_info": {"name": "Diya Rao", "profile_image_b64": ""},
+      "wellbeing": 39,
+      "traits": {"social_engagement": 27, "physical_energy": 32, "movement_energy": 31},
+      "gaze_direction": "down",
+      "eye_contact": false
+    },
+    {
+      "person_id": "SCHOOL_P0003",
+      "person_info": {"name": "Kabir Jain", "profile_image_b64": ""},
+      "wellbeing": 67,
+      "traits": {"social_engagement": 62, "physical_energy": 74, "movement_energy": 72},
+      "gaze_direction": "forward",
+      "eye_contact": true
+    }
+  ]
+}

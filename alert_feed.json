@@ -1,0 +1,203 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-20T00:19:19",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 7,
+    "urgent": 2,
+    "monitor": 5,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "alert_id": "ALT_001_SCHOOL_P0002_20260104_SUSTAINED_LOW",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Diya Rao",
+      "date": "2026-01-04",
+      "severity": "urgent",
+      "category": "SUSTAINED_LOW",
+      "title": "Sustained low wellbeing",
+      "description": "Wellbeing stayed below 45 for 3 consecutive days.",
+      "baseline_wellbeing": 45,
+      "today_wellbeing": 40,
+      "delta": -5,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        50,
+        44,
+        42,
+        40
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 33,
+      "recommended_action": "Escalate to counsellor for same-day follow-up",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_002_SCHOOL_P0002_20260105_SUSTAINED_LOW",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Diya Rao",
+      "date": "2026-01-05",
+      "severity": "urgent",
+      "category": "SUSTAINED_LOW",
+      "title": "Sustained low wellbeing",
+      "description": "Wellbeing stayed below 45 for 3 consecutive days.",
+      "baseline_wellbeing": 45,
+      "today_wellbeing": 39,
+      "delta": -6,
+      "days_flagged_consecutively": 2,
+      "trend_last_5_days": [
+        50,
+        44,
+        42,
+        40,
+        39
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 27,
+      "recommended_action": "Escalate to counsellor for same-day follow-up",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_001_SCHOOL_P0001_20260105_SUDDEN_DROP",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Aarav Singh",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "SUDDEN_DROP",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Wellbeing dropped from baseline 78 to 55 (23-point fall).",
+      "baseline_wellbeing": 78,
+      "today_wellbeing": 55,
+      "delta": -23,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        76,
+        78,
+        80,
+        82,
+        55
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 47,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_002_SCHOOL_P0001_20260105_SOCIAL_WITHDRAWAL",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Aarav Singh",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "SOCIAL_WITHDRAWAL",
+      "title": "Social withdrawal signal",
+      "description": "Social engagement dropped by 27 points and gaze was mostly down.",
+      "baseline_wellbeing": 78,
+      "today_wellbeing": 55,
+      "delta": -23,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        76,
+        78,
+        80,
+        82,
+        55
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 47,
+      "recommended_action": "Arrange supportive peer/counsellor conversation",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_003_SCHOOL_P0001_20260105_REGRESSION",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Aarav Singh",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "REGRESSION",
+      "title": "Regression after recovery",
+      "description": "After 3 improving days, wellbeing fell by 27 points today.",
+      "baseline_wellbeing": 78,
+      "today_wellbeing": 55,
+      "delta": -23,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        76,
+        78,
+        80,
+        82,
+        55
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 47,
+      "recommended_action": "Review potential trigger events with student",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_003_SCHOOL_P0002_20260105_GAZE_AVOIDANCE",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Diya Rao",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "Gaze avoidance pattern",
+      "description": "No eye contact detected for 3 consecutive days.",
+      "baseline_wellbeing": 45,
+      "today_wellbeing": 39,
+      "delta": -6,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        50,
+        44,
+        42,
+        40,
+        39
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 27,
+      "recommended_action": "Use low-pressure check-in and monitor engagement",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_001_SCHOOL_P0003_20260105_HYPERACTIVITY_SPIKE",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Kabir Jain",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "HYPERACTIVITY_SPIKE",
+      "title": "Hyperactivity spike",
+      "description": "Combined energy is 86 points above personal baseline.",
+      "baseline_wellbeing": 63,
+      "today_wellbeing": 67,
+      "delta": 4,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        62,
+        64,
+        63,
+        64,
+        67
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 62,
+      "recommended_action": "Observe classroom regulation and trigger calming support",
+      "profile_image_b64": ""
+    }
+  ],
+  "absence_flags": [
+    {
+      "person_id": "SCHOOL_P0004",
+      "person_name": "Meera Das",
+      "last_seen_date": "2026-01-03",
+      "days_absent": 2,
+      "recommended_action": "Welfare check - contact family if absent again tomorrow"
+    }
+  ],
+  "school_summary": {
+    "total_persons_tracked": 4,
+    "persons_flagged_today": 3,
+    "persons_flagged_yesterday": 1,
+    "most_common_anomaly_this_week": "SUSTAINED_LOW",
+    "school_avg_wellbeing_today": 53.67
+  }
+}
