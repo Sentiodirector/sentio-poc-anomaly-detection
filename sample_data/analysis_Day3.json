@@ -1,0 +1,75 @@
+{
+  "date": "2026-01-03",
+  "persons": [
+    {
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Arjun Mehta",
+      "wellbeing": 73,
+      "traits": {
+        "social_engagement": 71,
+        "physical_energy": 55,
+        "movement_energy": 52
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true,
+      "profile_image_b64": ""
+    },
+    {
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Priya Rajan",
+      "wellbeing": 64,
+      "traits": {
+        "social_engagement": 65,
+        "physical_energy": 48,
+        "movement_energy": 47
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true,
+      "profile_image_b64": ""
+    },
+    {
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Ravi Kumar",
+      "wellbeing": 62,
+      "traits": {
+        "social_engagement": 57,
+        "physical_energy": 42,
+        "movement_energy": 40
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true,
+      "profile_image_b64": ""
+    },
+    {
+      "person_id": "SCHOOL_P0004",
+      "person_name": "Neha Singh",
+      "wellbeing": 61,
+      "traits": {
+        "social_engagement": 53,
+        "physical_energy": 45,
+        "movement_energy": 44
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "detected": true,
+      "profile_image_b64": ""
+    },
+    {
+      "person_id": "SCHOOL_P0005",
+      "person_name": "Isha Nair",
+      "wellbeing": 57,
+      "traits": {
+        "social_engagement": 55,
+        "physical_energy": 45,
+        "movement_energy": 44
+      },
+      "gaze_direction": "side",
+      "eye_contact": false,
+      "detected": true,
+      "profile_image_b64": ""
+    }
+  ]
+}
