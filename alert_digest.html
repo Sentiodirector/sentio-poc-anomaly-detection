@@ -1,0 +1,97 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sentio Mind Alert Digest</title>
+        <style>
+            body { font-family: system-ui, sans-serif; margin: 40px; background: #f9f9f9; color: #333; }
+            .card { background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 5px solid #ccc; }
+            .urgent { border-left-color: #e74c3c; }
+            .monitor { border-left-color: #f39c12; }
+            .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; color: white; margin-left: 10px; }
+            .badge-urgent { background: #e74c3c; }
+            .badge-monitor { background: #f39c12; }
+            .sparkline { display: flex; align-items: flex-end; height: 40px; gap: 3px; margin-top: 10px; }
+            .bar { width: 15px; background: #3498db; border-radius: 2px 2px 0 0; }
+            .summary-box { display: flex; gap: 20px; margin-bottom: 30px; margin-top: 20px; }
+            .stat { background: white; padding: 20px; border-radius: 8px; flex: 1; text-align: center; border: 1px solid #ddd; }
+            .stat h3 { margin: 0; font-size: 24px; color: #2c3e50; }
+            .stat p { margin: 5px 0 0 0; color: #7f8c8d; font-size: 14px; }
+        </style>
+    </head>
+    <body>
+        <h1>Daily Counsellor Alert Digest</h1>
+        
+        <h2>1. Today's Action Required</h2>
+    
+        <div class="card urgent">
+            <h3 style="margin-top:0;">Liam Smith <span class="badge badge-urgent">URGENT</span></h3>
+            <strong>Sudden wellbeing drop</strong>
+            <p>Dropped 41.0 pts from baseline 72.0.</p>
+            <div class="sparkline"><div class="bar" style="height: 66%" title="66"></div><div class="bar" style="height: 71%" title="71"></div><div class="bar" style="height: 79%" title="79"></div><div class="bar" style="height: 79%" title="79"></div><div class="bar" style="height: 31%" title="31"></div></div>
+        </div>
+        
+        <div class="card urgent">
+            <h3 style="margin-top:0;">Arjun Mehta <span class="badge badge-urgent">URGENT</span></h3>
+            <strong>Sustained low wellbeing</strong>
+            <p>Wellbeing below 45 for 3+ days.</p>
+            <div class="sparkline"><div class="bar" style="height: 59%" title="59"></div><div class="bar" style="height: 68%" title="68"></div><div class="bar" style="height: 35%" title="35"></div><div class="bar" style="height: 35%" title="35"></div><div class="bar" style="height: 35%" title="35"></div></div>
+        </div>
+        
+        <div class="card monitor">
+            <h3 style="margin-top:0;">Aisha Khan <span class="badge badge-monitor">MONITOR</span></h3>
+            <strong>Gaze avoidance</strong>
+            <p>No direct eye contact detected for 3+ consecutive days.</p>
+            <div class="sparkline"><div class="bar" style="height: 83%" title="83"></div><div class="bar" style="height: 78%" title="78"></div><div class="bar" style="height: 70%" title="70"></div><div class="bar" style="height: 71%" title="71"></div><div class="bar" style="height: 79%" title="79"></div></div>
+        </div>
+        
+        <div class="card monitor">
+            <h3 style="margin-top:0;">Liam Smith <span class="badge badge-monitor">MONITOR</span></h3>
+            <strong>Gaze avoidance</strong>
+            <p>No direct eye contact detected for 3+ consecutive days.</p>
+            <div class="sparkline"><div class="bar" style="height: 66%" title="66"></div><div class="bar" style="height: 71%" title="71"></div><div class="bar" style="height: 79%" title="79"></div><div class="bar" style="height: 79%" title="79"></div><div class="bar" style="height: 31%" title="31"></div></div>
+        </div>
+        
+        <div class="card monitor">
+            <h3 style="margin-top:0;">Arjun Mehta <span class="badge badge-monitor">MONITOR</span></h3>
+            <strong>Gaze avoidance</strong>
+            <p>No direct eye contact detected for 3+ consecutive days.</p>
+            <div class="sparkline"><div class="bar" style="height: 59%" title="59"></div><div class="bar" style="height: 68%" title="68"></div><div class="bar" style="height: 35%" title="35"></div><div class="bar" style="height: 35%" title="35"></div><div class="bar" style="height: 35%" title="35"></div></div>
+        </div>
+        
+        <div class="card monitor">
+            <h3 style="margin-top:0;">Priya Rajan <span class="badge badge-monitor">MONITOR</span></h3>
+            <strong>Gaze avoidance</strong>
+            <p>No direct eye contact detected for 3+ consecutive days.</p>
+            <div class="sparkline"><div class="bar" style="height: 87%" title="87"></div><div class="bar" style="height: 87%" title="87"></div><div class="bar" style="height: 80%" title="80"></div></div>
+        </div>
+        
+        <div class="card urgent">
+            <h3 style="margin-top:0;">Priya Rajan <span class="badge badge-urgent">URGENT</span></h3>
+            <strong>ABSENCE FLAG</strong>
+            <p>Not seen for 2 consecutive days. Welfare check — contact family if absent again tomorrow</p>
+        </div>
+        
+        <h2>2. School Summary Numbers</h2>
+        <div class="summary-box">
+            <div class="stat"><h3>3</h3><p>Flagged Today</p></div>
+            <div class="stat"><h3>1</h3><p>Absence Flags</p></div>
+            <div class="stat"><h3>GAZE_AVOIDANCE</h3><p>Top Anomaly</p></div>
+        </div>
+    <h2>3. Chronic Flags (3+ Consecutive Days)</h2>
+                <div class="card urgent">
+                    <h3 style="margin-top:0;">Liam Smith</h3>
+                    <p>Flagged consecutively for 3 days. Immediate intervention recommended.</p>
+                </div>
+                
+                <div class="card urgent">
+                    <h3 style="margin-top:0;">Arjun Mehta</h3>
+                    <p>Flagged consecutively for 3 days. Immediate intervention recommended.</p>
+                </div>
+                
+                <div class="card urgent">
+                    <h3 style="margin-top:0;">Aisha Khan</h3>
+                    <p>Flagged consecutively for 3 days. Immediate intervention recommended.</p>
+                </div>
+                </body></html>

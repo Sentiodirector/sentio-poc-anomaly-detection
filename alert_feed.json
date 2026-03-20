@@ -1,0 +1,177 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-20T16:38:09.908853",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 6,
+    "urgent": 2,
+    "monitor": 4,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "alert_id": "ALT_SCHOOL_P0002_2026-01-05_0",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Liam Smith",
+      "date": "2026-01-05",
+      "severity": "urgent",
+      "category": "SUDDEN_DROP",
+      "title": "Sudden wellbeing drop",
+      "description": "Dropped 41.0 pts from baseline 72.0.",
+      "baseline_wellbeing": 72.0,
+      "today_wellbeing": 31,
+      "delta": -41.0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        66,
+        71,
+        79,
+        79,
+        31
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 60,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_SCHOOL_P0003_2026-01-05_1",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Arjun Mehta",
+      "date": "2026-01-05",
+      "severity": "urgent",
+      "category": "SUSTAINED_LOW",
+      "title": "Sustained low wellbeing",
+      "description": "Wellbeing below 45 for 3+ days.",
+      "baseline_wellbeing": 54.0,
+      "today_wellbeing": 35,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        59,
+        68,
+        35,
+        35,
+        35
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 58,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_SCHOOL_P0001_2026-01-05_5",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Aisha Khan",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "Gaze avoidance",
+      "description": "No direct eye contact detected for 3+ consecutive days.",
+      "baseline_wellbeing": 77.0,
+      "today_wellbeing": 79,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        83,
+        78,
+        70,
+        71,
+        79
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 84,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_SCHOOL_P0002_2026-01-05_5",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Liam Smith",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "Gaze avoidance",
+      "description": "No direct eye contact detected for 3+ consecutive days.",
+      "baseline_wellbeing": 72.0,
+      "today_wellbeing": 31,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        66,
+        71,
+        79,
+        79,
+        31
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 60,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_SCHOOL_P0003_2026-01-05_5",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Arjun Mehta",
+      "date": "2026-01-05",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "Gaze avoidance",
+      "description": "No direct eye contact detected for 3+ consecutive days.",
+      "baseline_wellbeing": 54.0,
+      "today_wellbeing": 35,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        59,
+        68,
+        35,
+        35,
+        35
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 58,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_SCHOOL_P0004_2026-01-03_5",
+      "person_id": "SCHOOL_P0004",
+      "person_name": "Priya Rajan",
+      "date": "2026-01-03",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "Gaze avoidance",
+      "description": "No direct eye contact detected for 3+ consecutive days.",
+      "baseline_wellbeing": 84.66666666666667,
+      "today_wellbeing": 80,
+      "delta": 0,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        87,
+        87,
+        80
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 89,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    }
+  ],
+  "absence_flags": [
+    {
+      "person_id": "SCHOOL_P0004",
+      "person_name": "Priya Rajan",
+      "last_seen_date": "2026-01-03",
+      "days_absent": 2,
+      "recommended_action": "Welfare check \u2014 contact family if absent again tomorrow"
+    }
+  ],
+  "school_summary": {
+    "total_persons_tracked": 4,
+    "persons_flagged_today": 3,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "GAZE_AVOIDANCE",
+    "school_avg_wellbeing_today": 48
+  }
+}

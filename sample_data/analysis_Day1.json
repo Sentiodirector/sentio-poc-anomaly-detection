@@ -1,0 +1,62 @@
+[
+    {
+        "person_id": "SCHOOL_P0001",
+        "person_name": "Aisha Khan",
+        "date": "2026-01-01",
+        "wellbeing": 83,
+        "social_engagement": 85,
+        "physical_energy": 77,
+        "movement_energy": 77,
+        "gaze": "forward",
+        "seen_in_video": true,
+        "person_info": {
+            "name": "Aisha Khan",
+            "profile_image_b64": ""
+        }
+    },
+    {
+        "person_id": "SCHOOL_P0002",
+        "person_name": "Liam Smith",
+        "date": "2026-01-01",
+        "wellbeing": 66,
+        "social_engagement": 80,
+        "physical_energy": 76,
+        "movement_energy": 76,
+        "gaze": "forward",
+        "seen_in_video": true,
+        "person_info": {
+            "name": "Liam Smith",
+            "profile_image_b64": ""
+        }
+    },
+    {
+        "person_id": "SCHOOL_P0003",
+        "person_name": "Arjun Mehta",
+        "date": "2026-01-01",
+        "wellbeing": 59,
+        "social_engagement": 62,
+        "physical_energy": 49,
+        "movement_energy": 49,
+        "gaze": "forward",
+        "seen_in_video": true,
+        "person_info": {
+            "name": "Arjun Mehta",
+            "profile_image_b64": ""
+        }
+    },
+    {
+        "person_id": "SCHOOL_P0004",
+        "person_name": "Priya Rajan",
+        "date": "2026-01-01",
+        "wellbeing": 87,
+        "social_engagement": 79,
+        "physical_energy": 81,
+        "movement_energy": 81,
+        "gaze": "forward",
+        "seen_in_video": true,
+        "person_info": {
+            "name": "Priya Rajan",
+            "profile_image_b64": ""
+        }
+    }
+]
