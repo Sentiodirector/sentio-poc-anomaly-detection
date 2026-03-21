@@ -1,0 +1,145 @@
+{
+  "date": "2026-03-18",
+  "school": "Demo High School",
+  "analysis_metadata": {
+    "version": "1.0",
+    "total_persons_detected": 9
+  },
+  "persons": {
+    "SCHOOL_P001": {
+      "person_id": "SCHOOL_P001",
+      "person_name": "Arjun Mehta",
+      "wellbeing": 28,
+      "traits": {
+        "social_engagement": 22,
+        "physical_energy": 25,
+        "movement_energy": 20,
+        "focus_level": 30,
+        "emotional_stability": 28
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P002": {
+      "person_id": "SCHOOL_P002",
+      "person_name": "Priya Singh",
+      "wellbeing": 38,
+      "traits": {
+        "social_engagement": 30,
+        "physical_energy": 33,
+        "movement_energy": 35,
+        "focus_level": 40,
+        "emotional_stability": 36
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P003": {
+      "person_id": "SCHOOL_P003",
+      "person_name": "Rohan Kumar",
+      "wellbeing": 65,
+      "traits": {
+        "social_engagement": 42,
+        "physical_energy": 60,
+        "movement_energy": 58,
+        "focus_level": 66,
+        "emotional_stability": 68
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P004": {
+      "person_id": "SCHOOL_P004",
+      "person_name": "Ananya Patel",
+      "wellbeing": 68,
+      "traits": {
+        "social_engagement": 63,
+        "physical_energy": 62,
+        "movement_energy": 60,
+        "focus_level": 71,
+        "emotional_stability": 69
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P005": {
+      "person_id": "SCHOOL_P005",
+      "person_name": "Vikram Shah",
+      "wellbeing": 60,
+      "traits": {
+        "social_engagement": 58,
+        "physical_energy": 55,
+        "movement_energy": 53,
+        "focus_level": 62,
+        "emotional_stability": 61
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P007": {
+      "person_id": "SCHOOL_P007",
+      "person_name": "Kabir Joshi",
+      "wellbeing": 85,
+      "traits": {
+        "social_engagement": 83,
+        "physical_energy": 81,
+        "movement_energy": 79,
+        "focus_level": 88,
+        "emotional_stability": 86
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P008": {
+      "person_id": "SCHOOL_P008",
+      "person_name": "Isha Gupta",
+      "wellbeing": 71,
+      "traits": {
+        "social_engagement": 69,
+        "physical_energy": 67,
+        "movement_energy": 65,
+        "focus_level": 73,
+        "emotional_stability": 72
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P009": {
+      "person_id": "SCHOOL_P009",
+      "person_name": "Aditya Nair",
+      "wellbeing": 79,
+      "traits": {
+        "social_engagement": 76,
+        "physical_energy": 73,
+        "movement_energy": 71,
+        "focus_level": 81,
+        "emotional_stability": 78
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P010": {
+      "person_id": "SCHOOL_P010",
+      "person_name": "Sanya Kapoor",
+      "wellbeing": 44,
+      "traits": {
+        "social_engagement": 40,
+        "physical_energy": 38,
+        "movement_energy": 35,
+        "focus_level": 48,
+        "emotional_stability": 45
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "profile_image_b64": ""
+    }
+  }
+}

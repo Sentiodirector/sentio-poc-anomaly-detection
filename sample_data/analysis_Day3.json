@@ -1,0 +1,160 @@
+{
+  "date": "2026-03-17",
+  "school": "Demo High School",
+  "analysis_metadata": {
+    "version": "1.0",
+    "total_persons_detected": 10
+  },
+  "persons": {
+    "SCHOOL_P001": {
+      "person_id": "SCHOOL_P001",
+      "person_name": "Arjun Mehta",
+      "wellbeing": 71,
+      "traits": {
+        "social_engagement": 67,
+        "physical_energy": 66,
+        "movement_energy": 61,
+        "focus_level": 71,
+        "emotional_stability": 73
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P002": {
+      "person_id": "SCHOOL_P002",
+      "person_name": "Priya Singh",
+      "wellbeing": 43,
+      "traits": {
+        "social_engagement": 38,
+        "physical_energy": 40,
+        "movement_energy": 42,
+        "focus_level": 46,
+        "emotional_stability": 42
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P003": {
+      "person_id": "SCHOOL_P003",
+      "person_name": "Rohan Kumar",
+      "wellbeing": 69,
+      "traits": {
+        "social_engagement": 68,
+        "physical_energy": 63,
+        "movement_energy": 59,
+        "focus_level": 67,
+        "emotional_stability": 71
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P004": {
+      "person_id": "SCHOOL_P004",
+      "person_name": "Ananya Patel",
+      "wellbeing": 66,
+      "traits": {
+        "social_engagement": 61,
+        "physical_energy": 59,
+        "movement_energy": 56,
+        "focus_level": 69,
+        "emotional_stability": 67
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P005": {
+      "person_id": "SCHOOL_P005",
+      "person_name": "Vikram Shah",
+      "wellbeing": 56,
+      "traits": {
+        "social_engagement": 52,
+        "physical_energy": 50,
+        "movement_energy": 48,
+        "focus_level": 58,
+        "emotional_stability": 56
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P006": {
+      "person_id": "SCHOOL_P006",
+      "person_name": "Neha Reddy",
+      "wellbeing": 62,
+      "traits": {
+        "social_engagement": 60,
+        "physical_energy": 58,
+        "movement_energy": 56,
+        "focus_level": 64,
+        "emotional_stability": 62
+      },
+      "gaze_direction": "side",
+      "eye_contact": false,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P007": {
+      "person_id": "SCHOOL_P007",
+      "person_name": "Kabir Joshi",
+      "wellbeing": 83,
+      "traits": {
+        "social_engagement": 81,
+        "physical_energy": 79,
+        "movement_energy": 76,
+        "focus_level": 86,
+        "emotional_stability": 84
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P008": {
+      "person_id": "SCHOOL_P008",
+      "person_name": "Isha Gupta",
+      "wellbeing": 72,
+      "traits": {
+        "social_engagement": 70,
+        "physical_energy": 68,
+        "movement_energy": 66,
+        "focus_level": 74,
+        "emotional_stability": 73
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P009": {
+      "person_id": "SCHOOL_P009",
+      "person_name": "Aditya Nair",
+      "wellbeing": 80,
+      "traits": {
+        "social_engagement": 78,
+        "physical_energy": 75,
+        "movement_energy": 73,
+        "focus_level": 82,
+        "emotional_stability": 80
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "profile_image_b64": ""
+    },
+    "SCHOOL_P010": {
+      "person_id": "SCHOOL_P010",
+      "person_name": "Sanya Kapoor",
+      "wellbeing": 58,
+      "traits": {
+        "social_engagement": 54,
+        "physical_energy": 51,
+        "movement_energy": 48,
+        "focus_level": 61,
+        "emotional_stability": 59
+      },
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "profile_image_b64": ""
+    }
+  }
+}
