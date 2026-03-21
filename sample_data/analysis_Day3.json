@@ -1,0 +1,135 @@
+{
+  "date": "2026-01-03",
+  "persons": {
+    "SCHOOL_P0001": {
+      "person_info": { "name": "Aarav", "profile_image_b64": "" },
+      "wellbeing": 74,
+      "traits": {
+        "social_engagement": 69,
+        "physical_energy": 49,
+        "movement_energy": 44,
+        "focus": 67,
+        "calmness": 71
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true
+    },
+    "SCHOOL_P0002": {
+      "person_info": { "name": "Anamika", "profile_image_b64": "" },
+      "wellbeing": 42,
+      "traits": {
+        "social_engagement": 34,
+        "physical_energy": 29,
+        "movement_energy": 27,
+        "focus": 38,
+        "calmness": 36
+      },
+      "gaze_direction": "down",
+      "eye_contact": false
+    },
+    "SCHOOL_P0003": {
+      "person_info": { "name": "Harshita", "profile_image_b64": "" },
+      "wellbeing": 79,
+      "traits": {
+        "social_engagement": 77,
+        "physical_energy": 54,
+        "movement_energy": 49,
+        "focus": 74,
+        "calmness": 79
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true
+    },
+    "SCHOOL_P0004": {
+      "person_info": { "name": "Jahanvi", "profile_image_b64": "" },
+      "wellbeing": 64,
+      "traits": {
+        "social_engagement": 59,
+        "physical_energy": 39,
+        "movement_energy": 37,
+        "focus": 61,
+        "calmness": 64
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true
+    },
+    "SCHOOL_P0005": {
+      "person_info": { "name": "Manav", "profile_image_b64": "" },
+      "wellbeing": 60,
+      "traits": {
+        "social_engagement": 62,
+        "physical_energy": 50,
+        "movement_energy": 45,
+        "focus": 55,
+        "calmness": 58
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true
+    },
+    "SCHOOL_P0006": {
+      "person_info": { "name": "Mohini", "profile_image_b64": "" },
+      "wellbeing": 71,
+      "traits": {
+        "social_engagement": 74,
+        "physical_energy": 47,
+        "movement_energy": 41,
+        "focus": 69,
+        "calmness": 67
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true
+    },
+    "SCHOOL_P0007": {
+      "person_info": { "name": "Ranjhana", "profile_image_b64": "" },
+      "wellbeing": 67,
+      "traits": {
+        "social_engagement": 64,
+        "physical_energy": 49,
+        "movement_energy": 47,
+        "focus": 65,
+        "calmness": 63
+      },
+      "gaze_direction": "side",
+      "eye_contact": false
+    },
+    "SCHOOL_P0008": {
+      "person_info": { "name": "Rohini", "profile_image_b64": "" },
+      "wellbeing": 65,
+      "traits": {
+        "social_engagement": 60,
+        "physical_energy": 46,
+        "movement_energy": 44,
+        "focus": 62,
+        "calmness": 66
+      },
+      "gaze_direction": "forward",
+      "eye_contact": false
+    },
+    "SCHOOL_P0009": {
+      "person_info": { "name": "Sparshita", "profile_image_b64": "" },
+      "wellbeing": 69,
+      "traits": {
+        "social_engagement": 67,
+        "physical_energy": 51,
+        "movement_energy": 49,
+        "focus": 64,
+        "calmness": 69
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true
+    },
+    "SCHOOL_P0010": {
+      "person_info": { "name": "Sushmita", "profile_image_b64": "" },
+      "wellbeing": 81,
+      "traits": {
+        "social_engagement": 79,
+        "physical_energy": 54,
+        "movement_energy": 51,
+        "focus": 77,
+        "calmness": 75
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true
+    }
+  }
+}
