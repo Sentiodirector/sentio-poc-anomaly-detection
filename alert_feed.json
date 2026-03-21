@@ -1,0 +1,63 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-21T22:55:48.922669",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 2,
+    "urgent": 0,
+    "monitor": 2,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "category": "SUDDEN_DROP",
+      "severity": "monitor",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Wellbeing dropped from 72.0 to 45 \u2014 27.0-point fall.",
+      "baseline_wellbeing": 72.0,
+      "today_wellbeing": 45,
+      "delta": -27.0,
+      "recommended_action": "Schedule pastoral check-in today",
+      "alert_id": "ALT_S001_1",
+      "person_id": "S001",
+      "person_name": "Raj Kumar",
+      "date": "2026-03-21",
+      "trend_last_5_days": [
+        70,
+        74,
+        69,
+        71,
+        45
+      ],
+      "profile_image_b64": ""
+    },
+    {
+      "category": "SOCIAL_WITHDRAWAL",
+      "severity": "monitor",
+      "title": "Social withdrawal detected",
+      "description": "Social engagement dropped 25.3 points with down gaze.",
+      "recommended_action": "Check-in with peer group",
+      "alert_id": "ALT_S001_2",
+      "person_id": "S001",
+      "person_name": "Raj Kumar",
+      "date": "2026-03-21",
+      "trend_last_5_days": [
+        70,
+        74,
+        69,
+        71,
+        45
+      ],
+      "profile_image_b64": ""
+    }
+  ],
+  "absence_flags": [],
+  "school_summary": {
+    "total_persons_tracked": 3,
+    "persons_flagged_today": 1,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "SUDDEN_DROP",
+    "school_avg_wellbeing_today": 0,
+    "school": "Demo School"
+  }
+}
