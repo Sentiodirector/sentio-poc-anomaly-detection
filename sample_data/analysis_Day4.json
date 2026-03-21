@@ -1,0 +1,90 @@
+{
+  "date": "2026-03-14",
+  "persons": {
+    "SCHOOL_P0001": {
+      "person_id": "SCHOOL_P0001",
+      "person_info": {
+        "name": "Aarav Sharma",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 28,
+      "traits": {
+        "social_engagement": 18,
+        "physical_energy": 45,
+        "movement_energy": 44,
+        "emotional_stability": 58,
+        "focus": 52
+      },
+      "gaze_direction": "down",
+      "eye_contact": false
+    },
+    "SCHOOL_P0002": {
+      "person_id": "SCHOOL_P0002",
+      "person_info": {
+        "name": "Diya Patel",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 33,
+      "traits": {
+        "social_engagement": 34,
+        "physical_energy": 40,
+        "movement_energy": 36,
+        "emotional_stability": 70,
+        "focus": 65
+      },
+      "gaze_direction": "down",
+      "eye_contact": false
+    },
+    "SCHOOL_P0003": {
+      "person_id": "SCHOOL_P0003",
+      "person_info": {
+        "name": "Arjun Mehta",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 66,
+      "traits": {
+        "social_engagement": 68,
+        "physical_energy": 95,
+        "movement_energy": 92,
+        "emotional_stability": 64,
+        "focus": 54
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true
+    },
+    "SCHOOL_P0004": {
+      "person_id": "SCHOOL_P0004",
+      "person_info": {
+        "name": "Priya Rajan",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 59,
+      "traits": {
+        "social_engagement": 44,
+        "physical_energy": 45,
+        "movement_energy": 48,
+        "emotional_stability": 67,
+        "focus": 58
+      },
+      "gaze_direction": "down",
+      "eye_contact": false
+    },
+    "SCHOOL_P0005": {
+      "person_id": "SCHOOL_P0005",
+      "person_info": {
+        "name": "Kabir Singh",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 78,
+      "traits": {
+        "social_engagement": 72,
+        "physical_energy": 56,
+        "movement_energy": 50,
+        "emotional_stability": 66,
+        "focus": 65
+      },
+      "gaze_direction": "forward",
+      "eye_contact": true
+    }
+  }
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentio Mind · Alert Digest · 2026-03-21</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #f8fafc; color: #1e293b; line-height: 1.6;
+    }
+    .page { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; }
+    header { margin-bottom: 32px; border-bottom: 2px solid #e2e8f0; padding-bottom: 20px; }
+    header h1 { font-size: 26px; font-weight: 800; color: #0f172a; }
+    header p  { color: #64748b; font-size: 13px; margin-top: 4px; }
+    h2 { font-size: 18px; font-weight: 700; color: #0f172a; margin: 32px 0 14px; }
+    h3 { font-size: 15px; font-weight: 600; color: #334155; }
+    .card {
+        background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+        padding: 18px 20px; margin-bottom: 14px;
+        display: flex; gap: 18px; align-items: flex-start;
+        box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+    .card-left  { flex: 1; min-width: 0; }
+    .card-right { flex-shrink: 0; text-align: right; }
+    .card-name  { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .card-title { font-size: 14px; color: #475569; margin: 4px 0; }
+    .card-desc  { font-size: 13px; color: #64748b; margin-top: 6px; }
+    .card-action{ font-size: 12px; color: #0ea5e9; margin-top: 8px; font-style: italic; }
+    .card-score { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
+    .score-urgent  { color: #ef4444; }
+    .score-monitor { color: #f59e0b; }
+    .score-ok      { color: #22c55e; }
+    .sparkline-label { font-size: 10px; color: #94a3b8; margin-top: 2px; }
+    .summary-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 14px; margin-bottom: 14px;
+    }
+    .summary-tile {
+        background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+        padding: 16px; text-align: center;
+    }
+    .summary-tile .val { font-size: 32px; font-weight: 800; color: #0f172a; }
+    .summary-tile .lbl { font-size: 12px; color: #64748b; margin-top: 4px; }
+    .absence-card {
+        background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px;
+        padding: 14px 18px; margin-bottom: 10px;
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .absence-name  { font-weight: 700; }
+    .absence-days  { color: #ea580c; font-weight: 700; }
+    .absence-action{ font-size: 12px; color: #64748b; margin-top: 2px; }
+    .persistent-card {
+        background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px;
+        padding: 14px 18px; margin-bottom: 10px;
+    }
+    .empty { color: #94a3b8; font-size: 14px; padding: 12px 0; }
+    .category-tag {
+        display: inline-block; font-size: 11px; font-weight: 600;
+        background: #f1f5f9; color: #475569;
+        border-radius: 6px; padding: 2px 8px; margin-right: 6px;
+    }
+    </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>🧠 Sentio Mind — Alert Digest</h1>
+    <p>Demo School &nbsp;·&nbsp; Generated: 2026-03-21 23:10 &nbsp;·&nbsp;
+       <span style="color:#ef4444;font-weight:700">2 urgent</span> &nbsp;
+       <span style="color:#f59e0b;font-weight:700">4 monitor</span> &nbsp;
+       0 absence flag(s)
+    </p>
+  </header>
+
+  <!-- ── SECTION 1: Today's Alerts ── -->
+  <h2>📋 Section 1 — Today's Alerts</h2>
+  
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Aarav Sharma</div>
+            <span class="category-tag">SUDDEN_DROP</span><span style="display:inline-block;padding:2px 10px;border-radius:12px;background:#fee2e2;color:#991b1b;font-size:11px;font-weight:700;letter-spacing:.5px;">🔴 URGENT</span>
+            <div class="card-title">Sudden wellbeing drop detected</div>
+            <div class="card-desc">Wellbeing dropped from a baseline of 74 to 28 today — a 46-point fall. Lowest trait: social_engagement at 18. Dominant gaze: down.</div>
+            <div class="card-action">↳ Schedule pastoral check-in today</div>
+          </div>
+          <div class="card-right">
+            <div class="card-score score-urgent">28</div>
+            <svg width="80" height="28" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,3.0 21.5,4.8 40.0,7.0 58.5,25.0 77.0,25.0" fill="none" stroke="#ef4444" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="25.0" r="3" fill="#ef4444"/></svg>
+            <div class="sparkline-label">5-day trend</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Diya Patel</div>
+            <span class="category-tag">SUSTAINED_LOW</span><span style="display:inline-block;padding:2px 10px;border-radius:12px;background:#fee2e2;color:#991b1b;font-size:11px;font-weight:700;letter-spacing:.5px;">🔴 URGENT</span>
+            <div class="card-title">Sustained low wellbeing for 3+ days</div>
+            <div class="card-desc">Wellbeing has remained below 45 for the last 3 consecutive days (scores: 40, 33, 40). Average: 38. Lowest trait today: social_engagement at 27.</div>
+            <div class="card-action">↳ Urgent: arrange wellbeing support meeting</div>
+          </div>
+          <div class="card-right">
+            <div class="card-score score-urgent">40</div>
+            <svg width="80" height="28" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,3.0 21.5,4.5 40.0,19.9 58.5,25.0 77.0,19.9" fill="none" stroke="#ef4444" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="19.9" r="3" fill="#ef4444"/></svg>
+            <div class="sparkline-label">5-day trend</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Aarav Sharma</div>
+            <span class="category-tag">SOCIAL_WITHDRAWAL</span><span style="display:inline-block;padding:2px 10px;border-radius:12px;background:#fef3c7;color:#92400e;font-size:11px;font-weight:700;letter-spacing:.5px;">🟡 MONITOR</span>
+            <div class="card-title">Social withdrawal detected</div>
+            <div class="card-desc">Social engagement dropped 47 points below baseline (baseline: 65, today: 18). Gaze is predominantly 'down', suggesting avoidance.</div>
+            <div class="card-action">↳ Observe in group settings; consider gentle outreach</div>
+          </div>
+          <div class="card-right">
+            <div class="card-score score-urgent">28</div>
+            <svg width="80" height="28" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,3.0 21.5,4.8 40.0,7.0 58.5,25.0 77.0,25.0" fill="none" stroke="#ef4444" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="25.0" r="3" fill="#ef4444"/></svg>
+            <div class="sparkline-label">5-day trend</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Diya Patel</div>
+            <span class="category-tag">GAZE_AVOIDANCE</span><span style="display:inline-block;padding:2px 10px;border-radius:12px;background:#fef3c7;color:#92400e;font-size:11px;font-weight:700;letter-spacing:.5px;">🟡 MONITOR</span>
+            <div class="card-title">No eye contact for 3+ consecutive days</div>
+            <div class="card-desc">No eye contact detected for the past 3 days. Gaze directions: down, down, down. May indicate withdrawal, anxiety or low confidence.</div>
+            <div class="card-action">↳ Gentle 1-on-1 conversation recommended</div>
+          </div>
+          <div class="card-right">
+            <div class="card-score score-urgent">40</div>
+            <svg width="80" height="28" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,3.0 21.5,4.5 40.0,19.9 58.5,25.0 77.0,19.9" fill="none" stroke="#ef4444" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="19.9" r="3" fill="#ef4444"/></svg>
+            <div class="sparkline-label">5-day trend</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Arjun Mehta</div>
+            <span class="category-tag">HYPERACTIVITY_SPIKE</span><span style="display:inline-block;padding:2px 10px;border-radius:12px;background:#fef3c7;color:#92400e;font-size:11px;font-weight:700;letter-spacing:.5px;">🟡 MONITOR</span>
+            <div class="card-title">Hyperactivity spike detected</div>
+            <div class="card-desc">Combined physical + movement energy is 94 points above baseline (baseline: 93, today: 187). Physical energy: 95, movement energy: 92.</div>
+            <div class="card-action">↳ Monitor for impulsivity; check sleep/diet patterns</div>
+          </div>
+          <div class="card-right">
+            <div class="card-score score-ok">66</div>
+            <svg width="80" height="28" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,3.0 21.5,3.0 40.0,19.5 58.5,25.0 77.0,25.0" fill="none" stroke="#22c55e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="25.0" r="3" fill="#22c55e"/></svg>
+            <div class="sparkline-label">5-day trend</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Priya Rajan</div>
+            <span class="category-tag">GAZE_AVOIDANCE</span><span style="display:inline-block;padding:2px 10px;border-radius:12px;background:#fef3c7;color:#92400e;font-size:11px;font-weight:700;letter-spacing:.5px;">🟡 MONITOR</span>
+            <div class="card-title">No eye contact for 3+ consecutive days</div>
+            <div class="card-desc">No eye contact detected for the past 3 days. Gaze directions: down, down, down. May indicate withdrawal, anxiety or low confidence.</div>
+            <div class="card-action">↳ Gentle 1-on-1 conversation recommended</div>
+          </div>
+          <div class="card-right">
+            <div class="card-score score-monitor">63</div>
+            <svg width="80" height="28" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg"><polyline points="3.0,25.0 21.5,14.0 40.0,3.0 58.5,21.3 77.0,6.7" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="6.7" r="3" fill="#f59e0b"/></svg>
+            <div class="sparkline-label">5-day trend</div>
+          </div>
+        </div>
+
+  <!-- ── Absence Flags ── -->
+  <h2>🚨 Absence Flags</h2>
+  <p class="empty">No absence flags.</p>
+
+  <!-- ── SECTION 2: School Summary ── -->
+  <h2>🏫 Section 2 — School Summary</h2>
+  
+    <div class="summary-grid">
+      <div class="summary-tile">
+        <div class="val">5</div>
+        <div class="lbl">Persons tracked</div>
+      </div>
+      <div class="summary-tile">
+        <div class="val" style="color:#ef4444">6</div>
+        <div class="lbl">Flagged today</div>
+      </div>
+      <div class="summary-tile">
+        <div class="val" style="color:#f59e0b">0</div>
+        <div class="lbl">Flagged yesterday</div>
+      </div>
+      <div class="summary-tile">
+        <div class="val score-monitor">54</div>
+        <div class="lbl">Avg wellbeing today</div>
+      </div>
+      <div class="summary-tile">
+        <div class="val" style="font-size:16px;padding-top:6px">GAZE_AVOIDANCE</div>
+        <div class="lbl">Top anomaly this week</div>
+      </div>
+    </div>
+
+  <!-- ── SECTION 3: Persistent Alerts ── -->
+  <h2>🔁 Section 3 — Persistent Alerts (3+ consecutive days)</h2>
+  
+        <div class="persistent-card">
+          <strong>Diya Patel</strong>
+          <span class="category-tag" style="margin-left:8px">SUSTAINED_LOW</span>
+          — flagged for <strong>3 consecutive days</strong>.
+          <span style="color:#64748b;font-size:13px"> Wellbeing has remained below 45 for the last 3 consecutive days (scores: 40, 33, 40). Average: 38. Lowest trait today: social_engagement at 27.</span>
+        </div>
+
+        <div class="persistent-card">
+          <strong>Diya Patel</strong>
+          <span class="category-tag" style="margin-left:8px">GAZE_AVOIDANCE</span>
+          — flagged for <strong>3 consecutive days</strong>.
+          <span style="color:#64748b;font-size:13px"> No eye contact detected for the past 3 days. Gaze directions: down, down, down. May indicate withdrawal, anxiety or low confidence.</span>
+        </div>
+
+        <div class="persistent-card">
+          <strong>Priya Rajan</strong>
+          <span class="category-tag" style="margin-left:8px">GAZE_AVOIDANCE</span>
+          — flagged for <strong>5 consecutive days</strong>.
+          <span style="color:#64748b;font-size:13px"> No eye contact detected for the past 3 days. Gaze directions: down, down, down. May indicate withdrawal, anxiety or low confidence.</span>
+        </div>
+
+</div>
+</body>
+</html>
