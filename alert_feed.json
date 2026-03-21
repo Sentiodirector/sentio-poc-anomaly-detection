@@ -1,0 +1,171 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-21T23:10:32.983468",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 6,
+    "urgent": 2,
+    "monitor": 4,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "alert_id": "ALT_001_0001",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Aarav Sharma",
+      "date": "2026-03-15",
+      "severity": "urgent",
+      "category": "SUDDEN_DROP",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Wellbeing dropped from a baseline of 74 to 28 today \u2014 a 46-point fall. Lowest trait: social_engagement at 18. Dominant gaze: down.",
+      "baseline_wellbeing": 74,
+      "today_wellbeing": 28,
+      "delta": -46,
+      "days_flagged_consecutively": 2,
+      "trend_last_5_days": [
+        78,
+        74,
+        69,
+        28,
+        28
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 18,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_001_0002",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Diya Patel",
+      "date": "2026-03-15",
+      "severity": "urgent",
+      "category": "SUSTAINED_LOW",
+      "title": "Sustained low wellbeing for 3+ days",
+      "description": "Wellbeing has remained below 45 for the last 3 consecutive days (scores: 40, 33, 40). Average: 38. Lowest trait today: social_engagement at 27.",
+      "baseline_wellbeing": 0,
+      "today_wellbeing": 40,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        63,
+        61,
+        40,
+        33,
+        40
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 27,
+      "recommended_action": "Urgent: arrange wellbeing support meeting",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_002_0001",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Aarav Sharma",
+      "date": "2026-03-15",
+      "severity": "monitor",
+      "category": "SOCIAL_WITHDRAWAL",
+      "title": "Social withdrawal detected",
+      "description": "Social engagement dropped 47 points below baseline (baseline: 65, today: 18). Gaze is predominantly 'down', suggesting avoidance.",
+      "baseline_wellbeing": 74,
+      "today_wellbeing": 28,
+      "delta": -47,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        78,
+        74,
+        69,
+        28,
+        28
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 18,
+      "recommended_action": "Observe in group settings; consider gentle outreach",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_002_0002",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Diya Patel",
+      "date": "2026-03-15",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "No eye contact for 3+ consecutive days",
+      "description": "No eye contact detected for the past 3 days. Gaze directions: down, down, down. May indicate withdrawal, anxiety or low confidence.",
+      "baseline_wellbeing": 0,
+      "today_wellbeing": 40,
+      "delta": 0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        63,
+        61,
+        40,
+        33,
+        40
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 27,
+      "recommended_action": "Gentle 1-on-1 conversation recommended",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_001_0003",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Arjun Mehta",
+      "date": "2026-03-15",
+      "severity": "monitor",
+      "category": "HYPERACTIVITY_SPIKE",
+      "title": "Hyperactivity spike detected",
+      "description": "Combined physical + movement energy is 94 points above baseline (baseline: 93, today: 187). Physical energy: 95, movement energy: 92.",
+      "baseline_wellbeing": 72,
+      "today_wellbeing": 66,
+      "delta": 94,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        74,
+        74,
+        68,
+        66,
+        66
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 64,
+      "recommended_action": "Monitor for impulsivity; check sleep/diet patterns",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_001_0004",
+      "person_id": "SCHOOL_P0004",
+      "person_name": "Priya Rajan",
+      "date": "2026-03-15",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "No eye contact for 3+ consecutive days",
+      "description": "No eye contact detected for the past 3 days. Gaze directions: down, down, down. May indicate withdrawal, anxiety or low confidence.",
+      "baseline_wellbeing": 0,
+      "today_wellbeing": 63,
+      "delta": 0,
+      "days_flagged_consecutively": 5,
+      "trend_last_5_days": [
+        58,
+        61,
+        64,
+        59,
+        63
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 40,
+      "recommended_action": "Gentle 1-on-1 conversation recommended",
+      "profile_image_b64": ""
+    }
+  ],
+  "absence_flags": [],
+  "school_summary": {
+    "total_persons_tracked": 5,
+    "persons_flagged_today": 6,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "GAZE_AVOIDANCE",
+    "school_avg_wellbeing_today": 54
+  }
+}
