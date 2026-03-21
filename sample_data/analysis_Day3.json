@@ -1,0 +1,260 @@
+{
+  "date": "2026-01-03",
+  "students": {
+    "SCHOOL_P0001": {
+      "wellbeing": 72,
+      "social_engagement": 63,
+      "physical_energy": 51,
+      "movement_energy": 59,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Arjun Mehta",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 63,
+        "physical_energy": 51,
+        "movement_energy": 59
+      }
+    },
+    "SCHOOL_P0002": {
+      "wellbeing": 33,
+      "social_engagement": 27,
+      "physical_energy": 42,
+      "movement_energy": 32,
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "person_info": {
+        "name": "Priya Sharma",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 27,
+        "physical_energy": 42,
+        "movement_energy": 32
+      }
+    },
+    "SCHOOL_P0003": {
+      "wellbeing": 70,
+      "social_engagement": 70,
+      "physical_energy": 57,
+      "movement_energy": 59,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Rahul Singh",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 70,
+        "physical_energy": 57,
+        "movement_energy": 59
+      }
+    },
+    "SCHOOL_P0004": {
+      "wellbeing": 74,
+      "social_engagement": 62,
+      "physical_energy": 46,
+      "movement_energy": 48,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Ananya Patel",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 62,
+        "physical_energy": 46,
+        "movement_energy": 48
+      }
+    },
+    "SCHOOL_P0005": {
+      "wellbeing": 55,
+      "social_engagement": 59,
+      "physical_energy": 53,
+      "movement_energy": 43,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Vikram Nair",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 59,
+        "physical_energy": 53,
+        "movement_energy": 43
+      }
+    },
+    "SCHOOL_P0006": {
+      "wellbeing": 67,
+      "social_engagement": 50,
+      "physical_energy": 48,
+      "movement_energy": 56,
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "person_info": {
+        "name": "Sneha Gupta",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 50,
+        "physical_energy": 48,
+        "movement_energy": 56
+      }
+    },
+    "SCHOOL_P0007": {
+      "wellbeing": 73,
+      "social_engagement": 64,
+      "physical_energy": 52,
+      "movement_energy": 53,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Rohan Das",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 64,
+        "physical_energy": 52,
+        "movement_energy": 53
+      }
+    },
+    "SCHOOL_P0008": {
+      "wellbeing": 82,
+      "social_engagement": 79,
+      "physical_energy": 63,
+      "movement_energy": 59,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Kavya Reddy",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 79,
+        "physical_energy": 63,
+        "movement_energy": 59
+      }
+    },
+    "SCHOOL_P0009": {
+      "wellbeing": 82,
+      "social_engagement": 80,
+      "physical_energy": 74,
+      "movement_energy": 59,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Amit Joshi",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 80,
+        "physical_energy": 74,
+        "movement_energy": 59
+      }
+    },
+    "SCHOOL_P0010": {
+      "wellbeing": 88,
+      "social_engagement": 80,
+      "physical_energy": 74,
+      "movement_energy": 64,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Divya Krishnan",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 80,
+        "physical_energy": 74,
+        "movement_energy": 64
+      }
+    },
+    "SCHOOL_P0011": {
+      "wellbeing": 87,
+      "social_engagement": 84,
+      "physical_energy": 65,
+      "movement_energy": 64,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Meera Kapoor",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 84,
+        "physical_energy": 65,
+        "movement_energy": 64
+      }
+    },
+    "SCHOOL_P0012": {
+      "wellbeing": 83,
+      "social_engagement": 73,
+      "physical_energy": 62,
+      "movement_energy": 66,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Siddharth Rao",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 73,
+        "physical_energy": 62,
+        "movement_energy": 66
+      }
+    },
+    "SCHOOL_P0013": {
+      "wellbeing": 80,
+      "social_engagement": 82,
+      "physical_energy": 66,
+      "movement_energy": 61,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Tanvi Shah",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 82,
+        "physical_energy": 66,
+        "movement_energy": 61
+      }
+    },
+    "SCHOOL_P0014": {
+      "wellbeing": 82,
+      "social_engagement": 79,
+      "physical_energy": 63,
+      "movement_energy": 60,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Rahul Gupta",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 79,
+        "physical_energy": 63,
+        "movement_energy": 60
+      }
+    },
+    "SCHOOL_P0015": {
+      "wellbeing": 78,
+      "social_engagement": 76,
+      "physical_energy": 63,
+      "movement_energy": 64,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_info": {
+        "name": "Aryan Kumar",
+        "profile_image_b64": ""
+      },
+      "traits": {
+        "social_engagement": 76,
+        "physical_energy": 63,
+        "movement_energy": 64
+      }
+    }
+  }
+}
