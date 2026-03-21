@@ -1,135 +1,125 @@
 """
 generate_mock_data.py
+Sentio Mind · Project 5
 Generates sample_data/analysis_Day1.json through analysis_Day5.json.
-Each file is a JSON array of student records with injected anomalies.
 """
 
 import json
-import os
+import numpy as np
 from pathlib import Path
 
-DATES = [
-    "2026-03-17",  # Day 1
-    "2026-03-18",  # Day 2
-    "2026-03-19",  # Day 3
-    "2026-03-20",  # Day 4
-    "2026-03-21",  # Day 5  (today)
-]
+rng = np.random.default_rng(42)   # reproducible
+
+DATES = ["2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21"]
 
 
-def rec(pid, name, date, wb, soc, phys, move, gaze, seen=True):
+def n(base, std=4):
+    """Noisy integer, clamped 0–100."""
+    return int(np.clip(int(rng.normal(base, std)), 0, 100))
+
+
+def rec(pid, name, date, wb, soc, phys, move, gaze="forward", seen=True):
     return {
-        "person_id": pid,
-        "person_name": name,
-        "date": date,
-        "wellbeing": wb,
-        "social_engagement": soc,
-        "physical_energy": phys,
-        "movement_energy": move,
-        "gaze": gaze,
-        "seen_in_video": seen,
+        "person_id":         pid,
+        "person_name":       name,
+        "date":              date,
+        "wellbeing":         int(np.clip(wb,   0, 100)),
+        "social_engagement": int(np.clip(soc,  0, 100)),
+        "physical_energy":   int(np.clip(phys, 0, 100)),
+        "movement_energy":   int(np.clip(move, 0, 100)),
+        "gaze":              gaze,
+        "seen_in_video":     bool(seen),
     }
 
 
-# ── per-student day values ──────────────────────────────────────────────────
-# Student A — normal baseline ~80, no anomaly
-A = [
-    rec("STU_A", "Alice Sharma",  DATES[0], 80, 78, 75, 72, "forward"),
-    rec("STU_A", "Alice Sharma",  DATES[1], 82, 79, 76, 73, "forward"),
-    rec("STU_A", "Alice Sharma",  DATES[2], 79, 77, 74, 71, "forward"),
-    rec("STU_A", "Alice Sharma",  DATES[3], 81, 78, 75, 72, "forward"),
-    rec("STU_A", "Alice Sharma",  DATES[4], 80, 78, 75, 72, "forward"),
-]
+daily = {d: [] for d in DATES}
 
-# Student B — SUDDEN_DROP: baseline ~80, Day 5 drops 45 pts → urgent
-B = [
-    rec("STU_B", "Bob Nair",      DATES[0], 82, 80, 75, 70, "forward"),
-    rec("STU_B", "Bob Nair",      DATES[1], 80, 78, 73, 68, "forward"),
-    rec("STU_B", "Bob Nair",      DATES[2], 79, 77, 72, 67, "forward"),
-    rec("STU_B", "Bob Nair",      DATES[3], 81, 79, 74, 69, "forward"),
-    rec("STU_B", "Bob Nair",      DATES[4], 35, 30, 40, 38, "down"),   # drop
-]
 
-# Student C — SUSTAINED_LOW: wellbeing = 35 from Day 3 onward (3 consec < 45)
-C = [
-    rec("STU_C", "Chitra Patel",  DATES[0], 65, 62, 58, 55, "forward"),
-    rec("STU_C", "Chitra Patel",  DATES[1], 62, 60, 56, 53, "forward"),
-    rec("STU_C", "Chitra Patel",  DATES[2], 35, 32, 40, 38, "down"),
-    rec("STU_C", "Chitra Patel",  DATES[3], 35, 30, 38, 36, "down"),
-    rec("STU_C", "Chitra Patel",  DATES[4], 35, 28, 36, 34, "down"),
-]
+# ── Student A  NORMAL  baseline ~80 ─────────────────────────────────────────
+for i, d in enumerate(DATES):
+    daily[d].append(rec("SCHOOL_P0001", "Alice Sharma", d,
+                        n(80), n(78), n(72), n(68)))
 
-# Student D — ABSENCE_FLAG: not present on Day 4 and Day 5 (2 consecutive absent)
-D = [
-    rec("STU_D", "David Kumar",   DATES[0], 75, 72, 68, 65, "forward"),
-    rec("STU_D", "David Kumar",   DATES[1], 73, 70, 66, 63, "forward"),
-    rec("STU_D", "David Kumar",   DATES[2], 70, 68, 64, 61, "forward"),
-    # Days 4 & 5 intentionally absent (seen_in_video = False represented by missing records)
-]
+# ── Student B  SUDDEN_DROP  Day 5 wellbeing = 35 ────────────────────────────
+# Baseline (Days 1-3) ≈ 80; delta ≈ 45 > 20 → urgent
+for i, d in enumerate(DATES):
+    wb  = 35    if i == 4 else n(80)
+    soc = n(72) if i == 4 else n(78)
+    daily[d].append(rec("SCHOOL_P0002", "Bob Nair", d,
+                        wb, soc, n(72), n(68)))
 
-# Student E — GAZE_AVOIDANCE: gaze = down/away for Days 3, 4, 5 (3 consecutive)
-E = [
-    rec("STU_E", "Esha Reddy",    DATES[0], 72, 70, 65, 62, "forward"),
-    rec("STU_E", "Esha Reddy",    DATES[1], 71, 69, 64, 61, "forward"),
-    rec("STU_E", "Esha Reddy",    DATES[2], 68, 65, 62, 59, "down"),
-    rec("STU_E", "Esha Reddy",    DATES[3], 66, 63, 60, 57, "away"),
-    rec("STU_E", "Esha Reddy",    DATES[4], 65, 62, 59, 56, "down"),
-]
+# ── Student C  SUSTAINED_LOW (+ SUDDEN_DROP)  chronic ───────────────────────
+# Fixed Days 1-2 so baseline is deterministic:
+#   baseline = (80+78+30)/3 = 62.7, std = 23.1 > 15 → threshold = 30
+#   delta = 62.7 – 30 = 32.7 > 30 → SUDDEN_DROP fires Days 3-5 (monitor)
+#   sustained_low: [30,30,30] < 45 → fires Day 5 (urgent)
+#   days_flagged_consecutively = 3 → CHRONIC
+C_wb  = [80, 78, 30, 30, 30]
+C_soc = [78, 76, 35, 33, 31]
+for i, d in enumerate(DATES):
+    gaze = "down" if i >= 2 else "forward"
+    daily[d].append(rec("SCHOOL_P0003", "Chitra Patel", d,
+                        C_wb[i], C_soc[i], n(58), n(54), gaze))
 
-# Student F — SOCIAL_WITHDRAWAL: social drops 36 pts + gaze=down on Day 4
-# Baseline social ≈ 78; Day 4 social = 42 → delta = 36 ≥ 25, gaze = down
-F = [
-    rec("STU_F", "Farhan Malik",  DATES[0], 78, 80, 72, 68, "forward"),
-    rec("STU_F", "Farhan Malik",  DATES[1], 76, 78, 70, 66, "forward"),
-    rec("STU_F", "Farhan Malik",  DATES[2], 75, 76, 69, 65, "forward"),
-    rec("STU_F", "Farhan Malik",  DATES[3], 70, 42, 65, 62, "down"),   # withdrawal
-    rec("STU_F", "Farhan Malik",  DATES[4], 72, 44, 67, 64, "forward"),
-]
+# ── Student D  ABSENCE_FLAG  seen_in_video=False Days 4-5 ───────────────────
+for i, d in enumerate(DATES):
+    seen = i < 3
+    daily[d].append(rec("SCHOOL_P0004", "David Kumar", d,
+                        n(72), n(70), n(65), n(61), seen=seen))
 
-# Student G — HYPERACTIVITY_SPIKE: combined energy spikes 102 pts on Day 4
-# Baseline phys ≈ 30.3, move ≈ 25.3  →  combined baseline ≈ 55.7
-# Day 4: 80 + 78 = 158  →  spike = 102 ≥ 40
-G = [
-    rec("STU_G", "Gauri Singh",   DATES[0], 65, 63, 30, 25, "forward"),
-    rec("STU_G", "Gauri Singh",   DATES[1], 67, 65, 32, 27, "forward"),
-    rec("STU_G", "Gauri Singh",   DATES[2], 64, 62, 29, 24, "forward"),
-    rec("STU_G", "Gauri Singh",   DATES[3], 68, 66, 80, 78, "forward"),  # spike
-    rec("STU_G", "Gauri Singh",   DATES[4], 66, 64, 31, 26, "forward"),
-]
+# ── Student E  GAZE_AVOIDANCE  gaze=down Days 3-5 ───────────────────────────
+for i, d in enumerate(DATES):
+    gaze = "down" if i >= 2 else "forward"
+    daily[d].append(rec("SCHOOL_P0005", "Esha Reddy", d,
+                        n(72), n(70), n(65), n(61), gaze))
 
-# Student H — REGRESSION: Days 2-4 improving (+5, +7, +8), Day 5 drops 20 pts
-H = [
-    rec("STU_H", "Harish Iyer",   DATES[0], 50, 55, 52, 48, "forward"),
-    rec("STU_H", "Harish Iyer",   DATES[1], 55, 58, 55, 51, "forward"),
-    rec("STU_H", "Harish Iyer",   DATES[2], 62, 62, 58, 54, "forward"),
-    rec("STU_H", "Harish Iyer",   DATES[3], 70, 67, 62, 58, "forward"),
-    rec("STU_H", "Harish Iyer",   DATES[4], 50, 52, 48, 44, "forward"),  # regression
-]
+# ── Student F  SOCIAL_WITHDRAWAL  social drop Days 3-5 + gaze=down ──────────
+# Fixed social: [80, 78, 40, 40, 40]
+#   baseline_social = (80+78+40)/3 = 66; delta = 26 ≥ 25 AND gaze=down → fires
+#   Also GAZE_AVOIDANCE fires on Day 5 (3 consecutive down-gaze days)
+#   days_flagged_consecutively = 3 → CHRONIC
+F_soc = [80, 78, 40, 40, 40]
+for i, d in enumerate(DATES):
+    gaze = "down" if i >= 2 else "forward"
+    daily[d].append(rec("SCHOOL_P0006", "Farhan Malik", d,
+                        n(78), F_soc[i], n(70), n(66), gaze))
 
-# ── assemble daily buckets ──────────────────────────────────────────────────
-daily: dict[str, list] = {d: [] for d in DATES}
+# ── Student G  HYPERACTIVITY_SPIKE  energy spike Days 4-5 ───────────────────
+# Baseline energy: (30+25+32+27+29+24)/3 combined = 55.7
+# Days 4-5: 82+80=162 > 55.7+40=95.7 → fires
+# days_flagged_consecutively = 2
+G_phys = [30, 32, 29, 82, 80]
+G_move = [25, 27, 24, 80, 79]
+for i, d in enumerate(DATES):
+    daily[d].append(rec("SCHOOL_P0007", "Gauri Singh", d,
+                        n(65), n(63), G_phys[i], G_move[i]))
 
-for student_records in [A, B, C, D, E, F, G, H]:
-    for r in student_records:
-        daily[r["date"]].append(r)
+# ── Student H  REGRESSION  wellbeing rises 3 days then drops ────────────────
+# Fixed: [50, 56, 63, 71, 50]  56>50, 63>56, 71>63 → 3 improvements
+# Drop: 71-50=21 > 15 → REGRESSION fires Day 5
+H_wb = [50, 56, 63, 71, 50]
+for i, d in enumerate(DATES):
+    daily[d].append(rec("SCHOOL_P0008", "Harish Iyer", d,
+                        H_wb[i], n(58 + i * 2), n(52), n(48)))
 
-# ── write files ─────────────────────────────────────────────────────────────
-out_dir = Path("sample_data")
-out_dir.mkdir(exist_ok=True)
 
-for i, d in enumerate(DATES, start=1):
-    fp = out_dir / f"analysis_Day{i}.json"
+# ── Write files ───────────────────────────────────────────────────────────────
+out = Path("sample_data")
+out.mkdir(exist_ok=True)
+
+for i, d in enumerate(DATES, 1):
+    fp = out / f"analysis_Day{i}.json"
     with open(fp, "w") as f:
         json.dump(daily[d], f, indent=2)
     print(f"  {fp}  ({len(daily[d])} records)")
 
-print("\nDone — 5 files written to sample_data/")
+print("\nDone - 5 files written to sample_data/")
 print("\nAnomalies injected:")
-print("  STU_A - no anomaly (baseline ~80)")
-print("  STU_B - SUDDEN_DROP   : Day 5 wellbeing 35 (baseline 80, delta 45, urgent)")
-print("  STU_C - SUSTAINED_LOW : Days 3-5 wellbeing 35 (< 45 for 3 days, urgent)")
-print("  STU_D - ABSENCE_FLAG  : missing from Day 4 & 5 (2 consecutive absences)")
-print("  STU_E - GAZE_AVOIDANCE: gaze down/away Days 3-5 (3 consecutive days)")
-print("  STU_F - SOCIAL_WITHDRAW: social -36 pts + gaze=down on Day 4")
-print("  STU_G - HYPERACTIVITY : phys+move spike 102 pts above baseline on Day 4")
-print("  STU_H - REGRESSION    : 3-day recovery (50->55->62->70) then drops 20 on Day 5")
+print("  SCHOOL_P0001 Alice Sharma  - Normal baseline ~80")
+print("  SCHOOL_P0002 Bob Nair      - SUDDEN_DROP     : Day 5 wb=35 (delta~45, urgent)")
+print("  SCHOOL_P0003 Chitra Patel  - SUSTAINED_LOW   : Days 3-5 wb=30 + SUDDEN_DROP (chronic)")
+print("  SCHOOL_P0004 David Kumar   - ABSENCE_FLAG    : seen_in_video=False Days 4-5")
+print("  SCHOOL_P0005 Esha Reddy    - GAZE_AVOIDANCE  : gaze=down Days 3-5")
+print("  SCHOOL_P0006 Farhan Malik  - SOCIAL_WITHDRAWAL: social drop+gaze=down Days 3-5 (chronic)")
+print("  SCHOOL_P0007 Gauri Singh   - HYPERACTIVITY   : phys+move spike Days 4-5")
+print("  SCHOOL_P0008 Harish Iyer   - REGRESSION      : recovery then 21pt drop Day 5")
