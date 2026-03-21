@@ -1,0 +1,79 @@
+[
+  {
+    "person_id": "STU_A",
+    "person_name": "Alice Sharma",
+    "date": "2026-03-20",
+    "wellbeing": 81,
+    "social_engagement": 78,
+    "physical_energy": 75,
+    "movement_energy": 72,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_B",
+    "person_name": "Bob Nair",
+    "date": "2026-03-20",
+    "wellbeing": 81,
+    "social_engagement": 79,
+    "physical_energy": 74,
+    "movement_energy": 69,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_C",
+    "person_name": "Chitra Patel",
+    "date": "2026-03-20",
+    "wellbeing": 35,
+    "social_engagement": 30,
+    "physical_energy": 38,
+    "movement_energy": 36,
+    "gaze": "down",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_E",
+    "person_name": "Esha Reddy",
+    "date": "2026-03-20",
+    "wellbeing": 66,
+    "social_engagement": 63,
+    "physical_energy": 60,
+    "movement_energy": 57,
+    "gaze": "away",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_F",
+    "person_name": "Farhan Malik",
+    "date": "2026-03-20",
+    "wellbeing": 70,
+    "social_engagement": 42,
+    "physical_energy": 65,
+    "movement_energy": 62,
+    "gaze": "down",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_G",
+    "person_name": "Gauri Singh",
+    "date": "2026-03-20",
+    "wellbeing": 68,
+    "social_engagement": 66,
+    "physical_energy": 80,
+    "movement_energy": 78,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_H",
+    "person_name": "Harish Iyer",
+    "date": "2026-03-20",
+    "wellbeing": 70,
+    "social_engagement": 67,
+    "physical_energy": 62,
+    "movement_energy": 58,
+    "gaze": "forward",
+    "seen_in_video": true
+  }
+]

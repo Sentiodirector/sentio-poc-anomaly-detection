@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentio Mind — Alert Digest · Demo School</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #F0F2F5;
+           color: #2C3E50; padding: 24px; }
+    h1   { font-size: 24px; font-weight: 700; color: #1A252F; margin-bottom: 4px; }
+    .subtitle { font-size: 13px; color: #7F8C8D; margin-bottom: 28px; }
+    h2   { font-size: 18px; font-weight: 600; margin: 28px 0 14px; border-left: 4px solid #3498DB;
+           padding-left: 10px; }
+    .card { background: #FFF; border-radius: 10px; padding: 16px 20px;
+            margin-bottom: 12px; border: 2px solid #ddd; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .card.urgent  { border-color: #E74C3C; background: #FFF8F8; }
+    .card.monitor { border-color: #F39C12; background: #FFFBF2; }
+    .card-header  { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .name   { font-size: 16px; font-weight: 600; }
+    .badge  { font-size: 11px; font-weight: 700; padding: 3px 8px;
+              border-radius: 12px; text-transform: uppercase; letter-spacing: .5px; }
+    .badge-urgent  { background: #E74C3C; color: #fff; }
+    .badge-monitor { background: #F39C12; color: #fff; }
+    .cat-badge { font-size: 11px; background: #EAF0FB; color: #2C5282;
+                 padding: 3px 8px; border-radius: 12px; }
+    .desc   { font-size: 13px; color: #555; margin: 6px 0; }
+    .meta   { font-size: 12px; color: #888; display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+    .spark-wrap { margin-top: 10px; }
+    .spark-label { font-size: 11px; color: #999; margin-bottom: 4px; }
+    .stats  { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+    .stat-box { background: #fff; border-radius: 10px; padding: 16px 24px; min-width: 140px;
+                border: 1px solid #E0E0E0; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+    .stat-num   { font-size: 32px; font-weight: 700; color: #2C3E50; }
+    .stat-label { font-size: 12px; color: #7F8C8D; margin-top: 4px; }
+    .no-alerts { color: #7F8C8D; font-size: 14px; padding: 20px 0; }
+    table { width: 100%; border-collapse: collapse; background: #fff;
+            border-radius: 10px; overflow: hidden; }
+    th { background: #3498DB; color: #fff; text-align: left; padding: 10px 14px; font-size: 13px; }
+    td { padding: 10px 14px; font-size: 13px; border-bottom: 1px solid #F0F0F0; }
+    tr:last-child td { border-bottom: none; }
+    </style>
+</head>
+<body>
+  <h1>&#128270; Sentio Mind — Counsellor Alert Digest</h1>
+  <p class="subtitle">Demo School &nbsp;|&nbsp; Generated: 2026-03-21 15:59:51 &nbsp;|&nbsp; Report date: 2026-03-21</p>
+
+  <h2>&#9888;&#65039; Section 1: Today's Action Required</h2>
+  
+        <div class="card urgent">
+          <div class="card-header">
+            <span class="name">Bob Nair</span>
+            <span class="badge badge-urgent">urgent</span>
+            <span class="cat-badge">SUDDEN_DROP</span>
+          </div>
+          <p class="desc">Bob Nair's wellbeing dropped from a baseline of 80 to 35 today — a 45-point fall. Gaze: down.</p>
+          <div class="meta">
+            <span>Baseline: <b>80.3</b></span>
+            <span>Today: <b>35</b></span>
+            <span>Delta: <b>-45.3</b></span>
+            <span>Days flagged: <b>1</b></span>
+            <span>Lowest trait: <b>social_engagement</b>
+                  (30)</span>
+          </div>
+          <div class="spark-wrap">
+            <div class="spark-label">5-day wellbeing trend</div>
+            <div style="display:inline-flex;align-items:flex-end;height:36px;background:#F5F5F5;padding:3px 4px;border-radius:4px;gap:1px;"><div title="82" style="width:14px;height:82%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="80" style="width:14px;height:80%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="79" style="width:14px;height:79%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="81" style="width:14px;height:81%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="35" style="width:14px;height:35%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div></div>
+          </div>
+          <p style="font-size:12px;color:#E74C3C;margin-top:8px;">
+            &#128276; Schedule pastoral check-in today
+          </p>
+        </div>
+        <div class="card urgent">
+          <div class="card-header">
+            <span class="name">Bob Nair</span>
+            <span class="badge badge-urgent">urgent</span>
+            <span class="cat-badge">SOCIAL_WITHDRAWAL</span>
+          </div>
+          <p class="desc">Social engagement dropped 48 pts from baseline (78 → 30). Dominant gaze: down.</p>
+          <div class="meta">
+            <span>Baseline: <b>80.3</b></span>
+            <span>Today: <b>35</b></span>
+            <span>Delta: <b>-45.3</b></span>
+            <span>Days flagged: <b>1</b></span>
+            <span>Lowest trait: <b>social_engagement</b>
+                  (30)</span>
+          </div>
+          <div class="spark-wrap">
+            <div class="spark-label">5-day wellbeing trend</div>
+            <div style="display:inline-flex;align-items:flex-end;height:36px;background:#F5F5F5;padding:3px 4px;border-radius:4px;gap:1px;"><div title="82" style="width:14px;height:82%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="80" style="width:14px;height:80%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="79" style="width:14px;height:79%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="81" style="width:14px;height:81%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="35" style="width:14px;height:35%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div></div>
+          </div>
+          <p style="font-size:12px;color:#E74C3C;margin-top:8px;">
+            &#128276; Schedule pastoral check-in today
+          </p>
+        </div>
+        <div class="card urgent">
+          <div class="card-header">
+            <span class="name">Chitra Patel</span>
+            <span class="badge badge-urgent">urgent</span>
+            <span class="cat-badge">SUSTAINED_LOW</span>
+          </div>
+          <p class="desc">Wellbeing has been below 45 for 3 consecutive days (current: 35).</p>
+          <div class="meta">
+            <span>Baseline: <b>54.0</b></span>
+            <span>Today: <b>35</b></span>
+            <span>Delta: <b>-19.0</b></span>
+            <span>Days flagged: <b>3</b></span>
+            <span>Lowest trait: <b>social_engagement</b>
+                  (28)</span>
+          </div>
+          <div class="spark-wrap">
+            <div class="spark-label">5-day wellbeing trend</div>
+            <div style="display:inline-flex;align-items:flex-end;height:36px;background:#F5F5F5;padding:3px 4px;border-radius:4px;gap:1px;"><div title="65" style="width:14px;height:65%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="62" style="width:14px;height:62%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="35" style="width:14px;height:35%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="35" style="width:14px;height:35%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="35" style="width:14px;height:35%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div></div>
+          </div>
+          <p style="font-size:12px;color:#E74C3C;margin-top:8px;">
+            &#128276; Schedule pastoral check-in today
+          </p>
+        </div>
+        <div class="card urgent">
+          <div class="card-header">
+            <span class="name">Harish Iyer</span>
+            <span class="badge badge-urgent">urgent</span>
+            <span class="cat-badge">REGRESSION</span>
+          </div>
+          <p class="desc">After 3 days of improving scores (peak: 70), wellbeing dropped 20 pts today (50).</p>
+          <div class="meta">
+            <span>Baseline: <b>55.7</b></span>
+            <span>Today: <b>50</b></span>
+            <span>Delta: <b>-5.7</b></span>
+            <span>Days flagged: <b>1</b></span>
+            <span>Lowest trait: <b>movement_energy</b>
+                  (44)</span>
+          </div>
+          <div class="spark-wrap">
+            <div class="spark-label">5-day wellbeing trend</div>
+            <div style="display:inline-flex;align-items:flex-end;height:36px;background:#F5F5F5;padding:3px 4px;border-radius:4px;gap:1px;"><div title="50" style="width:14px;height:50%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="55" style="width:14px;height:55%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="62" style="width:14px;height:62%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="70" style="width:14px;height:70%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="50" style="width:14px;height:50%;background:#E74C3C;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div></div>
+          </div>
+          <p style="font-size:12px;color:#E74C3C;margin-top:8px;">
+            &#128276; Schedule pastoral check-in today
+          </p>
+        </div>
+        <div class="card monitor">
+          <div class="card-header">
+            <span class="name">Chitra Patel</span>
+            <span class="badge badge-monitor">monitor</span>
+            <span class="cat-badge">GAZE_AVOIDANCE</span>
+          </div>
+          <p class="desc">No eye contact detected for 3 consecutive days (gaze: down).</p>
+          <div class="meta">
+            <span>Baseline: <b>54.0</b></span>
+            <span>Today: <b>35</b></span>
+            <span>Delta: <b>-19.0</b></span>
+            <span>Days flagged: <b>3</b></span>
+            <span>Lowest trait: <b>social_engagement</b>
+                  (28)</span>
+          </div>
+          <div class="spark-wrap">
+            <div class="spark-label">5-day wellbeing trend</div>
+            <div style="display:inline-flex;align-items:flex-end;height:36px;background:#F5F5F5;padding:3px 4px;border-radius:4px;gap:1px;"><div title="65" style="width:14px;height:65%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="62" style="width:14px;height:62%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="35" style="width:14px;height:35%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="35" style="width:14px;height:35%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="35" style="width:14px;height:35%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div></div>
+          </div>
+          <p style="font-size:12px;color:#E74C3C;margin-top:8px;">
+            &#128276; Schedule pastoral check-in today
+          </p>
+        </div>
+        <div class="card monitor">
+          <div class="card-header">
+            <span class="name">Esha Reddy</span>
+            <span class="badge badge-monitor">monitor</span>
+            <span class="cat-badge">GAZE_AVOIDANCE</span>
+          </div>
+          <p class="desc">No eye contact detected for 3 consecutive days (gaze: down).</p>
+          <div class="meta">
+            <span>Baseline: <b>70.3</b></span>
+            <span>Today: <b>65</b></span>
+            <span>Delta: <b>-5.3</b></span>
+            <span>Days flagged: <b>3</b></span>
+            <span>Lowest trait: <b>movement_energy</b>
+                  (56)</span>
+          </div>
+          <div class="spark-wrap">
+            <div class="spark-label">5-day wellbeing trend</div>
+            <div style="display:inline-flex;align-items:flex-end;height:36px;background:#F5F5F5;padding:3px 4px;border-radius:4px;gap:1px;"><div title="72" style="width:14px;height:72%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="71" style="width:14px;height:71%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="68" style="width:14px;height:68%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="66" style="width:14px;height:66%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div><div title="65" style="width:14px;height:65%;background:#F39C12;border-radius:2px 2px 0 0;display:inline-block;vertical-align:bottom;margin:0 1px;"></div></div>
+          </div>
+          <p style="font-size:12px;color:#E74C3C;margin-top:8px;">
+            &#128276; Schedule pastoral check-in today
+          </p>
+        </div>
+
+  <h2>&#127982; Section 2: School Summary</h2>
+  
+    <div class="stats">
+      <div class="stat-box">
+        <div class="stat-num">8</div>
+        <div class="stat-label">Persons tracked</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="color:#E74C3C">6</div>
+        <div class="stat-label">Alerts today</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="color:#F39C12">1</div>
+        <div class="stat-label">Absence flags</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="color:#27AE60">57</div>
+        <div class="stat-label">Avg wellbeing today</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" style="font-size:18px;color:#8E44AD">SOCIAL_WITHDRAWAL</div>
+        <div class="stat-label">Top anomaly this week</div>
+      </div>
+    </div>
+        <h3 style="margin:20px 0 10px;font-size:15px;">Absence Flags</h3>
+        <table>
+          <tr><th>Name</th><th>ID</th><th>Last Seen</th><th>Days Absent</th><th>Action</th></tr>
+          <tr><td>David Kumar</td><td>STU_D</td><td>2026-03-19</td><td><b>2</b></td><td style='color:#E74C3C'>Welfare check — contact family if absent again tomorrow</td></tr>
+        </table>
+
+  <h2>&#128200; Section 3: Chronic Flags (3+ consecutive days)</h2>
+  
+        <table>
+          <tr><th>Name</th><th>ID</th><th>Severity</th><th>Category</th>
+              <th>Days</th><th>Description</th></tr>
+          <tr><td>Chitra Patel</td><td>STU_C</td><td><span class='badge badge-urgent'>urgent</span></td><td>SUSTAINED_LOW</td><td><b>3</b></td><td>Wellbeing has been below 45 for 3 consecutive days (current: 35).</td></tr><tr><td>Chitra Patel</td><td>STU_C</td><td><span class='badge badge-monitor'>monitor</span></td><td>GAZE_AVOIDANCE</td><td><b>3</b></td><td>No eye contact detected for 3 consecutive days (gaze: down).</td></tr><tr><td>Esha Reddy</td><td>STU_E</td><td><span class='badge badge-monitor'>monitor</span></td><td>GAZE_AVOIDANCE</td><td><b>3</b></td><td>No eye contact detected for 3 consecutive days (gaze: down).</td></tr>
+        </table>
+</body>
+</html>

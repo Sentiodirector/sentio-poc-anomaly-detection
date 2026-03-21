@@ -1,0 +1,227 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-21T15:59:51.369024",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 8,
+    "urgent": 5,
+    "monitor": 3,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "category": "SUDDEN_DROP",
+      "severity": "urgent",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Bob Nair's wellbeing dropped from a baseline of 80 to 35 today \u2014 a 45-point fall. Gaze: down.",
+      "alert_id": "ALT_STU_B_2026-03-21_1",
+      "person_id": "STU_B",
+      "person_name": "Bob Nair",
+      "date": "2026-03-21",
+      "baseline_wellbeing": 80.3,
+      "today_wellbeing": 35,
+      "delta": -45.3,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        82,
+        80,
+        79,
+        81,
+        35
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 30,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "category": "SOCIAL_WITHDRAWAL",
+      "severity": "urgent",
+      "title": "Social withdrawal signs detected",
+      "description": "Social engagement dropped 48 pts from baseline (78 \u2192 30). Dominant gaze: down.",
+      "alert_id": "ALT_STU_B_2026-03-21_2",
+      "person_id": "STU_B",
+      "person_name": "Bob Nair",
+      "date": "2026-03-21",
+      "baseline_wellbeing": 80.3,
+      "today_wellbeing": 35,
+      "delta": -45.3,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        82,
+        80,
+        79,
+        81,
+        35
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 30,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "category": "SUSTAINED_LOW",
+      "severity": "urgent",
+      "title": "Sustained low wellbeing",
+      "description": "Wellbeing has been below 45 for 3 consecutive days (current: 35).",
+      "alert_id": "ALT_STU_C_2026-03-21_1",
+      "person_id": "STU_C",
+      "person_name": "Chitra Patel",
+      "date": "2026-03-21",
+      "baseline_wellbeing": 54.0,
+      "today_wellbeing": 35,
+      "delta": -19.0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        65,
+        62,
+        35,
+        35,
+        35
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 28,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "category": "SOCIAL_WITHDRAWAL",
+      "severity": "urgent",
+      "title": "Social withdrawal signs detected",
+      "description": "Social engagement dropped 36 pts from baseline (78 \u2192 42). Dominant gaze: down.",
+      "alert_id": "ALT_STU_F_2026-03-20_1",
+      "person_id": "STU_F",
+      "person_name": "Farhan Malik",
+      "date": "2026-03-20",
+      "baseline_wellbeing": 76.3,
+      "today_wellbeing": 70,
+      "delta": -6.3,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        78,
+        76,
+        75,
+        70
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 42,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "category": "REGRESSION",
+      "severity": "urgent",
+      "title": "Regression after recovery",
+      "description": "After 3 days of improving scores (peak: 70), wellbeing dropped 20 pts today (50).",
+      "alert_id": "ALT_STU_H_2026-03-21_1",
+      "person_id": "STU_H",
+      "person_name": "Harish Iyer",
+      "date": "2026-03-21",
+      "baseline_wellbeing": 55.7,
+      "today_wellbeing": 50,
+      "delta": -5.7,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        50,
+        55,
+        62,
+        70,
+        50
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 44,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "category": "GAZE_AVOIDANCE",
+      "severity": "monitor",
+      "title": "Persistent gaze avoidance",
+      "description": "No eye contact detected for 3 consecutive days (gaze: down).",
+      "alert_id": "ALT_STU_C_2026-03-21_2",
+      "person_id": "STU_C",
+      "person_name": "Chitra Patel",
+      "date": "2026-03-21",
+      "baseline_wellbeing": 54.0,
+      "today_wellbeing": 35,
+      "delta": -19.0,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        65,
+        62,
+        35,
+        35,
+        35
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 28,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "category": "GAZE_AVOIDANCE",
+      "severity": "monitor",
+      "title": "Persistent gaze avoidance",
+      "description": "No eye contact detected for 3 consecutive days (gaze: down).",
+      "alert_id": "ALT_STU_E_2026-03-21_1",
+      "person_id": "STU_E",
+      "person_name": "Esha Reddy",
+      "date": "2026-03-21",
+      "baseline_wellbeing": 70.3,
+      "today_wellbeing": 65,
+      "delta": -5.3,
+      "days_flagged_consecutively": 3,
+      "trend_last_5_days": [
+        72,
+        71,
+        68,
+        66,
+        65
+      ],
+      "lowest_trait": "movement_energy",
+      "lowest_trait_value": 56,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "category": "HYPERACTIVITY_SPIKE",
+      "severity": "monitor",
+      "title": "Hyperactivity spike detected",
+      "description": "Combined physical+movement score 158 is 102 pts above baseline (56).",
+      "alert_id": "ALT_STU_G_2026-03-20_1",
+      "person_id": "STU_G",
+      "person_name": "Gauri Singh",
+      "date": "2026-03-20",
+      "baseline_wellbeing": 65.3,
+      "today_wellbeing": 68,
+      "delta": 2.7,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        65,
+        67,
+        64,
+        68
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 66,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    }
+  ],
+  "absence_flags": [
+    {
+      "person_id": "STU_D",
+      "person_name": "David Kumar",
+      "last_seen_date": "2026-03-19",
+      "days_absent": 2,
+      "recommended_action": "Welfare check \u2014 contact family if absent again tomorrow"
+    }
+  ],
+  "school_summary": {
+    "total_persons_tracked": 8,
+    "persons_flagged_today": 6,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "SOCIAL_WITHDRAWAL",
+    "school_avg_wellbeing_today": 57
+  }
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "person_id": "STU_A",
+    "person_name": "Alice Sharma",
+    "date": "2026-03-17",
+    "wellbeing": 80,
+    "social_engagement": 78,
+    "physical_energy": 75,
+    "movement_energy": 72,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_B",
+    "person_name": "Bob Nair",
+    "date": "2026-03-17",
+    "wellbeing": 82,
+    "social_engagement": 80,
+    "physical_energy": 75,
+    "movement_energy": 70,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_C",
+    "person_name": "Chitra Patel",
+    "date": "2026-03-17",
+    "wellbeing": 65,
+    "social_engagement": 62,
+    "physical_energy": 58,
+    "movement_energy": 55,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_D",
+    "person_name": "David Kumar",
+    "date": "2026-03-17",
+    "wellbeing": 75,
+    "social_engagement": 72,
+    "physical_energy": 68,
+    "movement_energy": 65,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_E",
+    "person_name": "Esha Reddy",
+    "date": "2026-03-17",
+    "wellbeing": 72,
+    "social_engagement": 70,
+    "physical_energy": 65,
+    "movement_energy": 62,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_F",
+    "person_name": "Farhan Malik",
+    "date": "2026-03-17",
+    "wellbeing": 78,
+    "social_engagement": 80,
+    "physical_energy": 72,
+    "movement_energy": 68,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_G",
+    "person_name": "Gauri Singh",
+    "date": "2026-03-17",
+    "wellbeing": 65,
+    "social_engagement": 63,
+    "physical_energy": 30,
+    "movement_energy": 25,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "STU_H",
+    "person_name": "Harish Iyer",
+    "date": "2026-03-17",
+    "wellbeing": 50,
+    "social_engagement": 55,
+    "physical_energy": 52,
+    "movement_energy": 48,
+    "gaze": "forward",
+    "seen_in_video": true
+  }
+]
