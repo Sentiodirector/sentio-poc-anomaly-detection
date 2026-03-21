@@ -1,0 +1,195 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-21T22:17:59.921845",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 10,
+    "urgent": 3,
+    "monitor": 7,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "category": "SUDDEN_DROP",
+      "severity": "urgent",
+      "baseline_wellbeing": 72.33333333333333,
+      "today_wellbeing": 32,
+      "delta": -40.33333333333333,
+      "person_id": "SCHOOL_P001",
+      "person_name": "SCHOOL_P001",
+      "date": "2026-03-19",
+      "trend_last_5_days": [
+        72,
+        74,
+        71,
+        28,
+        32
+      ],
+      "alert_id": "ALT_001"
+    },
+    {
+      "category": "SUSTAINED_LOW",
+      "severity": "urgent",
+      "days_low": 3,
+      "person_id": "SCHOOL_P002",
+      "person_name": "SCHOOL_P002",
+      "date": "2026-03-19",
+      "trend_last_5_days": [
+        42,
+        40,
+        43,
+        38,
+        41
+      ],
+      "alert_id": "ALT_003"
+    },
+    {
+      "category": "SUDDEN_DROP",
+      "severity": "urgent",
+      "baseline_wellbeing": 78.0,
+      "today_wellbeing": 38,
+      "delta": -40.0,
+      "person_id": "SCHOOL_P009",
+      "person_name": "SCHOOL_P009",
+      "date": "2026-03-19",
+      "trend_last_5_days": [
+        78,
+        76,
+        80,
+        79,
+        38
+      ],
+      "alert_id": "ALT_008"
+    },
+    {
+      "category": "SOCIAL_WITHDRAWAL",
+      "severity": "monitor",
+      "social_engagement_drop": 40.33333333333333,
+      "gaze_direction": "down",
+      "person_id": "SCHOOL_P001",
+      "person_name": "SCHOOL_P001",
+      "date": "2026-03-19",
+      "trend_last_5_days": [
+        72,
+        74,
+        71,
+        28,
+        32
+      ],
+      "alert_id": "ALT_002"
+    },
+    {
+      "category": "GAZE_AVOIDANCE",
+      "severity": "monitor",
+      "days_no_contact": 3,
+      "person_id": "SCHOOL_P002",
+      "person_name": "SCHOOL_P002",
+      "date": "2026-03-19",
+      "trend_last_5_days": [
+        42,
+        40,
+        43,
+        38,
+        41
+      ],
+      "alert_id": "ALT_004"
+    },
+    {
+      "category": "SOCIAL_WITHDRAWAL",
+      "severity": "monitor",
+      "social_engagement_drop": 25.0,
+      "gaze_direction": "side",
+      "person_id": "SCHOOL_P003",
+      "person_name": "SCHOOL_P003",
+      "date": "2026-03-19",
+      "trend_last_5_days": [
+        68,
+        70,
+        69,
+        65,
+        67
+      ],
+      "alert_id": "ALT_005"
+    },
+    {
+      "category": "HYPERACTIVITY_SPIKE",
+      "severity": "monitor",
+      "energy_spike": 99.66666666666666,
+      "person_id": "SCHOOL_P004",
+      "person_name": "SCHOOL_P004",
+      "date": "2026-03-19",
+      "trend_last_5_days": [
+        65,
+        67,
+        66,
+        68,
+        70
+      ],
+      "alert_id": "ALT_006"
+    },
+    {
+      "category": "REGRESSION",
+      "severity": "monitor",
+      "drop_amount": 18,
+      "person_id": "SCHOOL_P005",
+      "person_name": "SCHOOL_P005",
+      "date": "2026-03-19",
+      "trend_last_5_days": [
+        48,
+        52,
+        56,
+        60,
+        42
+      ],
+      "alert_id": "ALT_007"
+    },
+    {
+      "category": "SOCIAL_WITHDRAWAL",
+      "severity": "monitor",
+      "social_engagement_drop": 43.33333333333333,
+      "gaze_direction": "down",
+      "person_id": "SCHOOL_P009",
+      "person_name": "SCHOOL_P009",
+      "date": "2026-03-19",
+      "trend_last_5_days": [
+        78,
+        76,
+        80,
+        79,
+        38
+      ],
+      "alert_id": "ALT_009"
+    },
+    {
+      "category": "GAZE_AVOIDANCE",
+      "severity": "monitor",
+      "days_no_contact": 3,
+      "person_id": "SCHOOL_P010",
+      "person_name": "SCHOOL_P010",
+      "date": "2026-03-18",
+      "trend_last_5_days": [
+        62,
+        60,
+        58,
+        44
+      ],
+      "alert_id": "ALT_010"
+    }
+  ],
+  "absence_flags": [
+    {
+      "person_id": "SCHOOL_P006",
+      "person_name": "SCHOOL_P006",
+      "last_seen_date": "2026-03-17",
+      "days_absent": 2,
+      "recommended_action": "Welfare check - contact family if absent again tomorrow"
+    }
+  ],
+  "school_summary": {
+    "total_persons_tracked": 10,
+    "persons_flagged_today": 0,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "SOCIAL_WITHDRAWAL",
+    "school_avg_wellbeing_today": 0
+  }
+}
