@@ -4,17 +4,23 @@
 
 ---
 
+## 🎥 Demo Video
+
+Watch the full working demo here: https://drive.google.com/file/d/1_DY3qSPy7-SYoh-jQTijniMO_q-L8D2M/view?usp=sharing
+
+---
+
 ## Why This Exists
 
 Sentio Mind already does the hard part — it processes video feeds, computes engagement scores, tracks gaze patterns, and produces daily snapshots for every student. What it didn't do was *act* on any of that. The scores existed. Charts existed. But if a student's wellbeing quietly collapsed over three days, nobody got a notification. A counsellor would have to manually dig through data to notice, which means they often didn't.
 
-This project adds the alert layer. It sits on top of the existing pipeline — no changes to the video processing, no new cameras, no new infrastructure — and does one thing: the moment a student's numbers deviate in a way that matters clinically, it raises a flag and tells a human being.
+I added the alert layer on top of that. No changes to the video processing, no new cameras, no new infrastructure — just one extra step: the moment a student's numbers deviate in a way that matters clinically, it raises a flag and tells a human being.
 
 ---
 
 ## What It Actually Does
 
-Every day, the engine reads the latest JSON snapshot from `sample_data/`. For each student, it builds a personal rolling baseline from their own history (not some global average — someone who's naturally quiet shouldn't trigger the same alert as an extrovert going quiet). Then it checks whether today's metrics cross any of seven anomaly thresholds.
+Every day, the engine reads the latest JSON snapshot from `sample_data/`. For each student, I compute a personal rolling baseline from their own history (not some global average — someone who's naturally quiet shouldn't trigger the same alert as an extrovert going quiet). Then it checks whether today's metrics cross any of seven anomaly thresholds.
 
 If something looks wrong, it generates two outputs:
 
@@ -25,7 +31,7 @@ If something looks wrong, it generates two outputs:
 
 ## The 7 Anomaly Categories
 
-These aren't arbitrary thresholds. Each one was chosen to reflect something a trained counsellor would actually care about:
+I didn't pick arbitrary numbers here. Each threshold was chosen to reflect something a trained counsellor would actually flag:
 
 | # | Category | What It Catches | Trigger Threshold |
 |---|----------|-----------------|-------------------|
@@ -62,36 +68,23 @@ That's it. One command does everything:
 
 ## The Sample Data
 
-The `sample_data/` folder contains five days of synthetic student snapshots, each named `day_1.json` through `day_5.json`. The mock profiles are deliberately crafted so that every anomaly path fires at least once — you can verify all 7 detection rules are working without ambiguity.
+The `sample_data/` folder contains five days of synthetic snapshots (`day_1.json` through `day_5.json`). I crafted each mock profile to trigger a specific anomaly category — so all 7 detection rules can be verified without ambiguity. Each student hits exactly one case: a sudden crash, a sustained slump, a social withdrawal, an energy spike, a recovery that collapses, persistent gaze avoidance, and an unexplained absence.
 
-The students are named after Indian cricketers, because making test data boring is a choice and we didn't make it.
-
-Here's what fires and why:
-
-| Student | Category | Severity | What Happens in the Data |
-|---------|----------|----------|--------------------------|
-| Arjun Mehta | `SUDDEN_DROP` | urgent | Wellbeing crashes from a ~74 baseline down to 28 on day 4 — a 46-point drop |
-| Rohan Sharma | `SUSTAINED_LOW` | urgent | Wellbeing stays below 45 on days 3, 4, and 5 |
-| Ananya Singh | `SOCIAL_WITHDRAWAL` | monitor | Social engagement drops 33 pts below baseline, gaze turns downward on day 4 |
-| Vikram Nair | `HYPERACTIVITY_SPIKE` | informational | Energy jumps from a ~55 baseline to 100 on day 5 (+45 pts) |
-| Meera Pillai | `REGRESSION` | monitor | Recovers steadily for three days (52 → 56 → 62 → 67), then drops 21 pts on day 5 |
-| Kabir Hassan | `GAZE_AVOIDANCE` | informational | Gaze is avoidant on days 3, 4, and 5 — three consecutive |
-| Siddharth Bose | `SUSTAINED_LOW` | urgent | Similar sustained drop below 45 from day 3 onward |
-| Priya Rajan | `ABSENCE_FLAG` | — | Not detected on days 4 or 5 — welfare check triggered |
+The students are named after Indian cricketers, because making test data boring is a choice and I didn't make it.
 
 ---
 
 ## Design Choices Worth Knowing
 
-**Weighted composite wellbeing score.** Wellbeing isn't a single number — it's a blend of social engagement (40%), energy traits (40%), and self-reported mood (20%). This mirrors how real behavioral assessment works: no single metric tells the full story, and this weighting reflects that social and physical signals tend to be more reliable than self-report alone.
+**Weighted composite wellbeing score.** Wellbeing isn't a single number — I compute it as a weighted blend of social engagement (40%), energy traits (40%), and self-reported mood (20%). Social and physical signals tend to be more reliable than self-report alone, and the weighting reflects that.
 
-**Personal rolling baselines, not global averages.** The engine uses each student's own first three days of data as their baseline (or all available data if fewer than three days exist). An introvert's baseline looks different from an extrovert's, and the alert logic respects that. If the standard deviation of someone's baseline is high (> 15), the drop threshold increases by 50% to reduce false positives for naturally variable students.
+**Personal rolling baselines, not global averages.** I use each student's own first three days of data as their baseline (or all available data if fewer than three days exist). An introvert's baseline looks different from an extrovert's, and the alert logic respects that. If the standard deviation of a baseline is high (> 15), I increase the drop threshold by 50% to reduce false positives for naturally variable students.
 
-**Prioritized alert chain.** The order in which anomaly rules are checked matters. `ABSENCE_FLAG` fires first — you can't assess someone who isn't there. `SUDDEN_DROP` comes next (most urgent clinical signal), and `GAZE_AVOIDANCE` comes last (subtler, longer-developing signal). This ensures critical alerts surface without being masked by softer ones.
+**Prioritized alert chain.** The order in which I check anomaly rules matters. `ABSENCE_FLAG` fires first — you can't assess someone who isn't there. `SUDDEN_DROP` comes next (most urgent clinical signal), and `GAZE_AVOIDANCE` comes last (subtler, longer-developing signal). This ensures critical alerts surface without being masked by softer ones.
 
 **Offline-first HTML output.** The digest uses inline SVG for sparklines and system fonts only. No CDN calls, no JavaScript frameworks, no internet dependency. A counsellor in a school with unreliable connectivity can still open it and get the full picture.
 
-**Severity vocabulary aligned to the PoC schema.** Alert severities are expressed as `urgent`, `monitor`, and `informational` — not `HIGH/MEDIUM/LOW` — to match the integration contract expected by downstream systems.
+**Severity vocabulary aligned to the PoC schema.** I express alert severities as `urgent`, `monitor`, and `informational` — not `HIGH/MEDIUM/LOW` — to match the integration contract expected by downstream systems.
 
 ---
 
