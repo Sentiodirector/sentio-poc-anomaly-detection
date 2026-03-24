@@ -118,18 +118,19 @@ Absence flags are in their own list — separate from `alerts[]` — exactly as 
 ## Project Structure
 
 ```
-sentio/
 ├── solution.py                  # Core engine: analysis + HTML/JSON generation + Flask
 ├── alert_digest.html            # Generated counsellor dashboard (offline, browser-ready)
 ├── alert_feed.json              # Generated machine-readable alerts (schema-compliant)
 ├── README.md                    # This file
-├── sample_data/                 # Daily JSON snapshots (5 days of synthetic input)
-│   ├── day_1.json
-│   ├── day_2.json
-│   ├── day_3.json
-│   ├── day_4.json
-│   └── day_5.json
-└── assignment_assets/           # Mock data generator, debug tools, assignment PDF
+└── sample_data/                 # Daily JSON snapshots (8 days of synthetic input)
+    ├── day_1_2023-10-03.json
+    ├── day_2_2023-10-04.json
+    ├── day_3_2023-10-05.json
+    ├── day_4_2023-10-06.json
+    ├── day_5_2023-10-07.json
+    ├── day_6_2023-10-08.json
+    ├── day_7_2023-10-09.json
+    └── day_8_2023-10-10.json
 ```
 
 ---
