@@ -1,0 +1,96 @@
+{
+  "date": "2023-10-09",
+  "school": "Sentio Demo School",
+  "students": [
+    {
+      "id": "std_virat",
+      "name": "Virat Kohli",
+      "social_engagement_score": 10,
+      "energy_traits": 10,
+      "wellbeing_score": 10,
+      "gaze_direction": "downward",
+      "detected": true
+    },
+    {
+      "id": "std_rohit",
+      "name": "Rohit Sharma",
+      "social_engagement_score": 20,
+      "energy_traits": 20,
+      "wellbeing_score": 20,
+      "gaze_direction": "downward",
+      "detected": true
+    },
+    {
+      "id": "std_shubman",
+      "name": "Shubman Gill",
+      "social_engagement_score": 40,
+      "energy_traits": 80,
+      "wellbeing_score": 80,
+      "gaze_direction": "downward",
+      "detected": true
+    },
+    {
+      "id": "std_jadeja",
+      "name": "Ravindra Jadeja",
+      "social_engagement_score": 80,
+      "energy_traits": 116,
+      "wellbeing_score": 86,
+      "gaze_direction": "forward",
+      "detected": true
+    },
+    {
+      "id": "std_surya",
+      "name": "Suryakumar Yadav",
+      "social_engagement_score": 44,
+      "energy_traits": 44,
+      "wellbeing_score": 44,
+      "gaze_direction": "downward",
+      "detected": true
+    },
+    {
+      "id": "std_jaiswal",
+      "name": "Yashasvi Jaiswal",
+      "social_engagement_score": 68,
+      "energy_traits": 50,
+      "wellbeing_score": 68,
+      "gaze_direction": "downward",
+      "detected": true
+    },
+    {
+      "id": "std_absence",
+      "name": "Rishabh Pant",
+      "social_engagement_score": 0,
+      "energy_traits": 0,
+      "wellbeing_score": 0,
+      "gaze_direction": "forward",
+      "detected": false
+    },
+    {
+      "id": "std_rahul",
+      "name": "KL Rahul",
+      "social_engagement_score": 76,
+      "energy_traits": 72,
+      "wellbeing_score": 75,
+      "gaze_direction": "forward",
+      "detected": true
+    },
+    {
+      "id": "std_hardik",
+      "name": "Hardik Pandya",
+      "social_engagement_score": 80,
+      "energy_traits": 78,
+      "wellbeing_score": 80,
+      "gaze_direction": "forward",
+      "detected": true
+    },
+    {
+      "id": "std_kuldeep",
+      "name": "Kuldeep Yadav",
+      "social_engagement_score": 67,
+      "energy_traits": 64,
+      "wellbeing_score": 68,
+      "gaze_direction": "forward",
+      "detected": true
+    }
+  ]
+}
