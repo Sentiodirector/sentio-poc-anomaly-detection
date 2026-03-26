@@ -1,4 +1,4 @@
-# Behavioral Anomaly & Early Distress Detection
+﻿# Behavioral Anomaly & Early Distress Detection
 
 > A lightweight alert engine that watches the numbers so counsellors can watch the people.
 
@@ -118,11 +118,12 @@ Absence flags are in their own list — separate from `alerts[]` — exactly as 
 ## Project Structure
 
 ```
-├── solution.py                  # Core engine: analysis + HTML/JSON generation + Flask
-├── alert_digest.html            # Generated counsellor dashboard (offline, browser-ready)
-├── alert_feed.json              # Generated machine-readable alerts (schema-compliant)
-├── README.md                    # This file
-└── sample_data/                 # Daily JSON snapshots (8 days of synthetic input)
+├── solution.py                                    # Core engine: analysis + HTML/JSON generation + Flask
+├── alert_digest.html                              # Generated counsellor dashboard (offline, browser-ready)
+├── alert_feed.json                                # Generated machine-readable alerts (schema-compliant)
+├── README.md                                      # This file
+├── Yashwanth_Sai_Kasarabada_220103012.mp4         # Demo video (required submission artifact)
+└── sample_data/                                   # Daily JSON snapshots (8 days of synthetic input)
     ├── day_1_2023-10-03.json
     ├── day_2_2023-10-04.json
     ├── day_3_2023-10-05.json
@@ -139,10 +140,11 @@ Absence flags are in their own list — separate from `alerts[]` — exactly as 
 
 | File | Status | Notes |
 |------|--------|-------|
-| `solution.py` | ✅ | Core implementation; original function signatures preserved, helpers added |
-| `alert_feed.json` | ✅ | Full PoC schema compliance, field-for-field verified |
-| `alert_digest.html` | ✅ | Fully offline, inline SVG sparklines, system fonts only |
-| `README.md` | ✅ | This document |
+| `solution.py` | ✅ | Core implementation; original function signatures preserved |
+| `alert_feed.json` | ✅ | Full PoC schema compliance |
+| `alert_digest.html` | ✅ | Offline counsellor dashboard |
+| `README.md` | ✅ | Documentation |
+| `Yashwanth_Sai_Kasarabada_220103012.mp4` | ✅ | Demo video as per submission requirement |
 
 ---
 
