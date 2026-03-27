@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentio Mind — Anomaly Detection Digest</title>
+<style>
+:root {
+    --bg-color:#f8fafc; --surface:#ffffff; --surface-elevated:#f1f5f9;
+    --text-main:#0f172a; --text-muted:#475569; --border:#e2e8f0;
+    --brand-saffron:#ea580c; --brand-green:#16a34a;
+    --urgent:#ef4444; --urgent-bg:rgba(239,68,68,0.08);
+    --monitor:#f59e0b; --monitor-bg:rgba(245,158,11,0.08);
+    --info-col:#3b82f6; --info-bg:rgba(59,130,246,0.08);
+    --font-sans:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;}
+body{font-family:var(--font-sans);background:var(--bg-color);color:var(--text-main);margin:0;padding:0;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.container{max-width:920px;margin:0 auto;padding:2rem 1.5rem;}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;margin-bottom:2rem;border-bottom:1px solid var(--border);}
+.header-eyebrow{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);font-weight:600;}
+.header-title{font-size:1.45rem;font-weight:600;margin:0.2rem 0 0;letter-spacing:-0.02em;}
+.logo-text{font-size:1.3rem;font-weight:700;color:var(--text-main);}
+.logo-text span{color:var(--brand-saffron);}
+.company-logo img{height:42px;object-fit:contain;}
+.summary-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+.stat-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;}
+.stat-value{font-size:2rem;font-weight:700;margin-top:0.25rem;line-height:1;}
+.stat-card.urgent .stat-value{color:var(--urgent);}
+.stat-card.monitor .stat-value{color:var(--monitor);}
+.stat-card.info-col .stat-value{color:var(--info-col);}
+.stat-card.total .stat-value{color:var(--text-main);}
+.developer-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.4rem 2rem;margin-bottom:2.5rem;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);}
+.developer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#FF9933 0%,#ffffff 50%,#138808 100%);}
+.dev-name{font-size:1.05rem;font-weight:600;margin:0;}
+.dev-meta{font-size:0.85rem;color:var(--text-muted);margin:0.35rem 0 0;display:flex;gap:1rem;flex-wrap:wrap;}
+.dev-meta span::after{content:'•';margin-left:1rem;color:var(--border);}
+.dev-meta span:last-child::after{content:'';margin:0;}
+.school-bar{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.5rem;margin-bottom:2.5rem;display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;font-size:0.85rem;}
+.school-bar-item{display:flex;flex-direction:column;gap:0.15rem;}
+.school-bar-label{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;}
+.school-bar-value{font-weight:600;color:var(--text-main);}
+.school-name{font-weight:700;font-size:1rem;color:var(--brand-saffron);margin-right:auto;}
+.section-title{font-size:0.95rem;font-weight:600;margin-bottom:1rem;color:var(--text-main);padding-bottom:0.6rem;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:0.06em;}
+.alert-card{background:var(--surface);border-radius:12px;padding:1.4rem 1.5rem;margin-bottom:0.85rem;border:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;transition:box-shadow 0.15s ease,transform 0.15s ease;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+.alert-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,0.08);}
+.alert-card.alert-danger{border-left:4px solid var(--urgent);}
+.alert-card.alert-warning{border-left:4px solid var(--monitor);}
+.alert-card.alert-info{border-left:4px solid var(--info-col);}
+.alert-content{flex:1;min-width:0;}
+.alert-header{display:flex;flex-wrap:wrap;align-items:center;gap:0.6rem;margin-bottom:0.4rem;}
+.student-name{font-weight:600;font-size:1rem;}
+.alert-id{font-size:0.7rem;color:var(--text-muted);font-family:monospace;}
+.date-badge{font-size:0.75rem;color:var(--text-muted);margin-left:auto;}
+.category-badge{display:inline-flex;padding:0.2rem 0.6rem;border-radius:6px;font-size:0.62rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;}
+.category-danger{background:var(--urgent-bg);color:var(--urgent);border:1px solid rgba(239,68,68,0.2);}
+.category-warning{background:var(--monitor-bg);color:var(--monitor);border:1px solid rgba(245,158,11,0.2);}
+.category-info{background:var(--info-bg);color:var(--info-col);border:1px solid rgba(59,130,246,0.2);}
+.alert-title{font-size:0.95rem;font-weight:600;margin-bottom:0.3rem;}
+.description{color:var(--text-muted);font-size:0.88rem;margin-bottom:0.75rem;line-height:1.5;}
+.meta-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.6rem;}
+.meta-chip{font-size:0.72rem;padding:0.15rem 0.55rem;border-radius:6px;background:var(--surface-elevated);border:1px solid var(--border);color:var(--text-muted);font-weight:500;}
+.recommended{font-size:0.8rem;color:var(--brand-green);font-weight:600;display:flex;align-items:center;gap:0.35rem;}
+.sparkline-container{text-align:right;width:150px;flex-shrink:0;}
+.sparkline-title{font-size:0.6rem;color:var(--text-muted);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;}
+.absence-card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--urgent);border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:center;font-size:0.88rem;}
+.absence-name{font-weight:600;}
+.absence-meta{color:var(--text-muted);font-size:0.8rem;}
+.absence-action{color:var(--urgent);font-size:0.78rem;font-weight:600;}
+footer{margin-top:4rem;padding:2rem 0;border-top:1px solid var(--border);display:flex;gap:2.5rem;flex-wrap:wrap;}
+.footer-col{flex:1;min-width:260px;}
+.footer-col:first-child{border-right:1px solid var(--border);padding-right:2rem;}
+.footer-name{font-weight:700;font-size:0.95rem;margin-bottom:0.25rem;}
+.footer-brand{font-weight:700;font-size:1rem;color:var(--brand-saffron);margin-bottom:0.5rem;}
+.footer-link{color:var(--brand-saffron);text-decoration:none;font-size:0.82rem;display:inline-block;margin-bottom:0.75rem;}
+.footer-link:hover{text-decoration:underline;}
+.footer-text{color:var(--text-muted);font-size:0.82rem;line-height:1.65;margin:0;}
+.footer-disclaimer{width:100%;text-align:center;margin-top:2rem;padding:1.25rem 1.5rem;background:var(--surface-elevated);border-radius:8px;border:1px solid var(--border);color:var(--text-muted);font-size:0.78rem;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div>
+    <div class="header-eyebrow">Behavioral Anomaly &amp; Early Distress Detection</div>
+    <h1 class="header-title">Sentio Mind — Alert Digest</h1>
+  </div>
+  <div class="company-logo">
+    <img src="" alt="Sentio Mind"
+         onerror="this.outerHTML='&lt;span class=&quot;logo-text&quot;&gt;Sentio &lt;span&gt;Mind&lt;/span&gt;&lt;/span&gt;'">
+  </div>
+</header>
+
+<div class="summary-row">
+  <div class="stat-card total"><div class="stat-label">Total Alerts</div><div class="stat-value">18</div></div>
+  <div class="stat-card urgent"><div class="stat-label">Urgent</div><div class="stat-value">11</div></div>
+  <div class="stat-card monitor"><div class="stat-label">Monitor</div><div class="stat-value">4</div></div>
+  <div class="stat-card info-col"><div class="stat-label">Informational</div><div class="stat-value">3</div></div>
+</div>
+
+<div class="school-bar">
+  <span class="school-name">Sentio Demo School</span>
+  <div class="school-bar-item"><span class="school-bar-label">Total Tracked</span><span class="school-bar-value">10</span></div>
+  <div class="school-bar-item"><span class="school-bar-label">Flagged Today</span><span class="school-bar-value">6</span></div>
+  <div class="school-bar-item"><span class="school-bar-label">Flagged Yesterday</span><span class="school-bar-value">4</span></div>
+  <div class="school-bar-item"><span class="school-bar-label">Top Anomaly This Week</span><span class="school-bar-value">SUDDEN DROP</span></div>
+  <div class="school-bar-item"><span class="school-bar-label">Avg Wellbeing Today</span><span class="school-bar-value">57.29</span></div>
+</div>
+
+<div class="developer-card">
+  <div class="dev-name">Yashwanth Sai Kasarabada</div>
+  <div class="dev-meta">
+    <span>Roll No. 220103012</span>
+    <span>IIIT Senapati, Manipur</span>
+    <span>CSE AI &amp; DS Branch '26</span>
+    <span>Generated: 2026-03-24T17:27:50</span>
+  </div>
+</div>
+
+<h3 class="section-title">Anomaly Alerts</h3>
+<div id="alerts-list">
+
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Virat Kohli</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_005</span>
+      <span class="date-badge">2023-10-10</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Virat's wellbeing dropped from a baseline of 89.5 to 10.0 — a 79.5-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 89.47</span>
+      <span class="meta-chip">Today: 10.0</span>
+      <span class="meta-chip">&#916; -79.5</span>
+      <span class="meta-chip">Consecutive: 5d</span>
+      <span class="meta-chip">Lowest: social engagement (10)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_virat_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_virat_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_virat_SUDDEN_DROP)" stroke-width="2.5" points="0.0,4.9 20.0,4.0 40.0,5.3 60.0,40.5 80.0,40.5 100.0,40.5 120.0,40.5 140.0,40.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_virat_SUDDEN_DROP)"/><circle cx="140.0" cy="40.5" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Rohit Sharma</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_010</span>
+      <span class="date-badge">2023-10-10</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Rohit's wellbeing dropped from a baseline of 63.2 to 20.0 — a 43.2-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 63.2</span>
+      <span class="meta-chip">Today: 20.0</span>
+      <span class="meta-chip">&#916; -43.2</span>
+      <span class="meta-chip">Consecutive: 5d</span>
+      <span class="meta-chip">Lowest: social engagement (20)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_rohit_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_rohit_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_rohit_SUDDEN_DROP)" stroke-width="2.5" points="0.0,16.1 20.0,16.6 40.0,17.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0 140.0,36.0" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_rohit_SUDDEN_DROP)"/><circle cx="140.0" cy="36.0" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-warning">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Shubman Gill</span>
+      <span class="category-badge category-warning">SOCIAL WITHDRAWAL</span>
+      <span class="alert-id">ALT_013</span>
+      <span class="date-badge">2023-10-10</span>
+    </div>
+    <div class="alert-title">Social withdrawal and gaze avoidance detected</div>
+    <div class="description">Shubman's social engagement dropped 30.33 points below baseline and gaze is predominantly downward.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 77.53</span>
+      <span class="meta-chip">Today: 68.8</span>
+      <span class="meta-chip">&#916; -8.7</span>
+      <span class="meta-chip">Consecutive: 3d</span>
+      <span class="meta-chip">Lowest: social engagement (50)</span>
+    </div>
+    <div class="recommended">&#10003; Engage student in supervised peer activity; monitor tomorrow</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_shubman_SOCIAL_WITHDRAWAL" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_shubman_SOCIAL_WITHDRAWAL" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_shubman_SOCIAL_WITHDRAWAL)" stroke-width="2.5" points="0.0,8.1 20.0,9.0 40.0,9.4 60.0,9.9 80.0,10.8 100.0,27.0 120.0,27.0 140.0,22.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_shubman_SOCIAL_WITHDRAWAL)"/><circle cx="140.0" cy="22.5" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-info">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Ravindra Jadeja</span>
+      <span class="category-badge category-info">HYPERACTIVITY SPIKE</span>
+      <span class="alert-id">ALT_015</span>
+      <span class="date-badge">2023-10-10</span>
+    </div>
+    <div class="alert-title">Hyperactivity spike detected</div>
+    <div class="description">Ravindra's energy traits spiked 55 points above baseline.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 65.4</span>
+      <span class="meta-chip">Today: 95.6</span>
+      <span class="meta-chip">&#916; +30.2</span>
+      <span class="meta-chip">Consecutive: 2d</span>
+      <span class="meta-chip">Lowest: social engagement (80)</span>
+    </div>
+    <div class="recommended">&#10003; Assess for environmental stressors; consider calm-down strategy</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_jadeja_HYPERACTIVITY_SPIKE" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_jadeja_HYPERACTIVITY_SPIKE" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_jadeja_HYPERACTIVITY_SPIKE)" stroke-width="2.5" points="0.0,17.1 20.0,18.0 40.0,17.6 60.0,16.6 80.0,17.1 100.0,16.2 120.0,0.0 140.0,0.0" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_jadeja_HYPERACTIVITY_SPIKE)"/><circle cx="140.0" cy="0.0" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Suryakumar Yadav</span>
+      <span class="category-badge category-danger">SUSTAINED LOW</span>
+      <span class="alert-id">ALT_017</span>
+      <span class="date-badge">2023-10-10</span>
+    </div>
+    <div class="alert-title">Sustained low wellbeing detected</div>
+    <div class="description">Suryakumar's wellbeing has remained below 45 for 3+ consecutive days (current: 44.0, baseline: 52.3).</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 52.27</span>
+      <span class="meta-chip">Today: 44.0</span>
+      <span class="meta-chip">&#916; -8.3</span>
+      <span class="meta-chip">Consecutive: 1d</span>
+      <span class="meta-chip">Lowest: social engagement (44)</span>
+    </div>
+    <div class="recommended">&#10003; Refer to school counsellor for extended support</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_surya_SUSTAINED_LOW" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_surya_SUSTAINED_LOW" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_surya_SUSTAINED_LOW)" stroke-width="2.5" points="0.0,20.8 20.0,21.7 40.0,22.0 60.0,20.3 80.0,18.1 100.0,25.2 120.0,25.2 140.0,25.2" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_surya_SUSTAINED_LOW)"/><circle cx="140.0" cy="25.2" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-info">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Yashasvi Jaiswal</span>
+      <span class="category-badge category-info">GAZE AVOIDANCE</span>
+      <span class="alert-id">ALT_018</span>
+      <span class="date-badge">2023-10-10</span>
+    </div>
+    <div class="alert-title">Persistent gaze avoidance detected</div>
+    <div class="description">Zero eye contact detected for Yashasvi for 3+ consecutive days. Gaze: downward.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 66.73</span>
+      <span class="meta-chip">Today: 60.8</span>
+      <span class="meta-chip">&#916; -5.9</span>
+      <span class="meta-chip">Consecutive: 1d</span>
+      <span class="meta-chip">Lowest: energy traits (50)</span>
+    </div>
+    <div class="recommended">&#10003; Low-pressure 1:1 conversation recommended</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_jaiswal_GAZE_AVOIDANCE" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_jaiswal_GAZE_AVOIDANCE" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_jaiswal_GAZE_AVOIDANCE)" stroke-width="2.5" points="0.0,0.0 20.0,0.0 40.0,0.0 60.0,0.0 80.0,0.0 100.0,45.0 120.0,45.0 140.0,45.0" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_jaiswal_GAZE_AVOIDANCE)"/><circle cx="140.0" cy="45.0" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Virat Kohli</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_004</span>
+      <span class="date-badge">2023-10-09</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Virat's wellbeing dropped from a baseline of 89.5 to 10.0 — a 79.5-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 89.47</span>
+      <span class="meta-chip">Today: 10.0</span>
+      <span class="meta-chip">&#916; -79.5</span>
+      <span class="meta-chip">Consecutive: 4d</span>
+      <span class="meta-chip">Lowest: social engagement (10)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_virat_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_virat_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_virat_SUDDEN_DROP)" stroke-width="2.5" points="0.0,4.9 20.0,4.0 40.0,5.3 60.0,40.5 80.0,40.5 100.0,40.5 120.0,40.5 140.0,40.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_virat_SUDDEN_DROP)"/><circle cx="140.0" cy="40.5" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Rohit Sharma</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_009</span>
+      <span class="date-badge">2023-10-09</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Rohit's wellbeing dropped from a baseline of 63.2 to 20.0 — a 43.2-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 63.2</span>
+      <span class="meta-chip">Today: 20.0</span>
+      <span class="meta-chip">&#916; -43.2</span>
+      <span class="meta-chip">Consecutive: 4d</span>
+      <span class="meta-chip">Lowest: social engagement (20)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_rohit_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_rohit_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_rohit_SUDDEN_DROP)" stroke-width="2.5" points="0.0,16.1 20.0,16.6 40.0,17.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0 140.0,36.0" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_rohit_SUDDEN_DROP)"/><circle cx="140.0" cy="36.0" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-warning">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Shubman Gill</span>
+      <span class="category-badge category-warning">SOCIAL WITHDRAWAL</span>
+      <span class="alert-id">ALT_012</span>
+      <span class="date-badge">2023-10-09</span>
+    </div>
+    <div class="alert-title">Social withdrawal and gaze avoidance detected</div>
+    <div class="description">Shubman's social engagement dropped 40.33 points below baseline and gaze is predominantly downward.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 77.53</span>
+      <span class="meta-chip">Today: 64.0</span>
+      <span class="meta-chip">&#916; -13.5</span>
+      <span class="meta-chip">Consecutive: 2d</span>
+      <span class="meta-chip">Lowest: social engagement (40)</span>
+    </div>
+    <div class="recommended">&#10003; Engage student in supervised peer activity; monitor tomorrow</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_shubman_SOCIAL_WITHDRAWAL" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_shubman_SOCIAL_WITHDRAWAL" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_shubman_SOCIAL_WITHDRAWAL)" stroke-width="2.5" points="0.0,8.1 20.0,9.0 40.0,9.4 60.0,9.9 80.0,10.8 100.0,27.0 120.0,27.0 140.0,22.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_shubman_SOCIAL_WITHDRAWAL)"/><circle cx="140.0" cy="22.5" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-info">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Ravindra Jadeja</span>
+      <span class="category-badge category-info">HYPERACTIVITY SPIKE</span>
+      <span class="alert-id">ALT_014</span>
+      <span class="date-badge">2023-10-09</span>
+    </div>
+    <div class="alert-title">Hyperactivity spike detected</div>
+    <div class="description">Ravindra's energy traits spiked 55 points above baseline.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 65.4</span>
+      <span class="meta-chip">Today: 95.6</span>
+      <span class="meta-chip">&#916; +30.2</span>
+      <span class="meta-chip">Consecutive: 1d</span>
+      <span class="meta-chip">Lowest: social engagement (80)</span>
+    </div>
+    <div class="recommended">&#10003; Assess for environmental stressors; consider calm-down strategy</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_jadeja_HYPERACTIVITY_SPIKE" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_jadeja_HYPERACTIVITY_SPIKE" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_jadeja_HYPERACTIVITY_SPIKE)" stroke-width="2.5" points="0.0,17.1 20.0,18.0 40.0,17.6 60.0,16.6 80.0,17.1 100.0,16.2 120.0,0.0 140.0,0.0" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_jadeja_HYPERACTIVITY_SPIKE)"/><circle cx="140.0" cy="0.0" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Virat Kohli</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_003</span>
+      <span class="date-badge">2023-10-08</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Virat's wellbeing dropped from a baseline of 89.5 to 10.0 — a 79.5-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 89.47</span>
+      <span class="meta-chip">Today: 10.0</span>
+      <span class="meta-chip">&#916; -79.5</span>
+      <span class="meta-chip">Consecutive: 3d</span>
+      <span class="meta-chip">Lowest: social engagement (10)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_virat_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_virat_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_virat_SUDDEN_DROP)" stroke-width="2.5" points="0.0,4.9 20.0,4.0 40.0,5.3 60.0,40.5 80.0,40.5 100.0,40.5 120.0,40.5 140.0,40.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_virat_SUDDEN_DROP)"/><circle cx="140.0" cy="40.5" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Rohit Sharma</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_008</span>
+      <span class="date-badge">2023-10-08</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Rohit's wellbeing dropped from a baseline of 63.2 to 20.0 — a 43.2-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 63.2</span>
+      <span class="meta-chip">Today: 20.0</span>
+      <span class="meta-chip">&#916; -43.2</span>
+      <span class="meta-chip">Consecutive: 3d</span>
+      <span class="meta-chip">Lowest: social engagement (20)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_rohit_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_rohit_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_rohit_SUDDEN_DROP)" stroke-width="2.5" points="0.0,16.1 20.0,16.6 40.0,17.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0 140.0,36.0" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_rohit_SUDDEN_DROP)"/><circle cx="140.0" cy="36.0" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-warning">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Shubman Gill</span>
+      <span class="category-badge category-warning">SOCIAL WITHDRAWAL</span>
+      <span class="alert-id">ALT_011</span>
+      <span class="date-badge">2023-10-08</span>
+    </div>
+    <div class="alert-title">Social withdrawal and gaze avoidance detected</div>
+    <div class="description">Shubman's social engagement dropped 40.33 points below baseline and gaze is predominantly downward.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 77.53</span>
+      <span class="meta-chip">Today: 64.0</span>
+      <span class="meta-chip">&#916; -13.5</span>
+      <span class="meta-chip">Consecutive: 1d</span>
+      <span class="meta-chip">Lowest: social engagement (40)</span>
+    </div>
+    <div class="recommended">&#10003; Engage student in supervised peer activity; monitor tomorrow</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_shubman_SOCIAL_WITHDRAWAL" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_shubman_SOCIAL_WITHDRAWAL" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_shubman_SOCIAL_WITHDRAWAL)" stroke-width="2.5" points="0.0,8.1 20.0,9.0 40.0,9.4 60.0,9.9 80.0,10.8 100.0,27.0 120.0,27.0 140.0,22.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_shubman_SOCIAL_WITHDRAWAL)"/><circle cx="140.0" cy="22.5" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-warning">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Suryakumar Yadav</span>
+      <span class="category-badge category-warning">REGRESSION</span>
+      <span class="alert-id">ALT_016</span>
+      <span class="date-badge">2023-10-08</span>
+    </div>
+    <div class="alert-title">Recovery regression detected</div>
+    <div class="description">Suryakumar was recovering for 3+ days but dropped 15.8 points today — recovery collapsed.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 52.27</span>
+      <span class="meta-chip">Today: 44.0</span>
+      <span class="meta-chip">&#916; -8.3</span>
+      <span class="meta-chip">Consecutive: 1d</span>
+      <span class="meta-chip">Lowest: social engagement (44)</span>
+    </div>
+    <div class="recommended">&#10003; Review prior support plan; escalate if decline continues</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_surya_REGRESSION" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_surya_REGRESSION" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_surya_REGRESSION)" stroke-width="2.5" points="0.0,20.8 20.0,21.7 40.0,22.0 60.0,20.3 80.0,18.1 100.0,25.2 120.0,25.2 140.0,25.2" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_surya_REGRESSION)"/><circle cx="140.0" cy="25.2" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Virat Kohli</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_002</span>
+      <span class="date-badge">2023-10-07</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Virat's wellbeing dropped from a baseline of 89.5 to 10.0 — a 79.5-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 89.47</span>
+      <span class="meta-chip">Today: 10.0</span>
+      <span class="meta-chip">&#916; -79.5</span>
+      <span class="meta-chip">Consecutive: 2d</span>
+      <span class="meta-chip">Lowest: social engagement (10)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_virat_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_virat_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_virat_SUDDEN_DROP)" stroke-width="2.5" points="0.0,4.9 20.0,4.0 40.0,5.3 60.0,40.5 80.0,40.5 100.0,40.5 120.0,40.5 140.0,40.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_virat_SUDDEN_DROP)"/><circle cx="140.0" cy="40.5" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Rohit Sharma</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_007</span>
+      <span class="date-badge">2023-10-07</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Rohit's wellbeing dropped from a baseline of 63.2 to 20.0 — a 43.2-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 63.2</span>
+      <span class="meta-chip">Today: 20.0</span>
+      <span class="meta-chip">&#916; -43.2</span>
+      <span class="meta-chip">Consecutive: 2d</span>
+      <span class="meta-chip">Lowest: social engagement (20)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_rohit_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_rohit_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_rohit_SUDDEN_DROP)" stroke-width="2.5" points="0.0,16.1 20.0,16.6 40.0,17.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0 140.0,36.0" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_rohit_SUDDEN_DROP)"/><circle cx="140.0" cy="36.0" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Virat Kohli</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_001</span>
+      <span class="date-badge">2023-10-06</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Virat's wellbeing dropped from a baseline of 89.5 to 10.0 — a 79.5-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 89.47</span>
+      <span class="meta-chip">Today: 10.0</span>
+      <span class="meta-chip">&#916; -79.5</span>
+      <span class="meta-chip">Consecutive: 1d</span>
+      <span class="meta-chip">Lowest: social engagement (10)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_virat_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_virat_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_virat_SUDDEN_DROP)" stroke-width="2.5" points="0.0,4.9 20.0,4.0 40.0,5.3 60.0,40.5 80.0,40.5 100.0,40.5 120.0,40.5 140.0,40.5" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_virat_SUDDEN_DROP)"/><circle cx="140.0" cy="40.5" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+<div class="alert-card alert-danger">
+  <div class="alert-content">
+    <div class="alert-header">
+      <span class="student-name">Rohit Sharma</span>
+      <span class="category-badge category-danger">SUDDEN DROP</span>
+      <span class="alert-id">ALT_006</span>
+      <span class="date-badge">2023-10-06</span>
+    </div>
+    <div class="alert-title">Sudden wellbeing drop detected</div>
+    <div class="description">Rohit's wellbeing dropped from a baseline of 63.2 to 20.0 — a 43.2-point fall.</div>
+    <div class="meta-row">
+      <span class="meta-chip">Baseline: 63.2</span>
+      <span class="meta-chip">Today: 20.0</span>
+      <span class="meta-chip">&#916; -43.2</span>
+      <span class="meta-chip">Consecutive: 1d</span>
+      <span class="meta-chip">Lowest: social engagement (20)</span>
+    </div>
+    <div class="recommended">&#10003; Schedule pastoral check-in today</div>
+  </div>
+  <div class="sparkline-container">
+    <div class="sparkline-title">Trend</div>
+    <svg width="140" height="45" class="sparkline" viewBox="0 -5 140 55"><defs><linearGradient id="grad_g_std_rohit_SUDDEN_DROP" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   style="stop-color:#FF9933;stop-opacity:1"/><stop offset="50%"  style="stop-color:#000080;stop-opacity:1"/><stop offset="100%" style="stop-color:#138808;stop-opacity:1"/></linearGradient><filter id="glow_g_std_rohit_SUDDEN_DROP" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs><polyline fill="none" stroke="url(#grad_g_std_rohit_SUDDEN_DROP)" stroke-width="2.5" points="0.0,16.1 20.0,16.6 40.0,17.0 60.0,36.0 80.0,36.0 100.0,36.0 120.0,36.0 140.0,36.0" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow_g_std_rohit_SUDDEN_DROP)"/><circle cx="140.0" cy="36.0" r="4" fill="#138808" stroke="#000" stroke-width="1.5"/></svg>
+  </div>
+</div>
+</div>
+
+<h3 class="section-title" style="margin-top:2.5rem;">Absence Flags</h3>
+
+<div class="absence-card">
+  <div>
+    <div class="absence-name">Rishabh Pant</div>
+    <div class="absence-meta">ID: std_absence &middot; Last seen: 2023-10-08 &middot; Absent: 2 day(s)</div>
+  </div>
+  <div class="absence-action">&#9888; Welfare check — contact family if absent again tomorrow</div>
+</div>
+<footer>
+  <div class="footer-col">
+    <div class="footer-name">Yashwanth Sai Kasarabada</div>
+    <a href="https://www.linkedin.com/in/yashwanth-sai-kasarabada-ba4265258/" class="footer-link">LinkedIn Profile</a>
+    <p class="footer-text">I'm driven to contribute to building something meaningful rather than operating as a generic output in a large MNC. I'm willing to put in the hard work, take ownership, and grow alongside the company. The core idea deeply resonates with me — I'd really appreciate the opportunity to prove my capabilities.</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-brand">Sentio Mind</div>
+    <p class="footer-text">An AI-powered behavioral intelligence platform operating on top of existing infrastructure to detect early emotional risks — without invading privacy.</p>
+    <p class="footer-text" style="margin-top:0.75rem;">Acting as a silent guardian, helping educators act with empathy, evidence, and responsibility.</p>
+  </div>
+  <div class="footer-disclaimer">
+    Thank you for reviewing my assignment. My primary goal was to demonstrate not just technical proficiency, but a deep alignment with Sentio's mission of building empathetic, AI-driven solutions. I have poured immense care into both the core algorithmic constraints and this visual presentation. I eagerly look forward to discussing my approach and proving how I can contribute from day one.
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
