@@ -1,0 +1,229 @@
+{
+  "source": "p5_anomaly_detection",
+  "generated_at": "2026-03-20T02:00:28.394847",
+  "school": "Demo School",
+  "alert_summary": {
+    "total_alerts": 8,
+    "urgent": 2,
+    "monitor": 6,
+    "informational": 0
+  },
+  "alerts": [
+    {
+      "alert_id": "ALT_0863A08F",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Aarav Sharma",
+      "date": "2026-03-19",
+      "severity": "urgent",
+      "category": "SUDDEN_DROP",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Aarav Sharma's wellbeing dropped from a baseline of 73 to 28 today \u2014 a 45-point fall. Lowest trait: social_engagement at 20. Dominant gaze: down.",
+      "baseline_wellbeing": 73,
+      "today_wellbeing": 28,
+      "delta": -45,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        74,
+        72,
+        75,
+        74,
+        28
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 20,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_EF0113AB",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Arjun Mehta",
+      "date": "2026-03-19",
+      "severity": "urgent",
+      "category": "SUSTAINED_LOW",
+      "title": "Sustained low wellbeing",
+      "description": "Arjun Mehta has had wellbeing below 45 for 4 consecutive day(s) (today: 39). Immediate follow-up required.",
+      "baseline_wellbeing": 66,
+      "today_wellbeing": 39,
+      "delta": -27,
+      "days_flagged_consecutively": 4,
+      "trend_last_5_days": [
+        68,
+        40,
+        42,
+        41,
+        39
+      ],
+      "lowest_trait": "emotional_stability",
+      "lowest_trait_value": 37,
+      "recommended_action": "Immediate counsellor follow-up required",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_37638C81",
+      "person_id": "SCHOOL_P0001",
+      "person_name": "Aarav Sharma",
+      "date": "2026-03-19",
+      "severity": "monitor",
+      "category": "SOCIAL_WITHDRAWAL",
+      "title": "Social withdrawal signs detected",
+      "description": "Aarav Sharma's social engagement dropped 53 pts (baseline: 73 \u2192 today: 20). Gaze predominantly 'down' \u2014 possible emotional disengagement.",
+      "baseline_wellbeing": 73,
+      "today_wellbeing": 28,
+      "delta": -53,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        74,
+        72,
+        75,
+        74,
+        28
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 20,
+      "recommended_action": "Check in with student informally \u2014 ask how they are doing",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_B81230DD",
+      "person_id": "SCHOOL_P0002",
+      "person_name": "Priya Nair",
+      "date": "2026-03-19",
+      "severity": "monitor",
+      "category": "SOCIAL_WITHDRAWAL",
+      "title": "Social withdrawal signs detected",
+      "description": "Priya Nair's social engagement dropped 28 pts (baseline: 62 \u2192 today: 34). Gaze predominantly 'down' \u2014 possible emotional disengagement.",
+      "baseline_wellbeing": 64,
+      "today_wellbeing": 62,
+      "delta": -28,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        63,
+        69,
+        65,
+        62,
+        62
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 34,
+      "recommended_action": "Check in with student informally \u2014 ask how they are doing",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_95217794",
+      "person_id": "SCHOOL_P0003",
+      "person_name": "Arjun Mehta",
+      "date": "2026-03-19",
+      "severity": "monitor",
+      "category": "SUDDEN_DROP",
+      "title": "Sudden wellbeing drop detected",
+      "description": "Arjun Mehta's wellbeing dropped from a baseline of 66 to 39 today \u2014 a 27-point fall. Lowest trait: emotional_stability at 37. Dominant gaze: forward.",
+      "baseline_wellbeing": 66,
+      "today_wellbeing": 39,
+      "delta": -27,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        68,
+        40,
+        42,
+        41,
+        39
+      ],
+      "lowest_trait": "emotional_stability",
+      "lowest_trait_value": 37,
+      "recommended_action": "Schedule pastoral check-in today",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_B5B6F664",
+      "person_id": "SCHOOL_P0004",
+      "person_name": "Sneha Reddy",
+      "date": "2026-03-19",
+      "severity": "monitor",
+      "category": "REGRESSION",
+      "title": "Regression after recovery",
+      "description": "Sneha Reddy was recovering for 3+ days (scores: [59, 64, 64]), then dropped 28 pts today to 36.",
+      "baseline_wellbeing": 55,
+      "today_wellbeing": 36,
+      "delta": -28,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        55,
+        59,
+        64,
+        64,
+        36
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 34,
+      "recommended_action": "Check for external stressor that may have triggered regression",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_72340355",
+      "person_id": "SCHOOL_P0005",
+      "person_name": "Rahul Verma",
+      "date": "2026-03-19",
+      "severity": "monitor",
+      "category": "GAZE_AVOIDANCE",
+      "title": "Persistent gaze avoidance",
+      "description": "Rahul Verma has had no eye contact detected for 3 consecutive days. May indicate anxiety, social withdrawal, or emotional disengagement.",
+      "baseline_wellbeing": 62,
+      "today_wellbeing": 56,
+      "delta": 0,
+      "days_flagged_consecutively": 0,
+      "trend_last_5_days": [
+        69,
+        62,
+        58,
+        63,
+        56
+      ],
+      "lowest_trait": "emotional_stability",
+      "lowest_trait_value": 48,
+      "recommended_action": "Gentle one-on-one conversation recommended with counsellor",
+      "profile_image_b64": ""
+    },
+    {
+      "alert_id": "ALT_6D9F9EED",
+      "person_id": "SCHOOL_P0006",
+      "person_name": "Kavya Iyer",
+      "date": "2026-03-19",
+      "severity": "monitor",
+      "category": "HYPERACTIVITY_SPIKE",
+      "title": "Hyperactivity spike detected",
+      "description": "Kavya Iyer's combined energy score is 185 (82 pts above baseline of 103). Physical: 95, Movement: 90.",
+      "baseline_wellbeing": 67,
+      "today_wellbeing": 66,
+      "delta": 82,
+      "days_flagged_consecutively": 1,
+      "trend_last_5_days": [
+        66,
+        71,
+        68,
+        69,
+        66
+      ],
+      "lowest_trait": "social_engagement",
+      "lowest_trait_value": 60,
+      "recommended_action": "Ensure structured breaks; monitor for impulsivity or anxiety",
+      "profile_image_b64": ""
+    }
+  ],
+  "absence_flags": [
+    {
+      "person_id": "SCHOOL_P0007",
+      "person_name": "Vikram Pillai",
+      "last_seen_date": "2026-03-17",
+      "days_absent": 2,
+      "recommended_action": "Welfare check \u2014 contact family if absent again tomorrow"
+    }
+  ],
+  "school_summary": {
+    "total_persons_tracked": 7,
+    "persons_flagged_today": 6,
+    "persons_flagged_yesterday": 0,
+    "most_common_anomaly_this_week": "SUDDEN_DROP",
+    "school_avg_wellbeing_today": 48
+  }
+}

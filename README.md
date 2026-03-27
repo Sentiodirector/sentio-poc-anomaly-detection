@@ -105,3 +105,16 @@ Push to your branch only. Do not touch main.
 Peer-comparison anomaly: flag a person whose wellbeing is more than 2 standard deviations below the class average on the same day, even if their personal baseline is also low.
 
 *Sentio Mind · 2026*
+
+---
+## Submission — Aditya Sinha | 23f1001286
+
+**Run:**
+```
+pip install numpy
+python generate_sample_data.py
+python solution.py
+```
+
+**Dataset:** Synthetic — generated via generate_sample_data.py.
+7 days × 7 students, each scenario triggers one anomaly category.
