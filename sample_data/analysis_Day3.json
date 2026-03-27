@@ -1,0 +1,90 @@
+[
+  {
+    "person_id": "SCHOOL_P0001",
+    "person_name": "Alice Sharma",
+    "date": "2026-03-19",
+    "wellbeing": 79,
+    "social_engagement": 74,
+    "physical_energy": 75,
+    "movement_energy": 71,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "SCHOOL_P0002",
+    "person_name": "Bob Nair",
+    "date": "2026-03-19",
+    "wellbeing": 81,
+    "social_engagement": 79,
+    "physical_energy": 80,
+    "movement_energy": 66,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "SCHOOL_P0003",
+    "person_name": "Chitra Patel",
+    "date": "2026-03-19",
+    "wellbeing": 30,
+    "social_engagement": 35,
+    "physical_energy": 58,
+    "movement_energy": 54,
+    "gaze": "down",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "SCHOOL_P0004",
+    "person_name": "David Kumar",
+    "date": "2026-03-19",
+    "wellbeing": 77,
+    "social_engagement": 66,
+    "physical_energy": 68,
+    "movement_energy": 54,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "SCHOOL_P0005",
+    "person_name": "Esha Reddy",
+    "date": "2026-03-19",
+    "wellbeing": 72,
+    "social_engagement": 72,
+    "physical_energy": 63,
+    "movement_energy": 62,
+    "gaze": "down",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "SCHOOL_P0006",
+    "person_name": "Farhan Malik",
+    "date": "2026-03-19",
+    "wellbeing": 72,
+    "social_engagement": 40,
+    "physical_energy": 64,
+    "movement_energy": 62,
+    "gaze": "down",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "SCHOOL_P0007",
+    "person_name": "Gauri Singh",
+    "date": "2026-03-19",
+    "wellbeing": 68,
+    "social_engagement": 56,
+    "physical_energy": 29,
+    "movement_energy": 24,
+    "gaze": "forward",
+    "seen_in_video": true
+  },
+  {
+    "person_id": "SCHOOL_P0008",
+    "person_name": "Harish Iyer",
+    "date": "2026-03-19",
+    "wellbeing": 63,
+    "social_engagement": 57,
+    "physical_energy": 52,
+    "movement_energy": 48,
+    "gaze": "forward",
+    "seen_in_video": true
+  }
+]

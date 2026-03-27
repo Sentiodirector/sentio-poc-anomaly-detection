@@ -105,3 +105,52 @@ Push to your branch only. Do not touch main.
 Peer-comparison anomaly: flag a person whose wellbeing is more than 2 standard deviations below the class average on the same day, even if their personal baseline is also low.
 
 *Sentio Mind · 2026*
+
+---
+
+## Submission — Daksha Subramanya (23F3001863)
+
+### What I Built
+A complete behavioral anomaly detection pipeline that processes 5 days of student behavioral JSON data and outputs a counsellor-facing dashboard and machine-readable alert feed.
+
+### Files
+- `solution.py` — core detection pipeline
+- `generate_mock_data.py` — generates 5 days of sample data for 8 students
+- `alert_feed.json` — machine-readable alert output (matches integration schema exactly)
+- `alert_digest.html` — offline counsellor dashboard (no CDN, single file)
+- `app.py` — bonus Flask endpoint serving `/get_alerts` and `/health`
+
+### How to Run
+```
+pip install numpy flask
+
+python generate_mock_data.py
+python solution.py
+python app.py
+```
+
+Open `alert_digest.html` in any browser (works offline as `file://`)
+API: `http://127.0.0.1:5000/get_alerts`
+
+### Anomaly Categories Detected
+All 7 categories implemented:
+- **SUDDEN_DROP** — wellbeing drops ≥20 pts from personal baseline
+- **SUSTAINED_LOW** — wellbeing <45 for 3+ consecutive days
+- **SOCIAL_WITHDRAWAL** — social engagement drops 25+ pts + gaze down
+- **HYPERACTIVITY_SPIKE** — combined energy 40+ pts above baseline
+- **REGRESSION** — recovering 3+ days then drops >15 pts
+- **GAZE_AVOIDANCE** — gaze down/away for 3+ consecutive days
+- **ABSENCE_FLAG** — not detected for 2+ consecutive days
+
+### Technical Approach
+- Personal baseline computed from each student's first 3 days
+- If baseline std dev >15, drop threshold increased 50% to reduce false positives
+- Rule-based detection — intentionally no ML models. Interpretable rules are more actionable for counsellors than black-box outputs
+- Dashboard features: 5-day wellbeing heatmap, severity filter tabs, expandable cards with baseline vs today trait comparison, chronic cases section, absence flags table
+
+### Dashboard Features
+- 5-day wellbeing heatmap for instant cohort overview
+- Filterable alerts by severity (All / Urgent / Monitor)
+- Expandable student cards with trait breakdown table
+- Fully offline — single HTML file, no internet required
+- Flask `/get_alerts` endpoint for direct pipeline integration
