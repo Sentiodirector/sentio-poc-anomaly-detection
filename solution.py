@@ -1,11 +1,3 @@
-"""
-anomaly_detection.py
-Sentio Mind · Project 5 · Behavioral Anomaly & Early Distress Detection
-
-Copy this file to solution.py and fill in every TODO block.
-Do not rename any function. No OpenCV needed — pure data analysis.
-Run: python solution.py
-"""
 
 import json
 from pathlib import Path
