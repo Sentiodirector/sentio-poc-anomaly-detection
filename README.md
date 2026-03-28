@@ -105,3 +105,58 @@ Push to your branch only. Do not touch main.
 Peer-comparison anomaly: flag a person whose wellbeing is more than 2 standard deviations below the class average on the same day, even if their personal baseline is also low.
 
 *Sentio Mind · 2026*
+
+---
+
+## Implementation Notes
+
+This repository now includes a working [solution.py](solution.py) implementation that:
+
+1. Loads all daily JSON files from [sample_data](sample_data).
+2. Sorts by date and builds person-wise histories.
+3. Computes personal baselines from first 3 days (or fewer if unavailable).
+4. Applies all seven anomaly rules.
+5. Writes schema-compliant [alert_feed.json](alert_feed.json).
+6. Generates offline [alert_digest.html](alert_digest.html) with inline CSS and sparklines.
+
+### Rule Coverage Implemented
+
+- SUDDEN_DROP (with high-variance baseline threshold adjustment)
+- SUSTAINED_LOW
+- SOCIAL_WITHDRAWAL
+- HYPERACTIVITY_SPIKE
+- REGRESSION
+- GAZE_AVOIDANCE
+- ABSENCE_FLAG
+
+### Local Run
+
+```bash
+python3 solution.py
+```
+
+Expected output files:
+
+- [alert_feed.json](alert_feed.json)
+- [alert_digest.html](alert_digest.html)
+
+### Sample Data Included
+
+Synthetic multi-student data is provided in [sample_data](sample_data) with 6 days:
+
+- [sample_data/analysis_Day1.json](sample_data/analysis_Day1.json)
+- [sample_data/analysis_Day2.json](sample_data/analysis_Day2.json)
+- [sample_data/analysis_Day3.json](sample_data/analysis_Day3.json)
+- [sample_data/analysis_Day4.json](sample_data/analysis_Day4.json)
+- [sample_data/analysis_Day5.json](sample_data/analysis_Day5.json)
+- [sample_data/analysis_Day6.json](sample_data/analysis_Day6.json)
+
+### demo.mp4 Recording Checklist (Under 2 Minutes)
+
+1. Open terminal in repo root.
+2. Run `python3 solution.py` and show the success summary.
+3. Open [alert_feed.json](alert_feed.json) and scroll first alert + summary fields.
+4. Open [alert_digest.html](alert_digest.html) in browser and show:
+	- Today's Alerts cards
+	- School Summary
+	- Persistent Alerts and Absence Flags
