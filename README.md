@@ -67,7 +67,7 @@ sentio-anomaly-detection/
 ├── alert_digest.html           ← counsellor report
 ├── alert_feed.json             
 └── README.md
-└── demo.mp4
+└── kapishankar_ashtankar_21f3000371.mp4
 ```
 
 ---
