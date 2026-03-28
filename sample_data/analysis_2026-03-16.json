@@ -1,0 +1,77 @@
+{
+  "date": "2026-03-16",
+  "school": "Demo School",
+  "persons": [
+    {
+      "person_id": "S001",
+      "person_name": "Alice Thomas",
+      "wellbeing": 77,
+      "social_engagement": 76,
+      "traits": {"physical_energy": 51, "movement_energy": 46, "social_engagement": 76},
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_detected": true
+    },
+    {
+      "person_id": "S002",
+      "person_name": "Bob Singh",
+      "wellbeing": 48,
+      "social_engagement": 58,
+      "traits": {"physical_energy": 50, "movement_energy": 44, "social_engagement": 58},
+      "gaze_direction": "side",
+      "eye_contact": false,
+      "person_detected": true
+    },
+    {
+      "person_id": "S003",
+      "person_name": "Carol Mehta",
+      "wellbeing": 41,
+      "social_engagement": 46,
+      "traits": {"physical_energy": 47, "movement_energy": 41, "social_engagement": 46},
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "person_detected": true
+    },
+    {
+      "person_id": "S004",
+      "person_name": "David Kumar",
+      "wellbeing": 64,
+      "social_engagement": 50,
+      "traits": {"physical_energy": 52, "movement_energy": 46, "social_engagement": 50},
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "person_detected": true
+    },
+    {
+      "person_id": "S005",
+      "person_name": "Emma Patel",
+      "wellbeing": 66,
+      "social_engagement": 63,
+      "traits": {"physical_energy": 79, "movement_energy": 55, "social_engagement": 63},
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_detected": true
+    },
+    {
+      "person_id": "S006",
+      "person_name": "Frank Sharma",
+      "wellbeing": 62,
+      "social_engagement": 58,
+      "traits": {"physical_energy": 51, "movement_energy": 43, "social_engagement": 58},
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "person_detected": true
+    },
+    {
+      "person_id": "S007",
+      "person_id": "S008",
+      "person_name": "Ravi Verma",
+      "wellbeing": 72,
+      "social_engagement": 68,
+      "traits": {"physical_energy": 54, "movement_energy": 48, "social_engagement": 68},
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "person_detected": true
+    }
+  ]
+}
