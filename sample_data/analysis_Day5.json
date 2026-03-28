@@ -1,0 +1,58 @@
+{
+  "date": "2026-03-20",
+  "school": "JAGRAN PUBLIC SCHOOL",
+  "persons": {
+    "SCHOOL_P0001": {
+      "person_id": "SCHOOL_P0001",
+      "person_info": {
+        "name": "Aarav Sharma",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 31,
+      "social_engagement": 18,
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "physical_energy": 20,
+      "movement_energy": 15
+    },
+    "SCHOOL_P0002": {
+      "person_id": "SCHOOL_P0002",
+      "person_info": {
+        "name": "Priya Rajan",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 40,
+      "social_engagement": 23,
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "physical_energy": 26,
+      "movement_energy": 20
+    },
+    "SCHOOL_P0003": {
+      "person_id": "SCHOOL_P0003",
+      "person_info": {
+        "name": "Arjun Mehta",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 39,
+      "social_engagement": 35,
+      "gaze_direction": "down",
+      "eye_contact": false,
+      "physical_energy": 58,
+      "movement_energy": 47
+    },
+    "SCHOOL_P0004": {
+      "person_id": "SCHOOL_P0004",
+      "person_info": {
+        "name": "Sneha Kulkarni",
+        "profile_image_b64": ""
+      },
+      "wellbeing": 69,
+      "social_engagement": 61,
+      "gaze_direction": "forward",
+      "eye_contact": true,
+      "physical_energy": 51,
+      "movement_energy": 43
+    }
+  }
+}
